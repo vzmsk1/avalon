@@ -1,0 +1,39 @@
+.breadcrumbs {
+  display: flex;
+  column-gap: 2.4rem;
+
+  &__link {
+    position: relative;
+    color: $grayTxt;
+
+    &_chapter {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '';
+        flex: 0 0 2.4rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url("./assets/images/icons/arr-gray.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.2rem;
+      right: -1.2rem;
+      height: 2rem;
+      width: 1.2px;
+      background-color: $grayTxt;
+      transform: translateX(100%);
+    }
+  }
+
+  &__txt {
+
+  }
+}

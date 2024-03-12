@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: 2.4rem;
+
+  &__arr {
+    flex: 0 0 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    svg path {
+      fill: $black;
+    }
+
+    &._is-disabled {
+      pointer-events: none;
+      svg path {
+        fill: $grayTxt;
+      }
+    }
+
+    &_next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__nums {
+    display: flex;
+    column-gap: 0.4rem;
+  }
+
+  &__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 5rem;
+    width: 5rem;
+    height: 5rem;
+    color: $grayTxt;
+
+    &._is-active {
+      background-color: $gray;
+      color: $black;
+    }
+  }
+}

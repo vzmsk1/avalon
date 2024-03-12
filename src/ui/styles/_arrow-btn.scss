@@ -1,0 +1,35 @@
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 5rem;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  transition: background-color 0.3s ease;
+
+  &_next {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:active {
+    background-color: $black;
+
+    svg path {
+      fill: $white;
+    }
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    path {
+      fill: $black;
+      transition: fill 0.3s ease;
+    }
+  }
+}
