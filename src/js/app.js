@@ -7,6 +7,9 @@ import * as utils from './utils/utils.js';
 // hamburger menu
 utils.menuInit();
 
+// show-more
+utils.showmore();
+
 // ------------------------------- components -------------------------------
 
 // forms
@@ -23,6 +26,10 @@ import './utils/select.js';
 
 // modals
 import './utils/modals.js';
+
+// ------------------------------- libs -------------------------------
+
+import './libs/nouislider'
 
 // --------------------------------------------------------------------------
 

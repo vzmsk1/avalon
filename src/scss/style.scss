@@ -7,16 +7,16 @@
 // colors
 $white: #ffffff;
 $black: #000000;
-$gray: #EFEFEF;
-$grayTxt: #A1A2A9;
-$red: #F40000FF;
+$gray: #efefef;
+$grayTxt: #a1a2a9;
+$red: #f40000ff;
 
 // ---------------------------------- fonts ---------------------------------
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap');
 
 // local fonts
- @import './fonts';
+@import './fonts';
 
 // ------------------------------- base styles ------------------------------
 
@@ -46,6 +46,43 @@ main {
     flex-direction: column;
     max-width: 1920px;
     height: 100%;
+}
+
+[data-showmore-button] {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: 0.3s margin-top ease;
+
+    ._showmore-active & {
+        margin-top: 1.6rem;
+    }
+
+    span {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 140%;
+
+        &:last-child {
+            display: none;
+        }
+        ._showmore-active & {
+            display: none;
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+
+    .arrow-icon {
+        @include sizes(2.4rem, 2.4rem);
+        transition: 0.3s transform ease;
+
+        ._showmore-active & {
+            transform: rotate(-180deg);
+        }
+    }
 }
 
 // --------------------------------------------------------------------------
