@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     setCatalogMenuClasses()
 
+    const setCurrentYear = () => {
+        const year = document.getElementById('currentYear')
+
+        if (year) {
+            year.innerHTML = new Date().getFullYear();
+        }
+    }
+    setCurrentYear()
+
     // handler functions
     const mouseoverHandler = e => {
         const target = e.target
@@ -26,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // header catalog menu
         if (target.closest('.header__catalog-btn')) {
             doc.classList.add('_show-catalog')
-        } else if (doc.classList.contains('_show-catalog') && !target.closest('.header__catalog-menu')) {
+        } else if (doc.classList.contains('_show-catalog') && !target.closest('.header__catalog-menu') && !target.closest('.header__catalog-btn')) {
             doc.classList.remove('_show-catalog')
         }
         if (target.closest('[data-nav-sublink-index]')) {
