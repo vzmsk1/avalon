@@ -1,0 +1,339 @@
+.catalog {
+    &__title {
+        margin-bottom: 5rem;
+    }
+
+    &__categories {
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem 2.8rem;
+            margin-bottom: 10rem;
+        }
+
+        &-item {
+            a {
+                min-height: 10.6rem;
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+                background-color: $gray;
+                padding-right: 7.7rem;
+            }
+
+            &-image {
+                @include sizes(10.6rem, 10.6rem);
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__filters {
+        max-width: 38.9rem;
+        width: 100%;
+
+        &-block {
+            padding-bottom: 2.4rem;
+            border-bottom: 0.1rem solid $grayTxt;
+
+            &:not(:last-child) {
+                margin-bottom: 2.4rem;
+            }
+
+            &:last-child {
+                margin-bottom: 5rem;
+            }
+
+            &-title {
+                display: block;
+                margin-bottom: 2rem;
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+
+                &:not(.catalog__filters-block-addiction &) {
+                    margin-bottom: 1.6rem;
+                }
+            }
+
+            &-item {
+                label {
+                    gap: 0.8rem;
+
+                    .checkbox__txt {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                cursor: pointer;
+
+                input {
+                    font-weight: 600;
+                    font-size: 2rem;
+                    line-height: 140%;
+                }
+
+                img {
+                    @include sizes(2.4rem, 2.4rem);
+                }
+            }
+        }
+
+        &-button {
+            width: fit-content;
+        }
+
+        &-slide {
+            &-fields {
+                margin-bottom: 2.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 5.6rem;
+                position: relative;
+
+                &::after {
+                    @include pseudo {
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 1.6rem;
+                        height: 0.1rem;
+                        background-color: #898485;
+                    }
+                }
+
+                label {
+                    flex: 1 1 100%;
+                    display: block;
+                    position: relative;
+
+                    &::after {
+                        top: 1.6rem;
+                        left: 1.6rem;
+                        font-size: 1.6rem;
+                        color: $grayTxt;
+                    }
+
+                    &:first-child {
+                        &:after {
+                            content: 'от';
+                            position: absolute;
+                        }
+                    }
+
+                    &:last-child {
+                        &:after {
+                            content: 'до';
+                            position: absolute;
+                        }
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 1.6rem 1.6rem 1.6rem 4rem;
+                        border: 0.1rem solid $grayTxt;
+                    }
+
+                    input,
+                    input::placeholder {
+                        font-size: 1.6rem;
+                        color: $grayTxt;
+                    }
+                }
+            }
+        }
+    }
+
+    &__products {
+        max-width: 128.3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        &-button {
+            margin: 0 auto;
+            display: block;
+            width: fit-content;
+            font-weight: 600;
+            font-size: 2rem;
+            line-height: 140%;
+        }
+    }
+
+    &__banner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+
+        &-text {
+            padding: 8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+            background-color: #efefef;
+            max-width: 76.8rem;
+            width: 100%;
+        }
+
+        &-description {
+            max-width: 27.9rem;
+            width: 100%;
+        }
+
+        &-poster {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            left: 12.4rem;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__selection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            max-width: 70rem;
+        }
+
+        &-item {
+           button {
+               display: flex;
+               align-items: center;
+               padding: 0.8rem 1.6rem;
+               background-color: $gray;
+           }
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem 2.8rem;
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: $gray;
+        padding: 1.2rem;
+
+        &-promotion {
+            position: absolute;
+            left: 1.2rem;
+            top: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            display: block;
+            width: fit-content;
+            background-color: $black;
+            font-size: 1.6rem;
+            color: $white;
+        }
+
+        &-image {
+            margin-top: 11.2rem;
+            padding: 0 1.8rem;
+            margin-bottom: 6rem;
+
+            @include sizes(100%, 29rem);
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-info {
+            padding: 1.2rem;
+            background-color: $white;
+
+            &-subtitle {
+                display: block;
+                margin-bottom: 0.4rem;
+            }
+
+            &-title {
+                @include clamp-text(1);
+                margin-bottom: 1.2rem;
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            &-price {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-top: 1.2rem;
+                border-top: 0.1rem solid $grayTxt;
+
+                &-empty {
+                    color: $grayTxt;
+                }
+
+                &-text {
+                    display: flex;
+                    align-items: flex-start;
+                    font-weight: 700;
+                    font-size: 2.8rem;
+                    text-transform: uppercase;
+
+                    sup {
+                        display: block;
+                        font-size: 2rem;
+                        margin-top: -0.5rem;
+                    }
+                }
+            }
+
+            &-button {
+                padding: 1.6rem;
+                background-color: $black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    @include sizes(2.4rem, 2.4rem);
+                }
+            }
+        }
+    }
+}
