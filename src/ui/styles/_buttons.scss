@@ -1,0 +1,62 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+
+  &_primary {
+    padding: 1rem 3.2rem;
+    justify-content: center;
+    height: 6rem;
+    border: 1.5px solid $black;
+    text-align: center;
+    background-color: $black;
+    transition: background-color 0.3s ease;
+
+    .txt {
+      color: $white;
+      transition: color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:not(&[disabled], &._is-disabled) {
+        &:hover {
+          background-color: $white;
+
+          .txt {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  &_secondary {
+    margin-right: 1.6rem;
+
+    &::after {
+      content: '';
+      flex: 0 0 2.4rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-image: url("./assets/images/icons/arr-sm.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateX(0.6rem);
+      transition: transform 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &[disabled],
+  &._is-disabled {
+    border: 1.5px solid $grayTxt;
+    background-color: $grayTxt;
+  }
+
+}

@@ -1,0 +1,90 @@
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
+  width: 100%;
+  border-radius: 0 !important;
+
+  &_pass {
+    .input__field {
+      padding-right: 4.5rem;
+    }
+  }
+
+  &__field,
+  &__field::placeholder {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  &__field {
+    padding: 1.8rem 2rem;
+    height: 6rem;
+    background-color: $white;
+    color: $grayTxt;
+    transition: color 0.3s ease;
+  }
+
+  &__pass-btn {
+    position: absolute;
+    top: 2.2rem;
+    right: 2rem;
+  }
+
+  &__pass-btn-i {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+
+    &_hide {
+      display: none;
+    }
+
+    ._is-revealed & {
+      display: none;
+      &_hide {
+        display: inline-block;
+      }
+    }
+  }
+
+  &._has-error {
+
+    &::after {
+      content: attr(data-hint);
+      font-size: 1.2rem;
+      color: $red;
+    }
+
+    .input__field {
+      color: $red;
+    }
+  }
+
+  &._has-focus,
+  &._is-filled {
+    .input__field {
+      color: $black;
+    }
+  }
+}
+
+textarea.input {
+  padding: 0px 0px;
+  resize: none;
+}

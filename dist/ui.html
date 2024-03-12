@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ui</title>
+<script defer src="main.js"></script></head>
+<body>
+<div class="wrapper">
+    <main style="background: rgba(224, 224, 224, 1);min-width: 100vw;min-height: 100vh;">
+        <div style="display: flex;flex-direction: column;align-items: center;row-gap: 3rem;padding: 5rem;" class="container">
+                <!-- typography -->
+                <div style="text-align: center">
+                    <div class="h h_h1">heading</div>
+                    <div class="h h_h2">heading</div>
+                    <div class="h h_h3">heading</div>
+                    <div class="txt">text</div>
+                    <div class="txt txt_24">text</div>
+                    <div class="txt txt_20">text</div>
+                    <div class="txt txt_16">text</div>
+                    <div class="txt txt_semibold">text</div>
+                </div>
+
+                <!-- buttons -->
+                <div style="display: flex;flex-direction: column;align-items: center;row-gap: 2rem;">
+                    <div>
+                        <button type="button" class="btn btn_primary"><span
+                                class="txt txt_20 txt_semibold">Заказать звонок</span></button>
+                        <button disabled type="button" class="btn btn_primary"><span class="txt txt_20 txt_semibold">Заказать звонок</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn_secondary"><span class="txt txt_20 txt_semibold">Читать</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- inputs -->
+                <form data-dev action="#" style="display: flex;flex-direction: column;align-items: center;row-gap: 2rem;">
+                    <div data-hint="Заполните поле" class="input">
+                        <input
+                                data-validate
+                                data-required
+                                autocomplete="off"
+                                type="text"
+                                name="form[]"
+                                placeholder="Имя"
+                                class="input__field"
+                        />
+                    </div>
+
+                    <div data-hint="Заполните поле" class="input input_pass">
+                        <input
+                                data-validate
+                                data-required="pass"
+                                autocomplete="off"
+                                type="password"
+                                name="form[]"
+                                placeholder="Пароль"
+                                class="input__field"
+                        />
+                        <button type="button" class="input__pass-btn">
+                            <img src="./assets/images/icons/view-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_show">
+                            <img src="./assets/images/icons/hide-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_hide">
+                        </button>
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" name="option" value="1" class="option__input">
+                        <span class="option__txt">Новые</span>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="form[]" value class="checkbox__input">
+                        <span class="checkbox__txt">Новые</span>
+                    </div>
+                </form>
+            </div>
+    </main>
+</div>
+</body>
+</html>
