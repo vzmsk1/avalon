@@ -1,84 +1,88 @@
 .footer {
-  background-color: $gray;
+    background-color: $gray;
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-  }
+    @media (max-width: 48em) {
+        display: none;
+    }
 
-  &__content {
-    padding: 5rem 0;
-    display: grid;
-    grid-template-columns: 3fr 6fr 3fr;
-  }
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
 
-  &__logo-wrap {
-    display: flex;
-    flex-direction: column;
-  }
+    &__content {
+        padding: 5rem 0;
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+    }
 
-  &__logo {
-    margin-bottom: 2.4rem;
-    width: 10.8rem;
-  }
+    &__logo-wrap {
+        display: flex;
+        flex-direction: column;
+    }
 
-  &__text {
-    max-width: 29.3rem;
-  }
+    &__logo {
+        margin-bottom: 2.4rem;
+        width: 10.8rem;
+    }
 
-  &__nav {
-    justify-self: center;
-  }
+    &__text {
+        max-width: 29.3rem;
+    }
 
-  &__nav-items {
-    display: flex;
-    column-gap: 8.8rem;
-  }
+    &__nav {
+        justify-self: center;
+    }
 
-  &__nav-item {
-    display: flex;
-    flex-direction: column;
-  }
+    &__nav-items {
+        display: flex;
+        column-gap: 8.8rem;
+    }
 
-  &__nav-heading {
-    margin-bottom: 2.8rem;
-  }
+    &__nav-item {
+        display: flex;
+        flex-direction: column;
+    }
 
-  &__subnav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 1.6rem;
-  }
+    &__nav-heading {
+        margin-bottom: 2.8rem;
+    }
 
-  &__contacts-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2.4rem;
-    justify-self: end;
-    max-width: 26.2rem;
-  }
+    &__subnav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1.6rem;
+    }
 
-  &__copyrights {
-    padding: 5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid $grayTxt;
-    color: #808080;
-  }
+    &__contacts-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+        justify-self: end;
+        max-width: 26.2rem;
+    }
 
-  &__copyrights-txt {
-    text-transform: uppercase;
-  }
+    &__copyrights {
+        padding: 5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $grayTxt;
+        color: #808080;
+    }
 
-  &__copyrights-info {
-    flex: 1 1 auto;
-    text-align: center;
-  }
+    &__copyrights-txt {
+        text-transform: uppercase;
+    }
 
-  &__rd-logo {
-    flex: 0 0 18.5rem;
-    width: 18.5rem;
-  }
+    &__copyrights-info {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    &__rd-logo {
+        flex: 0 0 18.5rem;
+        width: 18.5rem;
+    }
 }

@@ -3,7 +3,7 @@
         <div class="header__container container">
             <ul class="header__contacts-list">
                 <li class="header__contacts-item">
-                    <a href="tel:84952856896" class="header__contacts-item-txt i-link">
+                    <a data-da=".header__group,768,first" href="tel:84952856896" class="header__contacts-item-txt i-link">
                         <svg
                             width="24"
                             height="25"
@@ -24,7 +24,7 @@
                                 fill="#000001"
                             />
                         </svg>
-                        <span class="i-link__txt txt txt_semibold">8 (495) 285 68 96</span>
+                        <span class="i-link__txt txt txt_semibold _desktop-only">8 (495) 285 68 96</span>
                     </a>
                 </li>
                 <li class="header__contacts-item">
@@ -59,9 +59,11 @@
     </div>
     <div class="header__inner">
         <div class="header__container container">
-            <a href="#" class="header__logo"
+            <div class="header__group">
+                <a href="#" class="header__logo"
                 ><img src="./assets/images/logo.svg" alt="" class="header__logo-img"
-            /></a>
+                /></a>
+            </div>
             <div class="header__content">
                 <div class="header__row header__row_upper">
                     <a href="#" class="header__catalog-btn catalog-btn">
@@ -79,6 +81,7 @@
                         </span>
                         <span class="catalog-btn__txt txt txt_20">Каталог</span>
                     </a>
+                    <button type="button" class="header__hamburger _mobile-only"><img src="./assets/images/icons/menu.svg" alt="" class="header__hamburger-icon"></button>
                     <form action="#" class="header__search search-header">
                         <div class="search-header__input input">
                             <input
@@ -117,7 +120,7 @@
                         </button>
                     </form>
                     <div class="header__actions">
-                        <a href="#" class="header__actions-item">
+                        <a data-da=".header__group,768,last" href="#" class="header__actions-item">
                             <svg
                                 width="36"
                                 height="36"
