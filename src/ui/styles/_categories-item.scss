@@ -1,0 +1,19 @@
+.categories-item {
+  &__inner {
+    min-height: 10.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    background-color: $gray;
+    padding-right: 7.7rem;
+  }
+
+  &__image {
+    @include sizes(10.6rem, 10.6rem);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
