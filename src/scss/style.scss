@@ -20,6 +20,11 @@ $red: #f40000ff;
 
 // ------------------------------- base styles ------------------------------
 
+html,
+body {
+    overflow-x: clip;
+}
+
 // base scss file
 @import './set';
 

@@ -3,7 +3,7 @@ import Swiper from 'swiper';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 // utils
-import { removeClasses } from '../utils/utils';
+import { removeClasses, remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', function () {
     const doc = document.documentElement;
@@ -28,6 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
                         return `<span class="${className}">${idx}</span>`;
                     },
                     clickable: true
+                }
+            });
+        }
+        if (document.querySelector('.places__slider')) {
+            const slides = document.querySelectorAll('.places__slide');
+            for (let i = 0; i < slides.length; i += 2) {
+                const slide = slides[i];
+                slide.classList.add('_large');
+            }
+            new Swiper('.places__slider', {
+                modules: [Navigation],
+                speed: 800,
+                loop: true,
+                loopPreventsSliding: true,
+                spaceBetween: remToPx(2.5),
+                navigation: {
+                    prevEl: '.places__slider-navigation .arrow-btn_prev',
+                    nextEl: '.places__slider-navigation .arrow-btn_next'
+                },
+                breakpoints: {
+                    768: {
+                        freeMode: true,
+                        slidesPerView: 'auto'
+                    }
                 }
             });
         }
