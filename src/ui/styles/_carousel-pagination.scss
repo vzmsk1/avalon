@@ -1,0 +1,31 @@
+.carousel-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 1.7rem;
+
+  .swiper-pagination-bullet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 1.7rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $white;
+    transition: font-size 0.3s ease;
+    cursor: pointer;
+
+    &.swiper-pagination-bullet-active {
+      font-size: 3.6rem;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        width: 3.2rem;
+        height: 1px;
+        background-color: rgba(149, 142, 142, 1);
+      }
+    }
+  }
+}

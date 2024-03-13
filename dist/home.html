@@ -12,13 +12,13 @@
         <div class="header__container container">
             <ul class="header__contacts-list">
                 <li class="header__contacts-item">
-                    <a href="tel:84952856896" class="header__contacts-item-txt i-link">
+                    <a data-da=".header__group,768,first" href="tel:84952856896" class="header__contacts-item-txt i-link">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13 3.50022C13.8448 3.50022 13.6917 3.47148 14 3.50022C17.4281 3.81982 19.6931 5.93054 20 9.50022C20.0276 9.8213 21 10.6205 21 11.5002V12.5002C21 12.9235 20.5935 13.5002 21 13.5002C21.4065 13.5002 22 12.9235 22 12.5002V11.5002C22 10.6859 22.0342 9.89836 22 9.50022C21.6296 5.19199 18.1373 1.88595 14 1.50022C13.6176 1.46457 13.7821 1.50021 13 1.50022H12C11.5935 1.50022 11 2.07695 11 2.50022C11 2.92349 11.5935 3.50022 12 3.50022H13Z" fill="#000001"></path>
                             <path d="M7.00001 4.50022C5.96756 3.51236 4.03245 3.51236 3.00001 4.50022C2.95773 4.54068 3.05861 4.43918 3.00001 4.50022L2.00001 5.50022C1.11376 6.42308 0.728117 7.22618 1.00001 8.50022C2.54262 15.7287 8.05824 21.8939 15 23.5002C16.2235 23.7833 17.1138 23.4231 18 22.5002L19 21.5002C18.9611 21.5443 19.0587 21.4391 19 21.5002C19.9487 20.4251 19.9487 18.5753 19 17.5002C18.9611 17.4562 19.0587 17.5613 19 17.5002L18 15.5002C16.999 14.4578 15.2978 14.9112 14 15.5002C13.257 15.8375 12.5731 15.097 12 14.5002L9.00001 12.5002C8.42691 11.9035 8.67615 10.2739 9.00001 9.50022C9.5657 8.14885 9.00106 6.54263 8.00001 5.50022L7.00001 4.50022C7.04229 4.54068 6.94139 4.43917 7.00001 4.50022Z" fill="#000001"></path>
                             <path d="M12 5.50022C11.5935 5.50022 12 5.07695 12 5.50022C12 5.92349 11.5935 6.50022 12 6.50022H13C12.9715 6.4998 13.0856 6.50022 13 6.50022C15.2566 6.53388 16.9677 8.15037 17 10.5002C17.0004 10.5299 17 11.4111 17 11.5002C17 11.9235 17.5935 12.5002 18 12.5002C18.4065 12.5002 19 11.9235 19 11.5002C19 11.4208 19.0006 10.5424 19 10.5002C18.9563 7.32102 16.0531 5.54575 13 5.50022C12.9595 5.49962 13.0763 5.50022 13 5.50022H12Z" fill="#000001"></path>
                         </svg>
-                        <span class="i-link__txt txt txt_semibold">8 (495) 285 68 96</span>
+                        <span class="i-link__txt txt txt_semibold _desktop-only">8 (495) 285 68 96</span>
                     </a>
                 </li>
                 <li class="header__contacts-item">
@@ -41,7 +41,9 @@
     </div>
     <div class="header__inner">
         <div class="header__container container">
-            <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo-img"></a>
+            <div class="header__group">
+                <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo-img"></a>
+            </div>
             <div class="header__content">
                 <div class="header__row header__row_upper">
                     <a href="#" class="header__catalog-btn catalog-btn">
@@ -51,6 +53,7 @@
                         </span>
                         <span class="catalog-btn__txt txt txt_20">Каталог</span>
                     </a>
+                    <button type="button" class="header__hamburger _mobile-only"><img src="./assets/images/icons/menu.svg" alt="" class="header__hamburger-icon"></button>
                     <form action="#" class="header__search search-header">
                         <div class="search-header__input input">
                             <input data-validate="" data-required="" autocomplete="off" type="search" name="form[]" placeholder="Поиск ..." class="input__field">
@@ -63,7 +66,7 @@
                         </button>
                     </form>
                     <div class="header__actions">
-                        <a href="#" class="header__actions-item">
+                        <a data-da=".header__group,768,last" href="#" class="header__actions-item">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 3C14.1073 3 10 6.03298 10 10C10 13.967 14.1073 17 18 17C21.8927 17 25 13.967 25 10C25 6.03298 21.8927 3 18 3Z" fill="#000001"></path>
                                 <path d="M13 20C9.10728 20 6 23.033 6 27C6 30.967 9.10728 34 13 34H22C25.8927 34 29 30.967 29 27C29 23.033 25.8927 20 22 20H13Z" fill="#000001"></path>
@@ -863,6 +866,140 @@
 </header>
 
       <main>
+        <section class="hero">
+    <div class="hero__container container">
+        <div class="hero__carousel swiper">
+            <div class="hero__carousel-wrapper swiper-wrapper">
+                <div class="hero__slide slide-hero swiper-slide">
+                    <div class="slide-hero__text">
+                        <span class="slide-hero__heading h h_h1">Наполните сцену яркостью и энергией</span>
+                        <p class="slide-hero__description txt txt_24">Продажа мощного сценического оборудования для потрясающих шоу</p>
+                        <button type="button" class="slide-hero__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Оставить заявку</span>
+                        </button>
+                    </div>
+                    <div class="slide-hero__image-wrap">
+                        <img src="./assets/images/bg/1828042458.webp" alt="" class="slide-hero__image">
+                    </div>
+                </div>
+                <div class="hero__slide slide-hero swiper-slide">
+                    <div class="slide-hero__text">
+                        <span class="slide-hero__heading h h_h1">Наполните сцену яркостью и энергией</span>
+                        <p class="slide-hero__description txt txt_24">Продажа мощного сценического оборудования для потрясающих шоу</p>
+                        <button type="button" class="slide-hero__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Оставить заявку</span>
+                        </button>
+                    </div>
+                    <div class="slide-hero__image-wrap">
+                        <img src="./assets/images/bg/1828042458.webp" alt="" class="slide-hero__image">
+                    </div>
+                </div>
+                <div class="hero__slide slide-hero swiper-slide">
+                    <div class="slide-hero__text">
+                        <span class="slide-hero__heading h h_h1">Наполните сцену яркостью и энергией</span>
+                        <p class="slide-hero__description txt txt_24">Продажа мощного сценического оборудования для потрясающих шоу</p>
+                        <button type="button" class="slide-hero__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Оставить заявку</span>
+                        </button>
+                    </div>
+                    <div class="slide-hero__image-wrap">
+                        <img src="./assets/images/bg/1828042458.webp" alt="" class="slide-hero__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__carousel-pagination carousel-pagination">
+
+        </div>
+    </div>
+</section>
+        <section class="categories">
+    <div class="container">
+        <div class="categories__content">
+            <h1 class="categories__title h h_h1">Каталог товаров</h1>
+
+            <ul class="categories__cards">
+                <li>
+                    <a href="#" class="categories__card">
+                        <div class="categories__card-text">
+                            <span class="categories__card-subtitle txt_24 txt_semibold"> Световое </span>
+
+                            <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                                оборудование
+                            </p>
+                        </div>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-1.webp" alt="">
+                        </figure>
+                    </a>
+                </li>
+                <li class="categories__cards-group">
+                    <a href="#" class="categories__card --large">
+                        <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                            Звуковое оборудование
+                        </p>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-5.webp" alt="">
+                        </figure>
+                    </a>
+                    <a href="#" class="categories__card --large">
+                        <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                            видео - оборудование
+                        </p>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-6.webp" alt="">
+                        </figure>
+                    </a>
+                </li>
+                <li class="grid-row grid-row_2">
+                    <a href="#" class="categories__card">
+                        <div class="categories__card-text">
+                            <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                                Конференц-системы
+                            </p>
+                        </div>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-2.webp" alt="">
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="categories__card">
+                        <div class="categories__card-text">
+                            <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                                механическое оборудование
+                            </p>
+                        </div>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-4.webp" alt="">
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="categories__card">
+                        <div class="categories__card-text">
+                            <span class="categories__card-subtitle txt_24 txt_semibold"> рэковые шкафы </span>
+
+                            <p class="categories__card-title btn btn_secondary txt_24 txt_semibold">
+                                и кейсы
+                            </p>
+                        </div>
+
+                        <figure class="categories__card-image">
+                            <img src="../assets/images/sections/categories/category-image-3.webp" alt="">
+                        </figure>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
       </main>
       <footer class="footer">
     <div class="footer__container container">

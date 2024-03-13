@@ -16,6 +16,15 @@
       transition: color 0.3s ease;
     }
 
+    @media (max-width: 48em) {
+      padding: 3.6rem;
+      height: 10rem;
+
+      .txt {
+        font-weight: 400;
+      }
+    }
+
     @media (any-hover: hover) {
       &:not(&[disabled], &._is-disabled) {
         &:hover {

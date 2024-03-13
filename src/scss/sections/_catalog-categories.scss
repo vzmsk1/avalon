@@ -1,6 +1,12 @@
 .categories {
     &__title {
         margin-bottom: 5rem;
+
+        .home-page & {
+            @media (max-width: 48em) {
+                margin-bottom: 6rem;
+            }
+        }
     }
 
     &__cards {
@@ -11,12 +17,82 @@
         li {
             display: grid;
             min-height: 51rem;
+
+            .home-page & {
+                @media (min-width: 48em) {
+                    &:nth-child(3) {
+                        grid-row: span 2;
+
+                        .categories__card-image {
+                            height: 75rem;
+                            margin-top: auto;
+                        }
+                    }
+                    &:nth-child(5) {
+                        grid-column: 3 / 4;
+
+                        img {
+                            position: absolute;
+                            bottom: -1rem;
+                            right: -1rem;
+                            width: auto;
+                            height: 124%;
+                        }
+                    }
+                    &:nth-child(4) {
+                        grid-column: span 2;
+
+                        .categories__card-image {
+                            height: 79rem;
+                            margin-top: auto;
+
+                            img {
+                                position: absolute;
+                                left: 50%;
+                                bottom: -9rem;
+                                width: auto;
+                                height: 90%;
+                                text-align: center;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+                    &:not(:first-child) {
+                        min-height: 24.6rem;
+                    }
+                }
+            }
         }
 
         &-group {
             grid-row: span 1;
             grid-column: span 2;
             gap: 2rem;
+        }
+
+        .home-page & {
+            @media (max-width: 48em) {
+                display: flex;
+                flex-direction: column-reverse;
+                row-gap: 3rem;
+
+                li {
+                    min-height: auto;
+                }
+
+                .categories__card-title {
+                    white-space: nowrap;
+                }
+                .categories__card-text {
+                    padding: 0;
+                    margin-bottom: 0;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .categories__card {
+                    padding: 3rem 4rem;
+                }
+            }
         }
     }
 
@@ -27,15 +103,48 @@
         height: 100%;
         position: relative;
         z-index: 2;
+        overflow: hidden;
+
+        .home-page & {
+
+            @media (min-width: 48em) {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(238, 238, 238);
+                    opacity: 0.5;
+                    transition: opacity 0.3s ease;
+                }
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    &::after {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
 
         &.--large {
-            padding-top: 2.6rem;
-            padding-left: 2.6rem;
 
             p {
                 text-transform: uppercase;
             }
+
+            @media (min-width: 48em) {
+                &:not(.home-page &) {
+                    padding-top: 2.6rem;
+                    padding-left: 2.6rem;
+                }
+            }
         }
+
 
         &-text {
             display: flex;
@@ -46,12 +155,18 @@
             margin-bottom: 2rem;
             width: fit-content;
 
-            @include hover {
-                .categories__card-title {
-                    &::after {
-                        transform: translateX(0);
+            &:not(.home-page &) {
+                @include hover {
+                    .categories__card-title {
+                        &::after {
+                            transform: translateX(0);
+                        }
                     }
                 }
+            }
+
+            .home-page & {
+                width: auto;
             }
         }
 
@@ -75,6 +190,12 @@
             img {
                 height: 100%;
                 object-fit: cover;
+            }
+
+            .home-page & {
+                @media (max-width: 48em) {
+                    display: none;
+                }
             }
         }
     }
