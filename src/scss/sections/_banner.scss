@@ -1,0 +1,93 @@
+.banner {
+  margin: 0 2rem;
+  margin-bottom: 20rem;
+
+  @media (min-width: 48em) {
+    margin: 0;
+    margin-bottom: 15rem;
+    overflow: hidden;
+  }
+
+  &__container {
+    position: relative;
+    padding-left: 6rem;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    background-color: $gray;
+
+    @media (max-width: 48em) {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 48em) {
+      padding: 17.2rem 0;
+      align-items: flex-start;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+
+    @media (min-width: 48em) {
+      margin-bottom: 1.2rem;
+      max-width: 62.3rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 4.8rem;
+
+    @media (min-width: 48em) {
+      margin-bottom: 3rem;
+      max-width: 57.2rem;
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 100%;
+    height: 41.4rem;
+
+    @media (min-width: 48em) {
+      margin-bottom: 0;
+      height: 100%;
+      justify-self: end;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 20.3rem;
+        width: 40.8rem;
+        height: 100%;
+        background-color: rgba(89, 88, 88, 0.59);
+        backdrop-filter: blur(1rem);
+        transform: translateX(-50%);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @media (min-width: 48em) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-position: -23rem;
+      clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+}

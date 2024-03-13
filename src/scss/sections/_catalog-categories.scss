@@ -138,10 +138,8 @@
             }
 
             @media (min-width: 48em) {
-                &:not(.home-page &) {
-                    padding-top: 2.6rem;
-                    padding-left: 2.6rem;
-                }
+                padding-top: 2.6rem;
+                padding-left: 2.6rem;
             }
         }
 

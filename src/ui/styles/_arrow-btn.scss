@@ -9,6 +9,17 @@
   background-color: $white;
   transition: background-color 0.3s ease;
 
+  @media (max-width: 48em) {
+    flex: 0 0 8rem;
+    width: 8rem;
+    height: 8rem;
+
+    svg {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
   &_next {
     svg {
       transform: rotate(180deg);
