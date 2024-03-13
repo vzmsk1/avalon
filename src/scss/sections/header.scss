@@ -247,4 +247,11 @@
     width: auto;
     height: 100%;
   }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.8rem;
+    row-gap: 2rem;
+  }
 }
