@@ -1,0 +1,87 @@
+.contacts {
+    .marker {
+        svg {
+            width: 4rem;
+            height: 5.4rem;
+
+            @media (max-width: 48em) {
+                width: 8rem;
+                height: 8rem;
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+
+        @media (max-width: 48em) {
+            margin: 0 2rem;
+            padding: 0;
+            width: calc(100% - 4rem);
+        }
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        padding: 12.5rem 8.4rem 12.5rem 6rem;
+        display: flex;
+        flex-direction: column;
+        width: 43.7rem;
+        height: 100%;
+        background-color: rgba(89, 88, 88, 0.59);
+        backdrop-filter: blur(0.93rem);
+        color: $white;
+
+        @media (max-width: 48em) {
+            padding: 3rem 2rem;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 5rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.8rem;
+
+        @media (max-width: 48em) {
+            row-gap: 3rem;
+        }
+    }
+
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.8rem;
+
+        @media (max-width: 48em) {
+            row-gap: 1rem;
+        }
+    }
+
+    &__txt {
+        @media (min-width: 48em) {
+            max-width: 19.3rem;
+        }
+    }
+
+    &__map {
+        height: 66.4rem;
+
+        @media (max-width: 48em) {
+            height: 119.4rem;
+        }
+    }
+}
