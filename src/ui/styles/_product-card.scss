@@ -5,6 +5,10 @@
   background-color: $gray;
   padding: 1.2rem;
 
+  @media (max-width: 48em) {
+    padding: 3.2rem 2.4rem;
+  }
+
   &__promotion {
     position: absolute;
     left: 1.2rem;
@@ -15,6 +19,13 @@
     background-color: $black;
     font-size: 1.6rem;
     color: $white;
+
+    @media (max-width: 48em) {
+      left: 2.4rem;
+      top: 2.4rem;
+      padding: 1.6rem 2.4rem;
+      font-size: 2.3rem;
+    }
   }
 
   &__image {
@@ -27,17 +38,35 @@
     img {
       height: 100%;
       object-fit: cover;
+      mix-blend-mode: darken;
+    }
+
+    @media (max-width: 48em) {
+      margin-top: 13rem;
+      margin-bottom: 6.4rem;
+      padding: 0 3.6rem;
+      height: 45.6rem;
     }
   }
 
   &__info {
     padding: 1.2rem;
     background-color: $white;
+
+    @media (max-width: 48em) {
+      padding: 2.4rem;
+    }
   }
 
   &__info-subtitle {
     display: block;
     margin-bottom: 0.4rem;
+    color: rgba(161, 162, 169, 1);
+
+    @media (max-width: 48em) {
+      margin-bottom: 1rem;
+      font-size: 2.4rem;
+    }
   }
 
   &__info-title {
@@ -46,17 +75,27 @@
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 600;
+
+    @media (max-width: 48em) {
+      margin-bottom: 2rem;
+      font-size: 3.2rem;
+      line-height: 5rem;
+    }
   }
 
   &__info-price {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding-top: 1.2rem;
-    border-top: 0.1rem solid $grayTxt;
+    border-top: 0.1rem solid rgba(239, 239, 239, 1);
 
     &-empty {
       color: $grayTxt;
+    }
+
+    @media (max-width: 48em) {
+      padding-top: 2.4rem;
+      border-top: 0.2rem solid rgba(239, 239, 239, 1);
     }
   }
 
@@ -70,10 +109,63 @@
     sup {
       display: block;
       font-size: 2rem;
-      margin-top: -0.5rem;    }
+      margin-top: -0.5rem;
+    }
+
+    &_old,
+    &_old sup {
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 2.5rem;
+      color: $grayTxt;
+    }
+
+    &_old {
+      position: relative;
+      margin-left: 1.2rem;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: $grayTxt;
+        transform: rotate(9deg);
+      }
+
+      sup {
+        margin: 0 0 0 0.3rem;
+      }
+    }
+
+    @media (max-width: 48em) {
+      font-size: 4rem;
+
+      sup {
+        font-size: 3.2rem;
+        margin-top: -1rem;
+      }
+
+      &_old,
+      &_old sup {
+        font-size: 3.6rem;
+        line-height: 100%;
+      }
+
+      &_old {
+        margin-left: 1.5rem;
+
+        sup {
+          margin: 0;
+        }
+      }
+    }
   }
 
   &__info-button {
+    margin-left: auto;
     padding: 1.6rem;
     background-color: $black;
     display: flex;
@@ -81,7 +173,17 @@
     justify-content: center;
 
     svg {
-      @include sizes(2.4rem, 2.4rem);
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    @media (max-width: 48em) {
+      padding: 2rem;
+
+      svg {
+        width: 3.4rem;
+        height: 3.4rem;
+      }
     }
   }
 }

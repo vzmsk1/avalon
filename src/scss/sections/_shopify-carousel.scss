@@ -1,0 +1,30 @@
+.shopify-carousel {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 48em) {
+      margin-bottom: 6.4rem;
+      align-items: center;
+    }
+  }
+
+  &__heading {
+    @media (max-width: 48em) {
+      max-width: 50rem;
+    }
+  }
+
+  &__carousel-navigation {
+    @media (min-width: 48em) {
+      transform: translateY(0.3rem);
+    }
+  }
+}

@@ -58,6 +58,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
+        if (document.querySelectorAll('.shopify-carousel__slider').length) {
+            document.querySelectorAll('.shopify-carousel__slider').forEach((slider) => {
+                new Swiper(slider, {
+                    modules: [Navigation],
+                    speed: 800,
+                    loop: true,
+                    spaceBetween: remToPx(2.8),
+                    navigation: {
+                        prevEl: slider.closest('section').querySelector('.arrow-btn_prev'),
+                        nextEl: slider.closest('section').querySelector('.arrow-btn_next')
+                    },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 4
+                        }
+                    }
+                });
+            });
+        }
     };
     initSliders();
 
