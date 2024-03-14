@@ -41,8 +41,11 @@ body {
 // main
 main {
     position: relative;
-    margin-top: 7.8rem;
     flex: 1 1 auto;
+
+    .wrapper & {
+        margin-top: 7.8rem;
+    }
 }
 
 // wrapper

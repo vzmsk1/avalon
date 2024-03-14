@@ -1,4 +1,5 @@
 .banner {
+  position: relative;
   margin: 0 2rem;
   margin-bottom: 20rem;
 
@@ -6,10 +7,56 @@
     margin: 0;
     margin-bottom: 15rem;
     overflow: hidden;
+
+    &_extended {
+      background-image: url("./assets/images/bg/7254.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $gray;
+        clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+      }
+
+      .banner {
+        &__container {
+          padding: 0;
+          grid-template-columns: 8fr 5fr;
+          background-color: transparent;
+        }
+        &__text {
+          padding: 10.9rem 0 10.9rem 29.1rem;
+        }
+        &__heading {
+          max-width: 74.4rem;
+        }
+        &__description {
+          max-width: 53.5rem;
+        }
+        &__image-wrap {
+          &::before {
+            content: none;
+          }
+        }
+        &__image {
+          left: -8.5rem;
+          width: 80rem;
+          object-position: left;
+          clip-path: polygon(37% 0%, 100% 0%, 63% 100%, 0% 100%);
+        }
+      }
+    }
   }
 
   &__container {
     position: relative;
+    z-index: 2;
     padding-left: 6rem;
     display: grid;
     grid-template-columns: 5fr 7fr;
@@ -54,7 +101,7 @@
     position: relative;
     margin-bottom: 4rem;
     width: 100%;
-    height: 41.4rem;
+    min-height: 41.4rem;
 
     @media (min-width: 48em) {
       margin-bottom: 0;

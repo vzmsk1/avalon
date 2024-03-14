@@ -1,6 +1,6 @@
 // swiper
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 // utils
 import { removeClasses, remToPx } from '../utils/utils';
@@ -14,9 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const initSliders = () => {
         if (document.querySelector('.hero__carousel')) {
             new Swiper('.hero__carousel', {
-                modules: [Pagination, EffectFade],
+                modules: [Pagination, EffectFade, Autoplay],
                 speed: 800,
                 loop: true,
+                autoplay: {
+                    delay: 4000
+                },
                 effect: 'fade',
                 fadeEffect: {
                     crossFade: true
