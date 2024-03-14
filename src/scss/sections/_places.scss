@@ -22,6 +22,10 @@
     &.swiper {
       overflow: visible;
     }
+
+    @media (min-width: 48em) {
+      height: 85.7rem;
+    }
   }
 
   &__carousel {

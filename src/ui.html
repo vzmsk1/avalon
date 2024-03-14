@@ -4,10 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ui</title>
+        <style>
+            ul,
+            li {
+                list-style: none;
+            }
+        </style>
     </head>
     <body>
-        <div class="wrapper">
-            <main style="background: rgba(224, 224, 224, 1)">
+    <main style="background: rgba(224, 224, 224, 1)">
                 <div
                     style="
                         display: flex;
@@ -227,8 +232,75 @@
                     </span>
                         </a>
                     </li>
+
+                    <a href="#" class="product-card">
+                        <span class="product-card__promotion"> Новинка </span>
+
+                        <figure class="product-card__image">
+                            <img src="../assets/images/sections/categories/catalog-card-image-1.webp" alt="">
+                        </figure>
+
+                        <div class="product-card__info">
+                                <span class="product-card__info-subtitle txt_14 txt_semibold">
+                                    Персональная мониторная система
+                                </span>
+
+                            <p class="product-card__info-title txt_20">Behringer MS16 Monitor Speakers</p>
+
+                            <div class="product-card__info-price">
+                                <p class="product-card__info-price-text">11 900 <sup>₽</sup></p>
+
+                                <button type="button" class="product-card__info-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <div class="service-card__content">
+                        <span class="service-card__subtitle txt txt_16">
+                            Звук
+                        </span>
+                            <div class="service-card__heading-wrap">
+                                <span class="service-card__heading h h_h3">разработка и монтаж Звукоизоляции</span>
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 22.5L16.2929 13.2071C16.6262 12.8738 16.7929 12.7071 16.7929 12.5C16.7929 12.2929 16.6262 12.1262 16.2929 11.7929L7 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="service-card__description">
+                                <div class="service-card__text txt txt_16">Акустический сервис включает в себя целый круг специализированных инженерных задач, связанных с акустической экспертизой и проектированием при строительстве новых и реконструкции старых объектов.</div>
+                            </div>
+                        </div>
+                        <div class="service-card__bg">
+                            <img src="./assets/images/sections/services/02.webp" alt="" class="service-card__bg-img">
+                        </div>
+                    </a>
+
+                    <li class="news-sl-card">
+                        <a href="#" class="news-sl-card__inner">
+                            <div class="news-sl-card__image-wrap">
+                                <img src="./assets/images/sections/news/01.webp" alt="" class="news-sl-card__image">
+                            </div>
+                            <div class="news-sl-card__text">
+                                <span class="news-sl-card__heading h h_h3">Новая серия акустических систем VOLTA MAXIMUM</span>
+                                <p class="news-sl-card__description">Это топовая серия точечных источников VOLTA пришла на смену M-серии, которая продержалась на рынке более 10 лет и снискала высокую репутацию в профессиональном сообществе.</p>
+
+                            </div>
+                            <div class="news-sl-card__footer">
+                                <div class="news-sl-card__info txt txt_16">
+                                    <span class="news-sl-card__subtitle">Звуковое направление</span>
+                                    <span class="news-sl-card__date">28.02.2024</span>
+                                </div>
+                                <button type="button" class="news-sl-card__btn btn btn_secondary">
+                                    <span class="txt txt_20 txt_semibold">Читать</span>
+                                </button>
+                            </div>
+                        </a>
+                    </li>
                 </div>
             </main>
-        </div>
     </body>
 </html>

@@ -67,9 +67,16 @@
     &_14 {
         font-size: 1.4rem;
         line-height: 1.9rem;
+
+        @include small-tablet {
+            font-size: 2.8rem;
+            line-height: 121%;
+        }
     }
 
     &_semibold {
-        font-weight: 600;
+        @media (min-width: 48em) {
+            font-weight: 600;
+        }
     }
 }

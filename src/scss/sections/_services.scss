@@ -1,0 +1,35 @@
+.services {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 48em) {
+      margin-bottom: 6.4rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 4.8rem;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 3rem;
+    }
+  }
+}
