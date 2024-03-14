@@ -1,0 +1,10 @@
+.section-heading {
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include small-tablet {
+        margin-bottom: 6.4rem;
+    }
+}
