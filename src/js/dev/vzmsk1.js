@@ -77,6 +77,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         }
+        if (document.querySelector('.news__slider')) {
+            new Swiper('.news__slider', {
+                modules: [Navigation],
+                speed: 800,
+                rewind: true,
+                spaceBetween: remToPx(2.8),
+                navigation: {
+                    prevEl: '.news__slider-navigation .arrow-btn_prev',
+                    nextEl: '.news__slider-navigation .arrow-btn_next'
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+        }
     };
     initSliders();
 
