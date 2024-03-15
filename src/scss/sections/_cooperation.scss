@@ -1,0 +1,79 @@
+.cooperation {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.6rem;
+    }
+
+    &__title {
+        margin-bottom: 11.2rem;
+    }
+
+    &__subtext {
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        &-block {
+            display: flex;
+            gap: 2rem;
+
+            .cooperation__description {
+                flex: 1 1 50%;
+            }
+        }
+    }
+
+    &__block {
+        padding: 6rem;
+        background-color: $gray;
+        flex: 1 1 50%;
+
+        &:last-child {
+            padding: 0;
+        }
+
+        &-top {
+            padding: 5.5rem 6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 7.6rem;
+            margin-bottom: 7rem;
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            &-item {
+                padding-left: 1.5rem;
+                position: relative;
+
+                &::after {
+                    @include pseudo {
+                        left: 0;
+                        top: 0.8rem;
+                        background: url('./assets/images/icons/markup.svg') no-repeat center;
+                        background-size: cover;
+                        @include sizes(0.8rem, 0.8rem);
+                    }
+                }
+            }
+        }
+
+        &-title {
+            max-width: 30.2rem;
+            width: 100%;
+        }
+
+        &-image {
+            @include sizes(100%, 38.5rem);
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

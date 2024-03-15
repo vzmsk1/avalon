@@ -10,6 +10,9 @@ utils.menuInit();
 // show-more
 utils.showmore();
 
+// inputmask
+utils.initInputMask();
+
 // ------------------------------- components -------------------------------
 
 // forms
@@ -32,6 +35,8 @@ import './utils/modals.js';
 import './libs/nouislider';
 
 import './libs/da';
+
+import './libs/swiper';
 
 // --------------------------------------------------------------------------
 
