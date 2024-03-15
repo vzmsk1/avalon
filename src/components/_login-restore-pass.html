@@ -1,0 +1,36 @@
+<section class="login">
+    <div class="login__container container">
+        <div class="login__content">
+            <span class="login__heading h h_h1">Восстановление пароля</span>
+            <div class="login__group">
+                <span class="login__group-txt txt txt_20">Введите e-mail, чтобы восстановить пароль</span>
+            </div>
+            <form data-dev action="#" class="login__form form-login">
+                <div class="form-login__fields">
+                    <div data-hint="Заполните поле" class="form-login__input input">
+                        <input
+                            data-validate
+                            data-required
+                            autocomplete="off"
+                            type="email"
+                            name="form[]"
+                            placeholder="Почта"
+                            class="input__field"
+                        />
+                    </div>
+                </div>
+                <div class="form-login__actions">
+                    <button type="submit" class="form-login__btn btn btn_primary">
+                        <span class="txt txt_20 txt_semibold">Восстановить пароль</span>
+                    </button>
+                    <span class="form-login__timer"
+                        >Отправить повторно можно через <span data-timer="1">01:00</span></span
+                    >
+                </div>
+            </form>
+        </div>
+        <div class="login__bg">
+            <img src="./assets/images/bg/22477.webp" alt="" class="login__bg-img" />
+        </div>
+    </div>
+</section>

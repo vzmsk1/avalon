@@ -3,7 +3,7 @@ import Swiper from 'swiper';
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 // utils
-import { removeClasses, remToPx } from '../utils/utils';
+import { _slideToggle, _slideUp, removeClasses, remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', function () {
     const doc = document.documentElement;
@@ -161,6 +161,97 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         initMap();
     }
+
+    /**
+     * init timers
+     */
+    const initTimers = () => {
+        const timers = document.querySelectorAll('[data-timer]');
+        if (timers.length) {
+            timers.forEach((timer) => {
+                const minutes = timer.dataset.timer;
+                let timeInSecs, ticker;
+
+                const startTimer = (s) => {
+                    timeInSecs = parseInt(s);
+                    ticker = setInterval(function tick() {
+                        let s = timeInSecs;
+
+                        if (s > 0) {
+                            timeInSecs--;
+                        } else {
+                            clearInterval(ticker);
+                        }
+
+                        let m = Math.floor(s / 60);
+                        s %= 60;
+                        let pretty = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+
+                        timer.innerHTML = pretty;
+                    }, 1000);
+                };
+
+                startTimer(minutes * 60);
+            });
+        }
+    };
+    initTimers();
+
+    /**
+     * init quantity inputs
+     */
+    const initQuantityInputs = () => {
+        if (document.querySelectorAll('.quantity').length) {
+            const min = 1;
+            const step = 1;
+
+            document.querySelectorAll('.quantity').forEach((input) => {
+                const inp = input.querySelector('input');
+                const btnminus = input.querySelector('.quantity__button_minus');
+                const btnplus = input.querySelector('.quantity__button_plus');
+
+                const qtyminus = (e) => {
+                    const current = Number(inp.value);
+                    let newval = current - step;
+
+                    if (newval < min) {
+                        newval = min;
+                    }
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                const qtyplus = (e) => {
+                    const current = Number(inp.value);
+                    const newval = current + step;
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                btnminus.addEventListener('click', qtyminus);
+                btnplus.addEventListener('click', qtyplus);
+            });
+        }
+    };
+    initQuantityInputs();
+
+    /**
+     * show more catalog categories
+     */
+    const showmoreCategories = () => {
+        if (document.querySelectorAll('.categories-catalog__item-txt._heading').length) {
+            document.querySelectorAll('.categories-catalog__item-txt._heading').forEach((item) => {
+                _slideUp(item.nextElementSibling);
+                item.addEventListener('click', function () {
+                    item.closest('._chapter').classList.toggle('_showmore');
+                    _slideToggle(item.nextElementSibling);
+                });
+            });
+        }
+    };
+    showmoreCategories();
 
     /**
      * set classes to active menu chapter

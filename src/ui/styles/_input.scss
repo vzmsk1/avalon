@@ -4,6 +4,9 @@ input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
     -webkit-appearance: none;
 }
+input[type='number'] {
+    -moz-appearance: textfield;
+}
 input[type='text'],
 input[type='email'],
 input[type='tel'],
@@ -27,6 +30,15 @@ input:focus {
 
     @media (max-width: 48em) {
         row-gap: 0.4rem;
+    }
+
+    &_edit {
+        .input__field {
+            &::placeholder {
+                color: $grayTxt;
+                font-weight: 700;
+            }
+        }
     }
 
     &_pass {
@@ -57,12 +69,25 @@ input:focus {
         color: $grayTxt;
         transition: color 0.3s ease;
 
+        &[disabled] {
+            color: $black;
+        }
+
         @media (max-width: 48em) {
             padding: 3.2rem 4rem;
             height: 10rem;
         }
     }
 
+    &__edit-btn {
+        svg {
+            flex: 0 0 1.6rem;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &__edit-btn,
     &__pass-btn {
         position: absolute;
         top: 2.2rem;
@@ -90,6 +115,9 @@ input:focus {
     &._has-error {
         &::after {
             content: attr(data-hint);
+            position: absolute;
+            bottom: -2.3rem;
+            left: 0;
             font-size: 1.2rem;
             color: $red;
 
@@ -111,7 +139,62 @@ input:focus {
     }
 }
 
-textarea.input {
-    padding: 0px 0px;
+textarea.input__field {
     resize: none;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    border: 1px solid $gray;
+
+    &__button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 4rem;
+        width: 4rem;
+        height: 100%;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
+            height: 2rem;
+            font-weight: 600;
+            font-size: 2rem;
+            line-height: 2.8rem;
+            color: $grayTxt;
+        }
+
+        &_minus {
+            &::before {
+                content: '-';
+            }
+        }
+        &_plus {
+            &::before {
+                content: '+';
+            }
+        }
+    }
+
+    &__input {
+        flex: 0 0 4rem;
+        width: 4rem;
+
+        input {
+            width: 4rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: default;
+        }
+    }
 }
