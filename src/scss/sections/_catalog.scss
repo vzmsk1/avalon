@@ -1,6 +1,32 @@
 .catalog {
+    &__options {
+        display: flex;
+        column-gap: 2.8rem;
+    }
+
+    &__search {
+        margin-right: 2.8rem;
+        flex: 1 1 auto;
+        height: 6.2rem;
+    }
+
+    &__side-bar {
+        margin-bottom: 14.7rem;
+
+        &._mb-692 {
+            margin-bottom: 69.2rem;
+        }
+    }
+
+    &__option-wrap {
+        padding: 2.5rem 3.2rem;
+        background-color: $gray;
+    }
+
     &__title {
-        margin-bottom: 5rem;
+        &:not(.account-page &) {
+            margin-bottom: 5rem;
+        }
     }
 
     &__categories {
@@ -8,7 +34,9 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem 2.8rem;
-            margin-bottom: 10rem;
+            &:not(.account-page &) {
+                margin-bottom: 10rem;
+            }
         }
     }
 
@@ -21,6 +49,10 @@
     &__filters {
         max-width: 38.9rem;
         width: 100%;
+
+        .account-page & {
+            max-width: 40.9rem;
+        }
 
         &-block {
             padding-bottom: 2.4rem;
@@ -158,11 +190,18 @@
 
         &-button {
             margin: 0 auto;
-            display: block;
-            width: fit-content;
+            display: flex;
+            align-items: center;
+            column-gap: 0.6rem;
             font-weight: 600;
             font-size: 2rem;
             line-height: 140%;
+
+            svg {
+                flex: 0 0 2.4rem;
+                width: 2.4rem;
+                height: 2.4rem;
+            }
         }
     }
 
@@ -213,12 +252,12 @@
         }
 
         &-item {
-           button {
-               display: flex;
-               align-items: center;
-               padding: 0.8rem 1.6rem;
-               background-color: $gray;
-           }
+            button {
+                display: flex;
+                align-items: center;
+                padding: 0.8rem 1.6rem;
+                background-color: $gray;
+            }
         }
     }
 
@@ -226,5 +265,188 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem 2.8rem;
+
+        .account-page & {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.categories-catalog {
+    margin-bottom: 7.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
+    &__group-checkbox {
+        position: absolute;
+        top: 0.2rem;
+        left: 0;
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    &__heading {
+        padding-bottom: 2.4rem;
+        border-bottom: 1px solid $grayTxt;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+    }
+
+    &__groups {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+
+        &._hidden {
+            position: absolute;
+            top: -110vh;
+            left: -110vw;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+
+            ._showmore & {
+                position: static;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__group {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        padding-bottom: 2.4rem;
+        padding-left: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $grayTxt;
+        cursor: pointer;
+
+        &._is-active {
+            &::after {
+                transform: rotate(-90deg);
+            }
+        }
+
+        &::after {
+            content: '';
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            background-image: url('./assets/images/icons/arr-sm.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &__list {
+        padding-left: 3rem;
+    }
+
+    &__item {
+        display: block;
+
+        &._chapter {
+            &._showmore {
+                > .categories-catalog__item-txt {
+                    &::after {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+            > .categories-catalog__list {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 2rem;
+                    left: 1rem;
+                    height: calc(100% - 2rem);
+                    width: 1px;
+                    background-color: $grayTxt;
+                }
+            }
+            > .categories-catalog__checkbox {
+                position: absolute;
+            }
+            > .categories-catalog__item-txt {
+                padding-left: 3rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    flex: 0 0 2.4rem;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url('./assets/images/icons/arr-sm.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transform: rotate(90deg);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+
+        &:first-child {
+            padding-top: 2rem;
+        }
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__showmore-btn {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        column-gap: 0.6rem;
+
+        svg {
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .categories-catalog__showmore-btn-txt span {
+            &:last-child {
+                display: none;
+            }
+        }
+
+        ._showmore & {
+            svg {
+                transform: rotate(-180deg);
+            }
+
+            .categories-catalog__showmore-btn-txt span {
+                &:first-child {
+                    display: none;
+                }
+                &:last-child {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    &__showmore-btn-txt {
     }
 }

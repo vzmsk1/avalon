@@ -3,6 +3,28 @@
     flex-direction: column;
     row-gap: 1.2rem;
 
+    ._is-filled {
+        .select__value {
+            color: $black;
+        }
+    }
+
+    &_field {
+        .select__value {
+            padding: 2rem;
+            justify-content: space-between;
+            height: 6rem;
+            border: 1px solid $grayTxt;
+            font-size: 1.6rem;
+            color: $grayTxt;
+        }
+        ._is-filled {
+            .select__value::before {
+                display: none;
+            }
+        }
+    }
+
     @media (max-width: 48em) {
         row-gap: 1.6rem;
     }
@@ -90,9 +112,12 @@
     &__content {
         margin-right: auto;
         // hide / show selected value
-        // &:not(._select-filled &) {
-        //     display: none;
-        // }
+        &:not(.dropdown_field &) {
+            display: none;
+        }
+        &:not(._is-filled &) {
+            display: none;
+        }
     }
 
     // .select__text
@@ -116,9 +141,11 @@
         z-index: 2;
         top: calc(100% + 0.8rem);
         right: 0;
+        padding: 1.3rem 0;
+        width: 100%;
         min-width: 17.5rem;
         background-color: $white;
-        border: .1px solid #a1a2a9;
+        border: 0.1px solid #a1a2a9;
     }
 
     // .select__scroll
@@ -145,12 +172,11 @@
 
     // .select__option
     &__option {
-        padding: 2rem 0;
+        padding: 0.7rem 2rem;
         width: 100%;
         transition: color 0.3s ease;
         display: flex;
         align-items: center;
-        justify-content: center;
 
         &._is-selected {
             color: $white;

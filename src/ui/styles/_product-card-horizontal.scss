@@ -1,0 +1,104 @@
+.product-card-horizontal {
+    padding: 3.2rem;
+    display: flex;
+    column-gap: 3.2rem;
+    background-color: $gray;
+
+    .quantity {
+        height: 6rem;
+        border: 1px solid $black;
+
+        &__button {
+            flex: 0 0 6rem;
+            width: 6rem;
+            &::before {
+                color: $black;
+            }
+        }
+    }
+
+    &__image {
+        flex: 0 0 18.5rem;
+        width: 18.5rem;
+
+        img {
+            mix-blend-mode: darken;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1 1 auto;
+    }
+
+    &__heading {
+        margin-bottom: 2.4rem;
+    }
+
+    &__description {
+        margin-bottom: 4rem;
+        display: flex;
+        column-gap: 4rem;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.2rem;
+    }
+
+    &__subtitle {
+        color: $grayTxt;
+    }
+
+    &__add-btn {
+        display: flex;
+        align-items: center;
+        column-gap: 0.6rem;
+
+        svg {
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &__total {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: flex-end;
+        row-gap: 3.1rem;
+    }
+
+    &__discount {
+        color: $grayTxt;
+    }
+
+    &__pricing {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 1.2rem;
+    }
+
+    &__total-price {
+        display: flex;
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        text-transform: uppercase;
+
+        span {
+            align-self: flex-start;
+            font-size: 2rem;
+            line-height: 2.7rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 2.4rem;
+    }
+}

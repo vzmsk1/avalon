@@ -1,0 +1,333 @@
+.account {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 5rem;
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 3fr 8fr;
+        align-items: start;
+        column-gap: 2.8rem;
+
+        &.grid {
+            grid-template-columns: 3fr 5fr 4fr;
+        }
+    }
+
+    &__side-bar {
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+}
+
+.side-bar-account {
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        background-color: $gray;
+
+        &._is-active {
+            background-color: $black;
+
+            svg path {
+                fill: $white;
+            }
+
+            .side-bar-account {
+                &__txt {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__item-content {
+        padding: 2.4rem 4rem;
+        display: flex;
+        align-items: center;
+        column-gap: 1.2rem;
+
+        svg {
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+
+            path {
+                fill: $black;
+            }
+        }
+    }
+}
+
+.data-account {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.8rem;
+
+    &__form {
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $gray;
+    }
+
+    &__heading {
+        margin-bottom: 2.8rem;
+    }
+
+    &__form-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__fields {
+        margin-bottom: 2.8rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.8rem;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        column-gap: 2.8rem;
+    }
+}
+
+.cart-account {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7.8rem;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5rem;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__table {
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__pricing-info {
+        position: relative;
+        padding: 0.8rem 2.4rem;
+        background-color: $gray;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2.1rem;
+            height: 3.8rem;
+            background-color: $black;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 100%, 0 0, 100% 0);
+        }
+
+        &::after {
+            right: 0;
+            bottom: 0;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+    }
+
+    &__pricing-info-txt {
+        max-width: 35.9rem;
+    }
+
+    &__total {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 1rem;
+    }
+
+    &__total-price {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 1rem;
+
+        span {
+            font-weight: 700;
+            font-size: 3.6rem;
+            line-height: 120%;
+            text-transform: uppercase;
+            transform: translateY(0.3rem);
+        }
+    }
+
+    &__discount {
+        color: $grayTxt;
+    }
+}
+
+.table-cart-account {
+    display: grid;
+    row-gap: 2.8rem;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 4fr repeat(5, 1fr);
+        align-items: center;
+        column-gap: 2rem;
+
+        &:not(:last-child) {
+            padding-bottom: 2.8rem;
+            border-bottom: 1px solid $grayTxt;
+        }
+    }
+
+    &__quantity {
+        justify-self: start;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+    }
+
+    &__subtitle {
+        color: $grayTxt;
+    }
+
+    &__delete-btn {
+        justify-self: end;
+
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+.form-cart-account {
+    display: flex;
+    flex-direction: column;
+
+    &__dropdown {
+        grid-column: 1/2;
+    }
+
+    &__fields {
+        margin-bottom: 2.8rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.8rem;
+    }
+
+    &__input {
+        &.input_textarea {
+            grid-column: 2 / 3;
+            grid-row: 1 / 4;
+            height: 100%;
+            border: 1px solid $grayTxt;
+
+            textarea {
+                height: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        align-self: flex-start;
+    }
+}
+
+.projects-account {
+    display: flex;
+    flex-direction: column;
+
+    &__items {
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    &__btn {
+        align-self: flex-start;
+    }
+}
+
+.item-projects-account {
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.2rem;
+    background-color: $gray;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 3.2rem;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        column-gap: 0.6rem;
+
+        svg {
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        column-gap: 3.2rem;
+        flex: 1 1 auto;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.2rem;
+    }
+
+    &__subtitle {
+        color: $grayTxt;
+    }
+
+    &__txt {
+        max-width: 24.4rem;
+    }
+}
