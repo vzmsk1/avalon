@@ -109,9 +109,12 @@ input:focus {
             color: $black;
         }
     }
+
+    &.textarea {
+    }
 }
 
 textarea.input {
-    padding: 0px 0px;
+    padding: 1.6rem 2rem;
     resize: none;
 }
