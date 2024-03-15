@@ -1,12 +1,17 @@
 import Swiper from 'swiper';
 import { remToPx } from '../utils/utils';
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.brands')) {
         new Swiper('.brands-swiper', {
-            modules: [Navigation],
-            speed: 1200,
+            modules: [Navigation, Autoplay],
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
             navigation: {
                 prevEl: '.brands__navigation .arrow-btn_prev',
                 nextEl: '.brands__navigation .arrow-btn_next'
@@ -26,8 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         new Swiper('.brands-companies-swiper', {
-            modules: [Navigation],
-            speed: 1200,
+            modules: [Navigation, Autoplay],
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
             navigation: {
                 prevEl: '.brands__companies-slider .arrow-btn_prev',
                 nextEl: '.brands__companies-slider .arrow-btn_next'
