@@ -1,6 +1,12 @@
 .footer {
     background-color: $gray;
 
+    .product-page & {
+        @include small-tablet {
+            padding-bottom: 28rem;
+        }
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
