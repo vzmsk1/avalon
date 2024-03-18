@@ -3,7 +3,9 @@
         <nav class="breadcrumbs">
             <a href="#" class="breadcrumbs__link txt txt_16">Главная</a>
             <a href="#" class="breadcrumbs__link txt txt_16">Каталог</a>
-            <a href="#" class="breadcrumbs__link breadcrumbs__link_chapter txt txt_16">Световое оборудование</a>
+            <a href="#" class="breadcrumbs__link breadcrumbs__link_chapter txt txt_16"
+                >Световое оборудование</a
+            >
             <span class="breadcrumbs__txt txt txt_16">Световые приборы </span>
         </nav>
 
@@ -11,63 +13,36 @@
 
         <div class="catalog__content">
             <aside class="catalog__filters">
-                <form action="">
+                <form data-accordion="768,max" action="">
+                    <div class="catalog__filters-heading">
+                        <span class="catalog__filters-heading-title"> Фильтры </span>
+
+                        <button class="catalog__filters-heading-button">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M5 5L12 12M12 12L19 5M12 12L5 19M12 12L19 19"
+                                    stroke="#A1A2A9"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
                     <div class="catalog__filters-block">
-                        <span class="catalog__filters-block-title txt_20 txt_semibold"> Бренды </span>
+                        <span data-accordion-item class="catalog__filters-block-title txt_20 txt_semibold">
+                            Бренды
+                        </span>
 
-                        <ul class="catalog__filters-block-list">
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">APOGEE</span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">ARTURIA </span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">Alctron</span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">Artesia </span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">BEHRINGER </span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">BOSS </span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">Donner </span>
-                                </label>
-                            </li>
-                            <li class="catalog__filters-block-item">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="form[]" class="checkbox__input" />
-                                    <span class="checkbox__txt">FOCUSRITE </span>
-                                </label>
-                            </li>
-                        </ul>
-
-                        <div data-showmore="" class="catalog__filters-block-addiction">
-                            <ul data-showmore-content="0" class="catalog__filters-block-list">
+                        <div hidden="" class="catalog__filters-block-list-wrapper">
+                            <ul class="catalog__filters-block-list">
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
                                         <input type="checkbox" name="form[]" class="checkbox__input" />
@@ -118,54 +93,116 @@
                                 </li>
                             </ul>
 
-                            <div data-showmore-button="" class="catalog__filters-block-addiction-button">
-                                <div>
-                                    <span>Показать ещё</span>
-                                    <span>Скрыть</span>
+                            <div data-showmore="" class="catalog__filters-block-addiction">
+                                <ul data-showmore-content="0" class="catalog__filters-block-list --showmore">
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">APOGEE</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">ARTURIA </span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">Alctron</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">Artesia </span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">BEHRINGER </span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">BOSS </span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">Donner </span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog__filters-block-item">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="form[]" class="checkbox__input" />
+                                            <span class="checkbox__txt">FOCUSRITE </span>
+                                        </label>
+                                    </li>
+                                </ul>
+
+                                <div data-showmore-button="" class="catalog__filters-block-addiction-button">
+                                    <div>
+                                        <span>Показать ещё</span>
+                                        <span>Скрыть</span>
+                                    </div>
+
+                                    <figure class="arrow-icon">
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 10L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L17 10"
+                                                stroke="#000001"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog__filters-block">
+                        <div class="catalog__filters-slide">
+                            <span
+                                data-accordion-item
+                                class="catalog__filters-block-title txt_20 txt_semibold"
+                            >
+                                Цена
+                            </span>
+
+                            <div class="catalog__filters-slide-wrapper range-slider">
+                                <div class="catalog__filters-slide-fields">
+                                    <label for="from">
+                                        <input placeholder="от 20 000 ₽" type="text" id="from" />
+                                    </label>
+                                    <label for="to">
+                                        <input placeholder="до 820 000 ₽" type="text" id="to" />
+                                    </label>
                                 </div>
 
-                                <figure class="arrow-icon">
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M7 10L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L17 10"
-                                            stroke="#000001"
-                                            stroke-width="1.5"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </figure>
+                                <div class="catalog__filters-slide-price" id="range-slider"></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="catalog__filters-block">
-                        <div class="catalog__filters-slide range-slider">
-                            <span class="catalog__filters-block-title txt_20 txt_semibold"> Цена </span>
+                        <span data-accordion-item class="catalog__filters-block-title txt_20 txt_semibold">
+                            Источник света
+                        </span>
 
-                            <div class="catalog__filters-slide-fields">
-                                <label for="from">
-                                    <input placeholder="от 20 000 ₽" type="text" id="from" />
-                                </label>
-                                <label for="to">
-                                    <input placeholder="до 820 000 ₽" type="text" id="to" />
-                                </label>
-                            </div>
-
-                            <div class="catalog__filters-slide-price" id="range-slider"></div>
-                        </div>
-                    </div>
-
-                    <div class="catalog__filters-block">
-                        <span class="catalog__filters-block-title txt_20 txt_semibold"> Источник света </span>
-
-                        <ul class="catalog__filters-block-list">
+                        <ul hidden="" class="catalog__filters-block-list">
                             <li class="catalog__filters-block-item">
                                 <label class="checkbox">
                                     <input type="checkbox" name="form[]" class="checkbox__input" />
@@ -188,11 +225,11 @@
                     </div>
 
                     <div class="catalog__filters-block">
-                        <span class="catalog__filters-block-title txt_20 txt_semibold"
+                        <span data-accordion-item class="catalog__filters-block-title txt_20 txt_semibold"
                             >Количество входов</span
                         >
 
-                        <ul class="catalog__filters-block-list">
+                        <ul hidden="" class="catalog__filters-block-list">
                             <li class="catalog__filters-block-item">
                                 <label class="checkbox">
                                     <input type="checkbox" name="form[]" class="checkbox__input" />
@@ -215,9 +252,11 @@
                     </div>
 
                     <div class="catalog__filters-block">
-                        <span class="catalog__filters-block-title txt_20 txt_semibold">Питание</span>
+                        <span data-accordion-item class="catalog__filters-block-title txt_20 txt_semibold"
+                            >Питание</span
+                        >
 
-                        <ul class="catalog__filters-block-list">
+                        <ul hidden="" class="catalog__filters-block-list">
                             <li class="catalog__filters-block-item">
                                 <label class="checkbox">
                                     <input type="checkbox" name="form[]" class="checkbox__input" />
@@ -233,16 +272,18 @@
                         </ul>
                     </div>
 
-                    <div class="catalog__filters-buttons">
-                        <button type="submit" class="catalog__filters-button btn btn_primary">
-                            <span class="txt txt_20 txt_semibold">Применить</span>
-                        </button>
+                    <div class="catalog__filters-bottom">
+                        <div class="catalog__filters-buttons">
+                            <button type="submit" class="catalog__filters-button btn btn_primary">
+                                <span class="txt txt_20 txt_semibold">Применить</span>
+                            </button>
 
-                        <label for="reset-button">
-                            <input id="reset-button" type="reset" value="Сбросить" />
+                            <label for="reset-button">
+                                <input id="reset-button" type="reset" value="Сбросить" />
 
-                            <img src="../assets/images/icons/trash.svg" alt="" />
-                        </label>
+                                <img src="../assets/images/icons/trash.svg" alt="" />
+                            </label>
+                        </div>
                     </div>
                 </form>
             </aside>
@@ -263,7 +304,7 @@
                 </div>
 
                 <div class="catalog__selection">
-                    <ul class="catalog__selection-list">
+                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list">
                         <li class="catalog__selection-item txt txt_16">
                             <button>
                                 <span>Alctron</span>
@@ -310,6 +351,23 @@
                             </select>
                         </div>
                     </div>
+
+                    <button type="button" class="catalog__selection-button _mobile-only">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M3.00078 7.6474V4.22246C2.97932 2.7808 4.13041 1.5946 5.57206 1.57275H18.4285C19.8701 1.5946 21.0212 2.7808 20.9997 4.22246V7.6474C21.0007 7.99689 20.8656 8.33304 20.623 8.58463L14.9482 13.1435C14.7056 13.3951 14.5705 13.7312 14.5715 14.0807V20.7776C14.5743 21.2741 14.3001 21.7308 13.8606 21.9617L11.2893 23.2859C10.8853 23.488 10.4049 23.4632 10.0238 23.2207C9.64277 22.9781 9.41694 22.5534 9.42898 22.1018V14.0807C9.42997 13.7312 9.29487 13.3951 9.05229 13.1435L3.37748 8.58334C3.1352 8.33207 3.00012 7.99644 3.00078 7.6474Z"
+                                fill="#000001"
+                            />
+                        </svg>
+                    </button>
                 </div>
 
                 <ul class="catalog__cards">
@@ -318,7 +376,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-1.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-1.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -332,8 +393,20 @@
                                     <p class="product-card__info-price-text">11 900 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -345,7 +418,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-2.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-2.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -359,8 +435,20 @@
                                     <p class="product-card__info-price-empty txt_20">Цена по запросу</p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -372,7 +460,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-3.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-3.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -386,8 +477,20 @@
                                     <p class="product-card__info-price-text">194 400 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -399,7 +502,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-2.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-2.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -413,8 +519,20 @@
                                     <p class="product-card__info-price-empty txt_20">Цена по запросу</p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -426,7 +544,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-3.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-3.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -440,8 +561,20 @@
                                     <p class="product-card__info-price-text">194 400 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -453,7 +586,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-1.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-1.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -467,8 +603,20 @@
                                     <p class="product-card__info-price-text">11 900 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -480,7 +628,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-3.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-3.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -494,8 +645,20 @@
                                     <p class="product-card__info-price-text">194 400 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -507,7 +670,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-1.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-1.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -521,8 +687,20 @@
                                     <p class="product-card__info-price-text">11 900 <sup>₽</sup></p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -534,7 +712,10 @@
                             <span class="product-card__promotion"> Новинка </span>
 
                             <figure class="product-card__image">
-                                <img src="../assets/images/sections/categories/catalog-card-image-2.webp" alt="">
+                                <img
+                                    src="../assets/images/sections/categories/catalog-card-image-2.webp"
+                                    alt=""
+                                />
                             </figure>
 
                             <div class="product-card__info">
@@ -548,8 +729,20 @@
                                     <p class="product-card__info-price-empty txt_20">Цена по запросу</p>
 
                                     <button type="button" class="product-card__info-button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M7 22L16.2929 12.7071C16.6262 12.3738 16.7929 12.2071 16.7929 12C16.7929 11.7929 16.6262 11.6262 16.2929 11.2929L7 2"
+                                                stroke="white"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
                                         </svg>
                                     </button>
                                 </div>
