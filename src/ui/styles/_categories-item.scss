@@ -1,19 +1,38 @@
 .categories-item {
-  &__inner {
-    min-height: 10.6rem;
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    background-color: $gray;
-    padding-right: 7.7rem;
-  }
+    &__inner {
+        min-height: 10.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        background-color: $gray;
+        padding-right: 7.7rem;
 
-  &__image {
-    @include sizes(10.6rem, 10.6rem);
-
-    img {
-      height: 100%;
-      object-fit: cover;
+        @include small-tablet {
+            padding-right: 4.2rem;
+            gap: 1.2rem;
+        }
     }
-  }
+
+    &__image {
+        @include sizes(10.6rem, 10.6rem);
+
+        @include small-tablet {
+            height: 10.4rem;
+            width: 12rem;
+            max-width: 100%;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        @include small-tablet {
+            font-weight: 400;
+            font-size: 2.8rem;
+            line-height: 121%;
+        }
+    }
 }

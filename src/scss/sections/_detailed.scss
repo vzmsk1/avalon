@@ -3,19 +3,37 @@
         display: flex;
         align-items: flex-start;
         gap: 1rem;
+
+        @include small-tablet {
+            flex-direction: column;
+            gap: 0rem;
+        }
     }
 
     &__product {
         max-width: 50%;
         width: 100%;
 
+        @include small-tablet {
+            max-width: 100%;
+        }
+
         &-gallery {
             max-width: 64.2rem;
             width: 100%;
             margin: 0 auto 5rem;
 
+            @include small-tablet {
+                max-width: 100%;
+                margin: 0 0 4rem;
+            }
+
             &-image {
                 @include sizes(100%, 100%);
+
+                @include small-tablet {
+                    @include sizes(100%, 57.5rem);
+                }
 
                 img {
                     height: 100%;
@@ -30,8 +48,12 @@
                 transition:
                     0.3s border ease-out,
                     opacity 0.3s ease-out;
-                border: 0.1rem solid transparent;
+                border: 0.1rem solid $black;
                 opacity: 0.5;
+
+                @include small-tablet {
+                    @include sizes(16.4rem, 13.6rem);
+                }
 
                 img {
                     height: 100%;
@@ -54,16 +76,31 @@
 
     &__info {
         flex: 1 1 50%;
+
+        @include small-tablet {
+            flex: 1 1 100%;
+            width: 100%;
+        }
     }
 
     &__title {
         margin-bottom: 2rem;
+
+        @include small-tablet {
+            margin-bottom: 1.6rem;
+        }
     }
 
     &__articul {
         display: block;
         margin-bottom: 3.2rem;
         color: $grayTxt;
+
+        @include small-tablet {
+            font-weight: 400;
+            font-size: 2.8rem;
+            line-height: 121%;
+        }
     }
 
     &__block {
@@ -99,6 +136,10 @@
             width: 100%;
             justify-content: space-between;
 
+            @include small-tablet {
+                justify-content: flex-end;
+            }
+
             &:not(:has(.detailed__block-bookmark)) {
                 .detailed__block-button {
                     margin-left: auto;
@@ -132,11 +173,14 @@
             &-text {
                 width: fit-content;
                 display: block;
-                width: fit-content;
                 padding: 0.8rem 2.4rem;
                 background-color: $gray;
                 position: relative;
                 z-index: 2;
+
+                @include small-tablet {
+                    padding: 1.6rem 5rem;
+                }
 
                 &::after {
                     @include pseudo {
@@ -147,6 +191,10 @@
                         top: 0;
                         background-color: $black;
                         clip-path: polygon(0 0, 0% 100%, 100% 0);
+
+                        @include small-tablet {
+                            width: 4.2rem;
+                        }
                     }
                 }
 
@@ -159,17 +207,32 @@
                         top: 0;
                         background-color: $black;
                         clip-path: polygon(0 100%, 100% 100%, 100% 0);
+
+                        @include small-tablet {
+                            width: 4.2rem;
+                        }
                     }
                 }
             }
 
-            &-coutenr {
+            &-counter {
                 display: flex;
                 align-items: center;
                 gap: 0.8rem;
 
+                @include small-tablet {
+                    gap: 1.6rem;
+                    font-weight: 600;
+                    font-size: 3.2rem;
+                }
+
                 span {
                     font-weight: 400;
+
+                    @include small-tablet {
+                        font-size: 2.8rem;
+                        line-height: 121%;
+                    }
                 }
             }
         }
@@ -198,26 +261,56 @@
 
             &-content {
                 margin-top: 1rem;
+
+                @include small-tablet {
+                    margin-top: 3rem;
+                }
+            }
+
+            &-title {
+                @include small-tablet {
+                    font-weight: 600;
+                    font-size: 3.6rem !important;
+                }
             }
 
             &-icon {
                 @include sizes(2.4rem, 2.4rem);
                 transition: 0.3s transform ease-out;
+
+                @include small-tablet {
+                    @include sizes(4.8rem, 4.8rem);
+                }
             }
 
             &-subtitle {
                 display: block;
                 margin-bottom: 2rem;
+
+                @include small-tablet {
+                    font-weight: 400;
+                    font-size: 2.8rem;
+                    line-height: 121%;
+                }
             }
 
             &-blocks {
                 display: flex;
                 align-items: flex-start;
                 gap: 3.8rem;
+
+                @include small-tablet {
+                    flex-direction: column;
+                    gap: 0;
+                }
             }
 
             &-block {
                 flex: 1 1 50%;
+
+                @include small-tablet {
+                    flex: 1 1 100%;
+                }
 
                 ul {
                     display: flex;
@@ -229,6 +322,13 @@
                     padding-left: 3rem;
                     position: relative;
 
+                    @include small-tablet {
+                        font-weight: 400;
+                        font-size: 2.8rem;
+                        line-height: 121%;
+                        padding-left: 5rem;
+                    }
+
                     &::after {
                         @include pseudo {
                             left: 1.5rem;
@@ -236,6 +336,12 @@
                             border-radius: 50%;
                             background-color: $black;
                             @include sizes(0.5rem, 0.5rem);
+
+                            @include small-tablet {
+                                max-width: 5px;
+                                height: 5px;
+                                left: 2rem;
+                            }
                         }
                     }
                 }

@@ -26,6 +26,10 @@
     &__title {
         &:not(.account-page &) {
             margin-bottom: 5rem;
+
+            @include small-tablet {
+                margin-bottom: 4rem;
+            }
         }
     }
 
@@ -34,8 +38,22 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem 2.8rem;
+
             &:not(.account-page &) {
                 margin-bottom: 10rem;
+
+                @include small-tablet {
+                    display: flex;
+                    white-space: nowrap;
+                    gap: 1.6rem;
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    margin-right: -2.4rem;
+                    padding-right: 2.4rem;
+                    margin-bottom: 4rem;
+
+                    @include hide-scrollbar();
+                }
             }
         }
     }
@@ -44,11 +62,70 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+
+        @include small-tablet {
+            flex-direction: column;
+        }
     }
 
     &__filters {
         max-width: 38.9rem;
         width: 100%;
+
+        @include small-tablet {
+            max-width: 100%;
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            background-color: $white;
+            padding-top: 4.8rem;
+            overflow-x: scroll;
+            transform: translateX(100%);
+            transition: 0.3s transform ease-out;
+
+            &.--active {
+                transform: translateX(0);
+            }
+
+            form {
+                padding: 0 2.4rem;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        }
+
+        &-heading {
+            display: none;
+
+            @include small-tablet {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-bottom: 9rem;
+                gap: 18.8rem;
+            }
+
+            &-title {
+                @include small-tablet {
+                    font-weight: 700;
+                    font-size: 4.4rem;
+                    line-height: 159%;
+                    text-transform: uppercase;
+                }
+            }
+
+            &-button {
+                @include small-tablet {
+                    @include sizes(4.8rem, 4.8rem);
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
 
         .account-page & {
             max-width: 40.9rem;
@@ -58,26 +135,93 @@
             padding-bottom: 2.4rem;
             border-bottom: 0.1rem solid $grayTxt;
 
+            @include small-tablet {
+                padding-bottom: 2.8rem;
+            }
+
             &:not(:last-child) {
                 margin-bottom: 2.4rem;
+
+                @include small-tablet {
+                    margin-bottom: 4.8rem;
+                }
             }
 
             &:last-child {
                 margin-bottom: 5rem;
+
+                @include small-tablet {
+                    margin-bottom: 10rem;
+                }
             }
 
             &-title {
                 display: block;
                 margin-bottom: 2rem;
+
+                @include small-tablet {
+                    font-weight: 600;
+                    font-size: 3.6rem;
+                    margin-bottom: 2rem;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        flex: 0 0 4rem;
+                        width: 4rem;
+                        height: 4rem;
+                        background-image: url(./assets/images/icons/arr-sm.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        transform: rotate(90deg);
+                        transition: transform 0.3s ease;
+                    }
+
+                    &._is-active {
+                        &::after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+            }
+
+            &-addiction {
+                @include small-tablet {
+                    margin-top: 4rem;
+                }
             }
 
             &-list {
-                display: flex;
+                @media (min-width: 48em) {
+                    display: flex;
+                }
+
                 flex-direction: column;
                 gap: 0.7rem;
 
+                @include small-tablet {
+                    gap: 3.2rem;
+                    margin-bottom: 3.2rem;
+
+                    &.--showmore {
+                        margin: 0;
+                    }
+
+                    &-wrapper {
+                        margin-top: 4rem;
+                    }
+                }
+
                 &:not(.catalog__filters-block-addiction &) {
                     margin-bottom: 1.6rem;
+
+                    @include small-tablet {
+                        margin-bottom: 0;
+                    }
                 }
             }
 
@@ -85,8 +229,24 @@
                 label {
                     gap: 0.8rem;
 
+                    @include small-tablet {
+                        gap: 1.6rem;
+                    }
+
                     .checkbox__txt {
                         font-size: 1.6rem;
+
+                        @include small-tablet {
+                            font-weight: 400;
+                            font-size: 3rem;
+                            line-height: 113%;
+                        }
+                    }
+                }
+
+                @include small-tablet {
+                    &:not(:last-of-type) {
+                        margin-bottom: 3.2rem;
                     }
                 }
             }
@@ -97,26 +257,71 @@
             flex-direction: column;
             gap: 2.4rem;
 
+            @include small-tablet {
+                justify-content: center;
+                gap: 4.8rem;
+                align-items: center;
+                padding-right: 2.4rem;
+            }
+
             label {
                 display: flex;
                 align-items: center;
                 gap: 0.6rem;
                 cursor: pointer;
 
+                @include small-tablet {
+                    gap: 1.2rem;
+                }
+
                 input {
                     font-weight: 600;
                     font-size: 2rem;
                     line-height: 140%;
+
+                    @include small-tablet {
+                        font-weight: 400;
+                        font-size: 2.8rem;
+                        line-height: 121%;
+                        text-align: center;
+                    }
                 }
 
                 img {
                     @include sizes(2.4rem, 2.4rem);
+
+                    @include small-tablet {
+                        @include sizes(4.8rem, 4.8rem);
+                    }
                 }
             }
         }
 
         &-button {
             width: fit-content;
+
+            @include small-tablet {
+                width: 100%;
+            }
+        }
+
+        &-bottom {
+            @include small-tablet {
+                background-color: $white;
+                box-shadow: 0 -0.8rem 10.4rem 0 rgba(0, 0, 0, 0.06);
+                position: sticky;
+                bottom: 0;
+                z-index: 51;
+                gap: 6.4rem;
+                display: flex;
+                flex-direction: column;
+                width: calc(100% + 4.8rem);
+                margin-left: -2.4rem;
+                padding-top: 3.2rem;
+                padding-left: 2.4rem;
+                padding-bottom: 4.8rem;
+                margin-top: auto;
+            }
         }
 
         &-slide {
@@ -128,6 +333,11 @@
                 gap: 5.6rem;
                 position: relative;
 
+                @include small-tablet {
+                    gap: 11.2rem;
+                    margin-bottom: 6.4rem;
+                }
+
                 &::after {
                     @include pseudo {
                         left: 50%;
@@ -136,6 +346,10 @@
                         width: 1.6rem;
                         height: 0.1rem;
                         background-color: #898485;
+
+                        @include small-tablet {
+                            width: 3.2rem;
+                        }
                     }
                 }
 
@@ -145,10 +359,17 @@
                     position: relative;
 
                     &::after {
-                        top: 1.6rem;
+                        top: 50%;
+                        transform: translateY(-50%);
                         left: 1.6rem;
                         font-size: 1.6rem;
                         color: $grayTxt;
+
+                        @include small-tablet {
+                            font-size: 3rem;
+                            line-height: 113%;
+                            left: 3.2rem;
+                        }
                     }
 
                     &:first-child {
@@ -169,12 +390,20 @@
                         width: 100%;
                         padding: 1.6rem 1.6rem 1.6rem 4rem;
                         border: 0.1rem solid $grayTxt;
+
+                        @include small-tablet {
+                            padding: 3.2rem 3.2rem 3.2rem 7.5rem;
+                        }
                     }
 
                     input,
                     input::placeholder {
                         font-size: 1.6rem;
                         color: $grayTxt;
+
+                        @include small-tablet {
+                            font-size: 3rem;
+                        }
                     }
                 }
             }
@@ -188,6 +417,11 @@
         flex-direction: column;
         gap: 5rem;
 
+        @include small-tablet {
+            max-width: 100%;
+            gap: 6.4rem;
+        }
+
         &-button {
             margin: 0 auto;
             display: flex;
@@ -197,10 +431,22 @@
             font-size: 2rem;
             line-height: 140%;
 
+            @include small-tablet {
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 113%;
+            }
+
             svg {
                 flex: 0 0 2.4rem;
                 width: 2.4rem;
                 height: 2.4rem;
+
+                @include small-tablet {
+                    flex: 0 0 4.8rem;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
             }
         }
     }
@@ -209,6 +455,14 @@
         position: relative;
         z-index: 1;
         width: 100%;
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 4rem;
+            background-color: $gray;
+            padding: 3.2rem 2.4rem;
+        }
 
         &-text {
             padding: 8rem;
@@ -219,11 +473,34 @@
             background-color: #efefef;
             max-width: 76.8rem;
             width: 100%;
+
+            @include small-tablet {
+                max-width: 100%;
+                clip-path: none;
+                background-color: transparent;
+                gap: 1.6rem;
+                padding: 0;
+            }
+        }
+
+        &-title {
+            @include small-tablet {
+                font-weight: 600;
+                font-size: 3.2rem;
+                text-transform: uppercase;
+            }
         }
 
         &-description {
             max-width: 27.9rem;
             width: 100%;
+
+            @include small-tablet {
+                max-width: 100%;
+                font-weight: 400;
+                font-size: 2.8rem;
+                line-height: 121%;
+            }
         }
 
         &-poster {
@@ -231,6 +508,13 @@
             inset: 0;
             z-index: -1;
             left: 12.4rem;
+
+            @include small-tablet {
+                position: static;
+                z-index: 0;
+
+                @include sizes(100%, 27.6rem);
+            }
 
             img {
                 height: 100%;
@@ -244,11 +528,47 @@
         align-items: center;
         justify-content: space-between;
 
+        .select {
+            &__content {
+                display: block !important;
+            }
+
+            &__value {
+                @include small-tablet {
+                    padding: 0;
+                    height: initial;
+                    gap: 0;
+
+                    &::after {
+                        flex: 0 0 4.8rem;
+                        width: 4.8rem;
+                    }
+                }
+            }
+
+            &__option {
+                @include small-tablet {
+                    padding: 3.2rem 4rem;
+                }
+            }
+        }
+
         &-list {
             display: flex;
             flex-wrap: wrap;
             gap: 1.6rem;
             max-width: 70rem;
+
+            @include small-tablet {
+                max-width: 100%;
+                white-space: nowrap;
+                gap: 1.6rem;
+                flex-wrap: nowrap;
+                padding-right: 2.4rem;
+                overflow-x: scroll;
+
+                @include hide-scrollbar();
+            }
         }
 
         &-item {
@@ -257,6 +577,27 @@
                 align-items: center;
                 padding: 0.8rem 1.6rem;
                 background-color: $gray;
+
+                @include small-tablet {
+                    width: max-content;
+                    padding: 1.6rem 3.2rem;
+
+                    img {
+                        display: block;
+                        @include sizes(4.8rem, 4.8rem);
+                    }
+                }
+            }
+        }
+
+        &-button {
+            @include small-tablet {
+                @include sizes(4.8rem, 4.8rem);
+
+                svg {
+                    height: 100%;
+                    width: 100%;
+                }
             }
         }
     }
@@ -265,6 +606,12 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem 2.8rem;
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
 
         .account-page & {
             display: flex;

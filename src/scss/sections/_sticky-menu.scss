@@ -1,0 +1,56 @@
+.sticky-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    padding: 2.4rem 0;
+    z-index: 50;
+    margin-bottom: 0;
+    display: none;
+
+    @include small-tablet {
+        display: block;
+    }
+
+    &__content {
+        .detailed {
+            &__block {
+                padding: 0;
+                border: 0;
+                flex-direction: column;
+                gap: 3.2rem;
+                align-items: flex-start;
+
+                &-price {
+                    font-weight: 700;
+                    font-size: 4.4rem;
+                    line-height: 159%;
+
+                    sup {
+                        font-size: 3.2rem;
+                    }
+                }
+
+                &-actions {
+                    justify-content: flex-start;
+                    width: 100%;
+                    gap: 0.4rem;
+                }
+
+                &-button {
+                    max-width: 100%;
+                }
+
+                &-bookmark {
+                    max-width: 10rem;
+                    height: initial;
+
+                    svg {
+                        @include sizes(4.8rem, 4.8rem);
+                    }
+                }
+            }
+        }
+    }
+}
