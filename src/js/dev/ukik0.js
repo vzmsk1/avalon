@@ -51,4 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
             bodyUnlock();
         });
     }
+
+    const searchInput = document.querySelector('.search__input input');
+    const searchMenu = document.querySelector('.header__search-menu');
+
+    searchInput.addEventListener('focusin', (event) => {
+        searchMenu.classList.add('--active');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === searchInput) return;
+
+        searchMenu.classList.remove('--active');
+    });
+
+    searchMenu.addEventListener('click', (event) => event.stopPropagation());
 });
