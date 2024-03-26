@@ -114,4 +114,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    if (document.querySelector('.gallery')) {
+        new Swiper('.gallery-swiper', {
+            modules: [Navigation],
+            speed: 1200,
+            slidesPerView: 1.3,
+            loop: true,
+            navigation: {
+                prevEl: '.gallery__navigation .arrow-btn_prev',
+                nextEl: '.gallery__navigation .arrow-btn_next'
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 1.2,
+                    spaceBetween: remToPx(2.8),
+                    loop: true
+                }
+            }
+        });
+    }
+
+
+    if (document.querySelector('.benefits-work')) {
+        new Swiper('.benefits-work-swiper', {
+            modules: [Navigation],
+            speed: 1200,
+           
+            navigation: {
+                prevEl: '.benefits-work__navigation .arrow-btn_prev',
+                nextEl: '.benefits-work__navigation .arrow-btn_next'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                   
+                    
+                },
+                
+            }
+        });
+    }
+
+
+    if (document.querySelector('.news-c')) {
+        new Swiper('.news-c-swiper', {
+            modules: [Navigation],
+            speed: 1200,
+            slidesPerView: 1,
+            navigation: {
+                prevEl: '.news-c__navigation .arrow-btn_prev',
+                nextEl: '.news-c__navigation .arrow-btn_next'
+            },
+            
+        });
+    }
 });
