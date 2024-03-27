@@ -1,0 +1,8 @@
+.analogs {
+    &__title {
+        @include small-tablet {
+            max-width: 36.8rem;
+            width: 100%;
+        }
+    }
+}

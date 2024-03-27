@@ -154,13 +154,324 @@
 
     &__search {
         flex: 1 1 auto;
+        position: relative;
+
+        .search__btn {
+            height: 100%;
+        }
+
+        .search__input {
+            position: initial;
+
+            input {
+                padding: 0 2rem;
+            }
+        }
 
         @media (min-width: 48em) {
-            margin-right: 3.2rem;
+            margin-right: 2.8rem;
+        }
+
+        &-menu {
+            position: absolute;
+            width: 100%;
+            top: calc(100% + 0.5rem);
+            padding: 3.2rem;
+            background-color: $white;
+            border: 0.1rem solid #a1a2a9;
+            z-index: 55;
+            user-select: none;
+            pointer-events: none;
+
+            transition:
+                0.3s transform ease-out,
+                0.3s opacity ease-out;
+            transform: translateY(-1rem);
+            opacity: 0;
+            min-height: 35.2rem;
+
+            @include small-tablet {
+                top: calc(100% + 1rem);
+                padding: 3.2rem;
+                left: -9rem;
+                width: calc(100% + 9rem);
+                min-height: initial;
+                height: calc(100dvh - 39rem);
+            }
+
+            &:has(.header__search-menu-empty) {
+                height: 100%;
+
+                @include small-tablet {
+                    height: 57.8rem;
+                }
+            }
+
+            &.--active {
+                transform: translateY(0);
+                opacity: 1;
+                user-select: auto;
+                pointer-events: auto;
+            }
+
+            &-empty {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-icon {
+                    width: 3.4rem;
+                    height: 3.4rem;
+
+                    @include small-tablet {
+                        width: 8.8rem;
+                        height: 8.8rem;
+                    }
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                p {
+                    max-width: 36rem;
+                    width: 100%;
+
+                    @include small-tablet {
+                        max-width: 85%;
+                        font-weight: 400;
+                        font-size: 3.6rem;
+                        line-height: 94%;
+                    }
+                }
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                max-height: 49rem;
+                overflow-x: auto;
+                overscroll-behavior: contain;
+
+                @include small-tablet {
+                    gap: 4.8rem;
+                    height: 100%;
+                    max-height: initial;
+                }
+
+                &:has(.header__search-menu-empty) {
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2.4rem;
+                    height: 100%;
+                    text-align: center;
+
+                    @include small-tablet {
+                        gap: 4.8rem;
+                    }
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                @include small-tablet {
+                    gap: 2.4rem;
+                }
+            }
+
+            &-item {
+                a {
+                    @include small-tablet {
+                        font-size: 2.8rem;
+                        line-height: 121%;
+                    }
+                }
+            }
+
+            &-title {
+                display: block;
+                margin-bottom: 2.4rem;
+
+                @include small-tablet {
+                    font-weight: 600;
+                    font-size: 3.6rem !important;
+                    margin-bottom: 3.2rem;
+                }
+            }
+
+            &-categories {
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+
+                    @include small-tablet {
+                        gap: 2.4rem;
+                    }
+                }
+
+                &-item {
+                    font-weight: 400;
+                    font-size: 2.8rem;
+                    line-height: 121%;
+                }
+
+                &-item {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+
+                        @include small-tablet {
+                            gap: 1.6rem;
+                        }
+                    }
+
+                    figure {
+                        @include sizes(2.4rem, 2.4rem);
+
+                        @include small-tablet {
+                            @include sizes(4.8rem, 4.8rem);
+                        }
+                    }
+
+                    span {
+                        color: $grayTxt;
+
+                        @include small-tablet {
+                            font-weight: 400;
+                            font-size: 2.8rem;
+                            line-height: 121%;
+                        }
+                    }
+                }
+            }
+
+            &-products {
+                &-list {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 0.6rem;
+
+                    @include small-tablet {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.4rem;
+                    }
+                }
+
+                &-item {
+                    a {
+                        padding: 1.6rem;
+                        background-color: $gray;
+                        display: flex;
+                        gap: 1.2rem;
+
+                        @include small-tablet {
+                            padding: 2.4rem;
+                            gap: 2.4rem;
+                        }
+                    }
+
+                    &-image {
+                        @include sizes(9.6rem, 9.6rem);
+
+                        @include small-tablet {
+                            @include sizes(16.4rem, 16.4rem);
+                        }
+
+                        img {
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &-info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+
+                    &-title {
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        line-height: 120%;
+                        color: #1d1d1b;
+                        @include clamp-text(1);
+
+                        @include small-tablet {
+                            font-size: 2.8rem;
+                            line-height: 121%;
+                        }
+                    }
+
+                    &-bottom {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p {
+                            display: flex;
+                            align-items: flex-start;
+                            font-size: 2rem;
+
+                            @include small-tablet {
+                                font-weight: 600;
+                                font-size: 4rem;
+                            }
+
+                            sup {
+                                margin-top: -0.5rem;
+                                font-size: 1.8rem;
+
+                                @include small-tablet {
+                                    margin-top: -1rem;
+                                    font-size: 3.6rem;
+                                }
+                            }
+                        }
+                    }
+
+                    &-button {
+                        width: 4.4rem;
+                        height: 4.4rem;
+                        flex: 0 0 4.4rem;
+                        background-color: $black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @include small-tablet {
+                            width: 8rem;
+                            height: 8rem;
+                            flex: 0 0 8rem;
+                        }
+
+                        svg {
+                            @include sizes(2.4rem, 2.4rem);
+
+                            @include small-tablet {
+                                @include sizes(4.8rem, 4.8rem);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     &__actions {
+        @media (min-width: 48em) {
+            max-width: 7.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__actions-item {

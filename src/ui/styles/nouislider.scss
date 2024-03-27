@@ -24,6 +24,12 @@
 
 .noUi-base {
     height: 0.4rem;
+
+    @include small-tablet {
+        height: 0.8rem;
+        max-width: 96%;
+        margin: 0 auto;
+    }
 }
 /* Wrapper for all connect elements.
  */
@@ -31,7 +37,7 @@
     overflow: hidden;
     z-index: 0;
     border-radius: 1rem;
-    background: #e6eaff;
+    background-color: $grayTxt;
 }
 .noUi-connect,
 .noUi-origin {
@@ -91,6 +97,10 @@
     right: -1rem;
     top: 50%;
     transform: translateY(-50%);
+
+    @include small-tablet {
+        right: -2rem;
+    }
 }
 .noUi-vertical {
     width: 18px;
@@ -140,6 +150,12 @@
             background-color: $black;
             border-color: $black;
         }
+    }
+
+    @include small-tablet {
+        height: 4rem;
+        width: 4rem;
+        border: 0.6rem solid $black;
     }
 }
 .noUi-active {

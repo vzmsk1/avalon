@@ -27,6 +27,10 @@
         column-gap: 0.8rem;
         cursor: pointer;
 
+        @include small-tablet {
+            column-gap: 1.6rem;
+        }
+
         &::before {
             content: '';
             flex: 0 0 2.2rem;
@@ -35,6 +39,12 @@
             border: 1.5px solid $grayTxt;
             background-color: $white;
             transition: border 0.3s ease;
+
+            @include small-tablet {
+                flex: 0 0 4.4rem;
+                width: 4.4rem;
+                height: 4.4rem;
+            }
         }
 
         &::after {
@@ -47,6 +57,12 @@
             background-color: $black;
             transform: scale(0);
             transition: transform 0.3s ease;
+
+            @include small-tablet {
+                left: 0.6rem;
+                width: 3.2rem;
+                height: 3.2rem;
+            }
         }
     }
 }

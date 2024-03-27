@@ -1,40 +1,56 @@
 .breadcrumbs {
-  display: flex;
-  column-gap: 2.4rem;
-  margin-bottom: 5rem;
+    display: flex;
+    column-gap: 2.4rem;
+    margin-bottom: 5rem;
 
-  &__link {
-    position: relative;
-    color: $grayTxt;
+    @include small-tablet {
+        column-gap: 5.8rem;
+        margin-bottom: 4rem;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin-right: -2.4rem;
+        padding-right: 2.4rem;
 
-    &_chapter {
-      display: flex;
-      align-items: center;
-
-      &::after {
-        content: '';
-        flex: 0 0 2.4rem;
-        width: 2.4rem;
-        height: 2.4rem;
-        background-image: url("./assets/images/icons/arr-gray.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+        @include hide-scrollbar();
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0.2rem;
-      right: -1.2rem;
-      height: 2rem;
-      width: 1px;
-      background-color: $grayTxt;
-      transform: translateX(100%);
+    &__link {
+        position: relative;
+        color: $grayTxt;
+
+        &_chapter {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: '';
+                flex: 0 0 2.4rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url('./assets/images/icons/arr-gray.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.2rem;
+            right: -1.2rem;
+            height: 2rem;
+            width: 1px;
+            background-color: $grayTxt;
+            transform: translateX(100%);
+
+            @include small-tablet {
+                height: 100%;
+                right: -3rem;
+            }
+        }
     }
-  }
 
-  &__txt {
-
-  }
+    &__txt {
+    }
 }

@@ -61,9 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 4,
             freeMode: true,
             watchSlidesProgress: true,
-            spaceBetween: remToPx(2.8),
             speed: 1200,
-            slideToClickedSlide: true
+            slideToClickedSlide: true,
+            breakpoints: {
+                0: {
+                    spaceBetween: remToPx(1.6)
+                },
+                768: {
+                    spaceBetween: remToPx(2.8)
+                }
+            }
         });
 
         new Swiper('.detailed-product-gallery-swiper', {

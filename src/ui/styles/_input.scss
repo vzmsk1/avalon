@@ -137,6 +137,11 @@ input:focus {
             color: $black;
         }
     }
+
+    &.textarea {
+      padding: 1.6rem 2rem;
+      resize: none;
+    }
 }
 
 textarea.input__field {
