@@ -1,0 +1,41 @@
+.services-p {
+    &__title {
+        margin-bottom: 5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .services-box {
+            margin-right: 2.8rem;
+            margin-bottom: 2.8rem;
+            
+        }
+
+        .services-box:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 48em) {
+    .services-p {
+
+        &__title {
+            margin-bottom: 4rem;
+        }
+
+        &__wrapper {
+            flex-direction: column;
+
+            .services-box {
+                margin-right: 0;
+                margin-bottom: 3.2rem;
+            }
+
+            .services-box:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
