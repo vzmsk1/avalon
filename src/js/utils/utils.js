@@ -23,14 +23,18 @@ export const getHash = () => {
  * initializes hamburger menu
  */
 export const menuInit = () => {
-    if (document.querySelector('.hamburger')) {
+    if (document.querySelector('.header__mm-item_hamburger-btn')) {
         document.addEventListener('click', function (e) {
-            if (bodyLockStatus && e.target.closest('.hamburger')) {
+            if (
+                bodyLockStatus &&
+                (e.target.closest('.header__mm-item_hamburger-btn') ||
+                    e.target.closest('.menu-bar__item-content_hamburger'))
+            ) {
                 menuOpen();
             } else if (
                 bodyLockStatus &&
-                document.documentElement.classList.contains('_menu-opened') &&
-                (e.target.closest('.menu__close-btn') || !e.target.closest('.menu'))
+                document.documentElement.classList.contains('_show-menu') &&
+                (e.target.closest('.hamburger-menu__close-btn') || !e.target.closest('.hamburger-menu'))
             ) {
                 menuClose();
             }
@@ -42,15 +46,52 @@ export const menuInit = () => {
  */
 export const menuOpen = () => {
     bodyLock();
-    document.documentElement.classList.add('_menu-opened');
+    document.documentElement.classList.add('_show-menu');
 };
 /**
  * closes hamburger menu
  */
 export const menuClose = () => {
     bodyUnlock();
-    document.documentElement.classList.remove('_menu-opened');
+    document.documentElement.classList.remove('_show-menu');
 };
+
+// control window scroll event
+let addWindowScrollEvent = false;
+/**
+ * header scroll detection
+ */
+export function headerScroll() {
+    addWindowScrollEvent = true;
+    const header = document.querySelector('header.header');
+    let scrollDirection = 0;
+    let timer;
+
+    if (header) {
+        document.addEventListener('windowScroll', function (e) {
+            const scrollTop = window.scrollY;
+            clearTimeout(timer);
+            if (scrollTop >= header.offsetHeight) {
+                !document.documentElement.classList.contains('_header-scroll')
+                    ? document.documentElement.classList.add('_header-scroll')
+                    : null;
+            } else {
+                document.documentElement.classList.contains('_header-scroll')
+                    ? document.documentElement.classList.remove('_header-scroll')
+                    : null;
+            }
+            scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    }
+}
+setTimeout(() => {
+    if (addWindowScrollEvent) {
+        let windowScroll = new Event('windowScroll');
+        window.addEventListener('scroll', function (e) {
+            document.dispatchEvent(windowScroll);
+        });
+    }
+}, 0);
 
 // body lock
 export let bodyLockStatus = true;
@@ -59,7 +100,7 @@ export let bodyLockStatus = true;
  * @param {number} delay
  */
 export const bodyLockToggle = (delay = 500) => {
-    if (document.documentElement.classList.contains('lock')) {
+    if (document.documentElement.classList.contains('lock') && bodyLockStatus) {
         bodyUnlock(delay);
     } else {
         bodyLock(delay);
