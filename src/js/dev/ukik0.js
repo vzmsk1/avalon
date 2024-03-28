@@ -1,4 +1,4 @@
-import { bodyLock, bodyLockStatus, bodyUnlock } from '../utils/utils';
+import { bodyLock, bodyUnlock } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.communication')) {
@@ -56,13 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchMenu = document.querySelector('.header__search-menu');
 
     searchInput.addEventListener('focusin', (event) => {
-        searchMenu.classList.add('--active');
+        document.documentElement.classList.add('_show-search');
     });
 
     window.addEventListener('click', (event) => {
-        if (event.target === searchInput) return;
+        if (event.target === searchInput || event.target.closest('.search-btn')) {
+            document.documentElement.classList.add('_show-search');
 
-        searchMenu.classList.remove('--active');
+            if (window.innerWidth <= 768) {
+                bodyLock();
+            }
+            return;
+        }
+
+        document.documentElement.classList.remove('_show-search');
+        bodyUnlock();
     });
 
     searchMenu.addEventListener('click', (event) => event.stopPropagation());

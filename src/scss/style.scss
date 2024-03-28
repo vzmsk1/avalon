@@ -11,7 +11,6 @@ $gray: #efefef;
 $grayTxt: #a1a2a9;
 $red: #f40000ff;
 
-
 // ---------------------------------- fonts ---------------------------------
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap');
@@ -26,17 +25,14 @@ body {
     overflow-x: clip;
 }
 
-
 // base scss file
 @import './set';
 
 // body
-body {
-    .lock & {
+html {
+    &.lock {
         overflow: hidden;
-        touch-action: none;
-    }
-    .loaded & {
+        pointer-events: none;
     }
 }
 
