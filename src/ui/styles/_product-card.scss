@@ -7,6 +7,10 @@
 
     @media (max-width: 48em) {
         padding: 3.2rem 2.4rem;
+
+        .product-page & {
+            padding-bottom: 8rem;
+        }
     }
 
     &__promotion {

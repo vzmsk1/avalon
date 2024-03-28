@@ -121,19 +121,34 @@
                             <ul class="catalog__filters-block-list">
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="APOGEE"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">APOGEE</span>
                                     </label>
                                 </li>
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="ARTURIA"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">ARTURIA </span>
                                     </label>
                                 </li>
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="Alctron"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">Alctron</span>
                                     </label>
                                 </li>
@@ -354,11 +369,11 @@
                                 <span class="txt txt_20 txt_semibold">Применить</span>
                             </button>
 
-                            <label for="reset-button">
-                                <input id="reset-button" type="reset" value="Сбросить" />
+                            <button type="button" class="catalog__filters-button --reset">
+                                <span> Сбросить </span>
 
                                 <img src="./assets/images/icons/trash.svg" alt="" />
-                            </label>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -380,43 +395,7 @@
                 </div>
 
                 <div class="catalog__selection">
-                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list">
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                    </ul>
+                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list"></ul>
 
                     <div class="catalog__selection-sorting">
                         <div class="dropdown">
@@ -429,6 +408,8 @@
                     </div>
 
                     <button type="button" class="catalog__selection-button _mobile-only">
+                        <span> Фильтры </span>
+
                         <svg
                             width="24"
                             height="24"

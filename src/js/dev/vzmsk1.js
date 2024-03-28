@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 slide.classList.add('_large');
             }
             new Swiper('.places__slider', {
-                modules: [Navigation, Autoplay],
+                modules: [Navigation, Autoplay, Pagination],
                 speed: 800,
                 loop: true,
                 autoplay: {
@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextEl: '.places__slider-navigation .arrow-btn_next'
                 },
                 breakpoints: {
+                    0: {
+                        centeredSlides: true,
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.places__carousel-pagination',
+                            type: 'bullets',
+                            clickable: true
+                        }
+                    },
                     768: {
                         freeMode: true,
                         slidesPerView: 'auto'
