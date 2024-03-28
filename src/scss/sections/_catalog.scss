@@ -263,18 +263,25 @@
                 align-items: center;
                 padding-right: 2.4rem;
             }
+        }
 
-            label {
+        &-button {
+            width: fit-content;
+
+            @include small-tablet {
+                width: 100%;
+            }
+
+            &.--reset {
                 display: flex;
                 align-items: center;
                 gap: 0.6rem;
-                cursor: pointer;
 
                 @include small-tablet {
                     gap: 1.2rem;
                 }
 
-                input {
+                span {
                     font-weight: 600;
                     font-size: 2rem;
                     line-height: 140%;
@@ -283,7 +290,6 @@
                         font-weight: 400;
                         font-size: 2.8rem;
                         line-height: 121%;
-                        text-align: center;
                     }
                 }
 
@@ -294,14 +300,6 @@
                         @include sizes(4.8rem, 4.8rem);
                     }
                 }
-            }
-        }
-
-        &-button {
-            width: fit-content;
-
-            @include small-tablet {
-                width: 100%;
             }
         }
 
@@ -527,6 +525,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        min-height: 4rem;
+
+        @include small-tablet {
+            min-height: initial;
+        }
 
         .select {
             &__content {
@@ -587,16 +590,27 @@
                         @include sizes(4.8rem, 4.8rem);
                     }
                 }
+
+                img {
+                    @include sizes(2.4rem, 2.4rem);
+                }
             }
         }
 
         &-button {
             @include small-tablet {
-                @include sizes(4.8rem, 4.8rem);
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+
+                span {
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 113%;
+                }
 
                 svg {
-                    height: 100%;
-                    width: 100%;
+                    @include sizes(4.8rem, 4.8rem);
                 }
             }
         }

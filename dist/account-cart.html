@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://api-maps.yandex.ru/v3/?apikey=136cf658-5cab-4ec1-8934-49c6ce4baa7c&lang=ru_RU"></script>
         <title>ЛК - Корзина</title>
-    <script defer src="main.js"></script></head>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
         <div class="wrapper account-page">
             <header class="header">
@@ -1118,16 +1118,18 @@
                         <div class="cart-account__body">
                             <div class="cart-account__table table-cart-account">
                                 <div class="table-cart-account__row">
-                                    <span class="table-cart-account__heading txt txt_20 txt_semibold">Наименование</span>
-                                    <span class="table-cart-account__heading txt txt_20 txt_semibold">Кол-во</span>
-                                    <span class="table-cart-account__heading txt txt_20 txt_semibold">Вес</span>
-                                    <span class="table-cart-account__heading txt txt_20 txt_semibold">Цена</span>
-                                    <span class="table-cart-account__heading txt txt_20 txt_semibold">Сумма</span>
+                                    <p class="table-cart-account__heading txt txt_20 txt_semibold">Наименование</p>
+                                    <p class="table-cart-account__heading txt txt_20 txt_semibold">Кол-во</p>
+                                    <p class="table-cart-account__heading txt txt_20 txt_semibold">
+                                        Вес <span class="tooltip"><sub>?</sub></span>
+                                    </p>
+                                    <p class="table-cart-account__heading txt txt_20 txt_semibold">Цена</p>
+                                    <p class="table-cart-account__heading txt txt_20 txt_semibold">Сумма</p>
                                 </div>
                                 <div class="table-cart-account__row">
                                     <div class="table-cart-account__group">
                                         <span class="table-cart-account__subtitle txt txt_14 txt_semibold">Cветодиодный прожектор полного вращения</span>
-                                        <span class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</span>
+                                        <a href="#" class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</a>
                                     </div>
                                     <div class="table-cart-account__quantity quantity">
                                         <button type="button" class="quantity__button quantity__button_minus"></button>
@@ -1149,7 +1151,7 @@
                                 <div class="table-cart-account__row">
                                     <div class="table-cart-account__group">
                                         <span class="table-cart-account__subtitle txt txt_14 txt_semibold">Cветодиодный прожектор полного вращения</span>
-                                        <span class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</span>
+                                        <a href="#" class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</a>
                                     </div>
                                     <div class="table-cart-account__quantity quantity">
                                         <button type="button" class="quantity__button quantity__button_minus"></button>
@@ -1170,8 +1172,9 @@
                                 </div>
                                 <div class="table-cart-account__row">
                                     <div class="table-cart-account__group">
-                                        <span class="table-cart-account__subtitle txt txt_14 txt_semibold">Cветодиодный прожектор полного вращения</span>
-                                        <span class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</span>
+                                        <span class="table-cart-account__subtitle txt txt_14 txt_semibold">Cветодиодный прожектор полного вращения
+                                        </span>
+                                        <a href="#" class="table-cart-account__name txt txt_semibold">Involight MH FXWash1912</a>
                                     </div>
                                     <div class="table-cart-account__quantity quantity">
                                         <button type="button" class="quantity__button quantity__button_minus"></button>
@@ -1195,10 +1198,14 @@
                         <div class="cart-account__footer">
                             <div class="cart-account__pricing-info">
                                 <p class="cart-account__pricing-info-txt txt txt_16">
-                                    *Стоимость указана без учета доставки, доставка рассчитывается
-                                    индивидуально
+                                    *Стоимость указана без учета доставки, доставка рассчитывается индивидуально
                                 </p>
                             </div>
+
+                            <div class="cart-account__summary-weight txt_20 txt_semibold">
+                                <p>Общий вес: <span>30 кг</span></p>
+                            </div>
+
                             <div class="cart-account__total txt txt_20 txt_semibold">
                                 <span class="cart-account__total-price">Итого:
                                     <span>380 000₽</span>

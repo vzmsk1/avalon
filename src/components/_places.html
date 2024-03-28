@@ -1,7 +1,7 @@
 <section class="places">
     <div class="places__container container">
         <div class="places__head">
-            <span class="places__heading h h_h1">Объекты</span>
+            <span class="places__heading h h_h1">Портфолио</span>
         </div>
         <div class="places__carousel">
             <div class="places__slider swiper">
@@ -103,7 +103,10 @@
                     </li>
                 </ul>
             </div>
-            <div data-da=".places__head,768,last" class="places__slider-navigation slider-navigation">
+            <div
+                data-da=".places__head,768,last"
+                class="places__slider-navigation slider-navigation _desktop-only"
+            >
                 <button type="button" class="slider-navigation__arrow arrow-btn arrow-btn_prev">
                     <svg
                         width="24"
@@ -133,6 +136,7 @@
                     </svg>
                 </button>
             </div>
+            <div class="places__carousel-pagination slider-pagination"></div>
         </div>
     </div>
 </section>

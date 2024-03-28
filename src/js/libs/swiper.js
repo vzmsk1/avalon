@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import { remToPx } from '../utils/utils';
-import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
+import { Navigation, Thumbs, Autoplay, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.brands')) {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelector('.analogs')) {
         new Swiper('.analogs-swiper', {
-            modules: [Navigation],
+            modules: [Navigation, Pagination],
             speed: 1200,
             navigation: {
                 prevEl: '.analogs__navigation .arrow-btn_prev',
@@ -105,7 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     slidesPerView: 'auto',
                     spaceBetween: remToPx(1.6),
                     centeredSlides: true,
-                    loop: true
+                    loop: true,
+                    pagination: {
+                        el: '.analogs-pagination',
+                        type: 'bullets',
+                        clickable: true
+                    }
                 },
                 768: {
                     slidesPerView: 4,
@@ -135,27 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     if (document.querySelector('.benefits-work')) {
         new Swiper('.benefits-work-swiper', {
             modules: [Navigation],
             speed: 1200,
-           
+
             navigation: {
                 prevEl: '.benefits-work__navigation .arrow-btn_prev',
                 nextEl: '.benefits-work__navigation .arrow-btn_next'
             },
             breakpoints: {
                 0: {
-                    slidesPerView: 1,
-                   
-                    
-                },
-                
+                    slidesPerView: 1
+                }
             }
         });
     }
-
 
     if (document.querySelector('.news-c')) {
         new Swiper('.news-c-swiper', {
@@ -165,8 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navigation: {
                 prevEl: '.news-c__navigation .arrow-btn_prev',
                 nextEl: '.news-c__navigation .arrow-btn_next'
-            },
-            
+            }
         });
     }
 });

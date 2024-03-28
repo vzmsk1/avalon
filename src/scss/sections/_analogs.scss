@@ -1,8 +1,9 @@
 .analogs {
-    &__title {
+    &__pagination {
         @include small-tablet {
-            max-width: 36.8rem;
-            width: 100%;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 5;
         }
     }
 }
