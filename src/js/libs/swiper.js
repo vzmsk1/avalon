@@ -100,17 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 prevEl: '.analogs__navigation .arrow-btn_prev',
                 nextEl: '.analogs__navigation .arrow-btn_next'
             },
+            pagination: {
+                el: '.analogs-pagination',
+                type: 'bullets',
+                clickable: true
+            },
             breakpoints: {
                 0: {
                     slidesPerView: 'auto',
                     spaceBetween: remToPx(1.6),
                     centeredSlides: true,
-                    loop: true,
-                    pagination: {
-                        el: '.analogs-pagination',
-                        type: 'bullets',
-                        clickable: true
-                    }
+                    loop: true
                 },
                 768: {
                     slidesPerView: 4,
