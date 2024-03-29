@@ -2,6 +2,10 @@
     &__title {
         margin-bottom: 5rem;
 
+        @include small-tablet {
+            margin-bottom: 4rem;
+        }
+
         .home-page & {
             @media (max-width: 48em) {
                 margin-bottom: 6rem;
@@ -14,9 +18,21 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 2.4rem 2.8rem;
 
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+            width: 100%;
+        }
+
         li {
             display: grid;
             min-height: 51rem;
+
+            @include small-tablet {
+                min-height: initial;
+                display: flex;
+            }
 
             .home-page & {
                 @media (min-width: 48em) {
@@ -68,6 +84,12 @@
             grid-row: span 1;
             grid-column: span 2;
             gap: 2rem;
+
+            @include small-tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+            }
         }
 
         .home-page & {
@@ -105,8 +127,12 @@
         z-index: 2;
         overflow: hidden;
 
-        .home-page & {
+        @include small-tablet {
+            padding: 3rem 4rem;
+            width: 100%;
+        }
 
+        .home-page & {
             @media (min-width: 48em) {
                 &::after {
                     content: '';
@@ -130,9 +156,7 @@
             }
         }
 
-
         &.--large {
-
             p {
                 text-transform: uppercase;
             }
@@ -143,7 +167,6 @@
             }
         }
 
-
         &-text {
             display: flex;
             flex-direction: column;
@@ -152,6 +175,15 @@
             padding: 2.4rem;
             margin-bottom: 2rem;
             width: fit-content;
+
+            @include small-tablet {
+                flex-direction: row;
+                align-items: center;
+                padding: 0;
+                margin-bottom: 0;
+                width: 100%;
+                gap: 1rem;
+            }
 
             &:not(.home-page &) {
                 @include hover {
@@ -168,11 +200,35 @@
             }
         }
 
+        &-subtitle {
+            @include small-tablet {
+                font-weight: 600;
+                font-size: 3.2rem;
+                text-transform: uppercase;
+            }
+        }
+
         &-title {
-            &::after{
+            &::after {
                 flex: 0 0 3.4rem;
                 background-size: cover;
                 background-position: center;
+
+                @include small-tablet {
+                    flex: 0 0 4.8rem;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+
+            @include small-tablet {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: 600;
+                font-size: 3.2rem;
+                text-transform: uppercase;
+                margin: 0;
             }
 
             img {
@@ -184,6 +240,10 @@
             position: absolute;
             inset: 0;
             z-index: -1;
+
+            @include small-tablet {
+                display: none;
+            }
 
             img {
                 height: 100%;
