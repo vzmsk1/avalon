@@ -1,4 +1,4 @@
-import { bodyLock, bodyUnlock } from '../utils/utils';
+import { bodyLock, bodyLockToggle, bodyUnlock } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.communication')) {
@@ -133,6 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 selectionList.innerHTML = '';
             });
+        });
+    }
+
+    if (document.querySelector('.detailed')) {
+        const bookmarkMenu = document.querySelector('.detailed__block-bookmark-menu');
+        const bookmarkMenuButton = document.querySelector('.detailed__block-bookmark');
+
+        bookmarkMenuButton.addEventListener('click', () => {
+            bookmarkMenu.classList.toggle('--active');
         });
     }
 });
