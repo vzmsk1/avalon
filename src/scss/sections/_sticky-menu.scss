@@ -11,9 +11,15 @@
 
     @include small-tablet {
         display: block;
+        border-top: 0.1rem solid #a1a2a9;
     }
 
     &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
         .detailed {
             &__block {
                 padding: 0;
@@ -26,6 +32,7 @@
                     font-weight: 700;
                     font-size: 4.4rem;
                     line-height: 159%;
+                    width: fit-content;
 
                     sup {
                         font-size: 3.2rem;
@@ -40,6 +47,11 @@
 
                 &-button {
                     max-width: 100%;
+                    width: 100%;
+
+                    @include small-tablet {
+                        max-width: 37rem;
+                    }
                 }
 
                 &-bookmark {

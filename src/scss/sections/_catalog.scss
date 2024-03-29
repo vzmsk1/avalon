@@ -454,6 +454,22 @@
         z-index: 1;
         width: 100%;
 
+        &::after {
+            @include pseudo {
+                background-color: rgba(89, 88, 88, 0.59);
+                z-index: -1;
+                left: 12.4rem;
+                height: 100%;
+                top: 0;
+                width: 76.8rem;
+                clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+
+                @include small-tablet {
+                    display: none;
+                }
+            }
+        }
+
         @include small-tablet {
             display: flex;
             flex-direction: column-reverse;
@@ -467,10 +483,23 @@
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
-            clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
-            background-color: #efefef;
             max-width: 76.8rem;
             width: 100%;
+            position: relative;
+            z-index: 2;
+
+            &::after {
+                @include pseudo {
+                    inset: 0;
+                    z-index: -1;
+                    clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
+                    background-color: #efefef;
+
+                    @include small-tablet {
+                        display: none;
+                    }
+                }
+            }
 
             @include small-tablet {
                 max-width: 100%;
