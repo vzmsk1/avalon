@@ -2,6 +2,10 @@
     position: relative;
     z-index: 2;
 
+    @include small-tablet {
+        display: none;
+    }
+
     &::after {
         @include pseudo {
             width: 100%;
@@ -9,60 +13,28 @@
             bottom: 0;
             background-color: $gray;
             z-index: -1;
-
-            @include small-tablet {
-                display: none;
-            }
         }
     }
 
     &__title {
         max-width: 35.8rem;
         width: 100%;
-
-        @include small-tablet {
-            max-width: 100%;
-            margin-bottom: 2.4rem;
-            font-weight: 700;
-            font-size: 4.4rem;
-            line-height: 159%;
-        }
+        padding-top: 4rem;
     }
 
     &__content {
-        padding: 4rem 0;
         display: flex;
         justify-content: space-between;
         min-height: 61.4rem;
-
-        @include small-tablet {
-            min-height: initial;
-            padding: 3.2rem 2.4rem;
-            background-color: $gray;
-            display: flex;
-            flex-direction: column;
-        }
     }
 
     &__image {
-        position: absolute;
         @include sizes(84.5rem, 100%);
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -3.5rem;
+        margin-left: 5rem;
 
         img {
             height: 100%;
             object-fit: cover;
-        }
-
-        @include small-tablet {
-            position: initial;
-            order: -1;
-
-            @include sizes(100%, 40.6rem);
-            transform: translateX(0);
-            margin-bottom: 4rem;
         }
     }
 
@@ -70,12 +42,6 @@
         margin-top: auto;
         max-width: 40.9rem;
         width: 100%;
-
-        @include small-tablet {
-            max-width: 100%;
-            font-weight: 400;
-            font-size: 2.8rem;
-            line-height: 121%;
-        }
+        padding-bottom: 4rem;
     }
 }

@@ -132,6 +132,13 @@
         align-items: flex-end;
     }
 
+    &__summary-weight {
+        margin-left: 16.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
     &__pricing-info {
         position: relative;
         padding: 0.8rem 2.4rem;
@@ -191,6 +198,70 @@
 .table-cart-account {
     display: grid;
     row-gap: 2.8rem;
+
+    &__name {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        width: fit-content;
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        .tooltip {
+            border-radius: 50%;
+            border: 0.1rem solid $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 109%;
+            color: #000001;
+            cursor: pointer;
+            position: relative;
+
+            @include hover {
+                &::after {
+                    opacity: 1;
+                    pointer-events: auto;
+                    user-select: auto;
+                }
+            }
+
+            @include small-tablet {
+                display: none;
+            }
+
+            &::after {
+                @include pseudo {
+                    content: 'Вес в упаковке';
+                    padding: 0.6rem 0.5rem;
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    color: $grayTxt;
+                    box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+                    background: $white;
+                    top: -3.05rem;
+                    left: 50%;
+                    width: max-content;
+                    opacity: 0;
+                    transition: 0.3s opacity ease-out;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+
+            sub {
+                display: block;
+                margin-top: 0.3rem;
+            }
+        }
+    }
 
     &__row {
         display: grid;

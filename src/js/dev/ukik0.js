@@ -75,4 +75,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     searchMenu.addEventListener('click', (event) => event.stopPropagation());
+
+    if (document.querySelector('.catalog')) {
+        //add selection item on change checkbox
+        const selectionList = document.querySelector('.catalog__selection-list');
+        const checkboxes = document.querySelectorAll('.catalog__filters-block-item input');
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', ({ target: { value, checked } }) => {
+                const html = `
+                <li data-name="${value}" class="catalog__selection-item txt txt_16">
+                    <button>
+                        <span>${value}</span>
+                        <img src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </li>
+            `;
+
+                if (checked) {
+                    selectionList.insertAdjacentHTML('beforeend', html);
+
+                    removeSelectionItemOnClick();
+
+                    return;
+                }
+
+                removeSelectionItem(value);
+                removeSelectionItemOnClick();
+            });
+
+            function removeSelectionItem(value) {
+                document.querySelector(`[data-name="${value}"]`).remove();
+            }
+
+            function removeSelectionItemOnClick() {
+                Array.from(document.querySelectorAll('[data-name]'), (item) => {
+                    item.addEventListener('click', () => {
+                        const name = item.dataset.name;
+
+                        item.remove();
+
+                        removeSelectionCheckbox(name);
+                    });
+
+                    function removeSelectionCheckbox(value) {
+                        document.querySelector(`.catalog__filters-block-item input[value="${value}"]`).checked = false;
+                    }
+                });
+            }
+        });
+
+        //reset filters
+        const resetButton = document.querySelector('.catalog__filters-button.--reset');
+
+        resetButton.addEventListener('click', () => {
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+
+                selectionList.innerHTML = '';
+            });
+        });
+    }
 });
