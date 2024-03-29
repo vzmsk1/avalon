@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 768) {
                 bodyLock();
             }
+
             return;
         }
 
