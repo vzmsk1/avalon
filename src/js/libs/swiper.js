@@ -131,8 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextEl: '.gallery__navigation .arrow-btn_next'
             },
             breakpoints: {
+                0: {
+                    spaceBetween: remToPx(2.4)
+                },
                 768: {
-                    slidesPerView: 1.5,
+                    slidesPerView: 1.6,
                     spaceBetween: remToPx(2.8),
                     loop: true
                 }
