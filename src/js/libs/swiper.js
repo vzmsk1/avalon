@@ -159,12 +159,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelector('.news-c')) {
         new Swiper('.news-c-swiper', {
-            modules: [Navigation],
+            modules: [Navigation, Pagination],
             speed: 1200,
             slidesPerView: 1,
             navigation: {
                 prevEl: '.news-c__navigation .arrow-btn_prev',
                 nextEl: '.news-c__navigation .arrow-btn_next'
+            },
+            pagination: {
+                el: '.news-c-pagination',
+                type: 'bullets',
+                clickable: true
             }
         });
     }
