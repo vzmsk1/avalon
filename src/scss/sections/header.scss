@@ -682,20 +682,22 @@
         overflow: auto;
         transform: translateX(110%);
         transition: transform 0.3s ease;
+        min-width: 45rem;
 
         ._show-menu & {
             transform: translateX(0);
         }
 
         &__inner {
-            padding: 2.4rem;
             display: flex;
             flex-direction: column;
-            row-gap: 6.4rem;
         }
 
         &__close-btn {
             align-self: flex-end;
+            margin-top: 2.4rem;
+            margin-right: 2.4rem;
+            margin-bottom: 5.4rem;
 
             svg {
                 width: 4.8rem;
@@ -704,23 +706,37 @@
         }
 
         &__nav {
-            padding-left: 7rem;
             display: flex;
+            gap: 3.2rem;
             flex-direction: column;
-            text-align: right;
-            row-gap: 3.2rem;
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                gap: 2.5rem;
+
+                &:first-child {
+                    border-bottom: 0.1rem solid #a1a2a9;
+                }
+            }
+
+            &-item {
+                border-bottom: 0.1rem solid #efefef;
+                padding-bottom: 3.2rem;
+
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
         }
 
         &__nav-link {
             font-weight: 600;
-            font-size: 3.6rem;
+            font-size: 3.2rem;
             line-height: 5rem;
             text-transform: uppercase;
-
-            &:not(:last-child) {
-                padding-bottom: 3.2rem;
-                border-bottom: 1px solid $grayTxt;
-            }
+            padding-right: 2.4rem;
         }
     }
 }

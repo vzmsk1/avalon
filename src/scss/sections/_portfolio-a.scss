@@ -1,0 +1,157 @@
+.portfolio-a {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        width: 76.4rem;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+        }
+
+        ul {
+            margin-bottom: 2rem;
+        }
+
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            font-size: 1.8rem;
+            font-weight: 400;
+            padding-left: 1.5rem;
+            display: block;
+            &::before {
+                position: absolute;
+                content:'';
+                width: 0.8rem;
+                height: 0.8rem;
+                background-image: url(./assets/images/sections/services-main/tringls.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__block {
+        background-color: $gray;
+        width: 55.4rem;
+
+        &-content {
+            padding-left: 4rem;
+            padding-right: 4rem;
+            padding-top: 4rem;
+        }
+
+        &-title {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 5.6rem;
+            margin-bottom: 2rem;
+            width: 33rem;
+        }
+
+        &-text {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 2.8rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-width: 48em) {
+
+    .portfolio-a {
+
+        &__wrapper {
+
+            flex-direction: column;
+        }
+
+        &__title {
+            margin-bottom: 3.2rem;
+        }
+
+        &__content {
+            width: 100%;
+            margin-bottom: 4rem;
+            p {
+                font-size: 2.4rem;
+                line-height: 3.4rem;
+                margin-bottom: 3.2rem;
+            }
+
+            strong {
+                margin-bottom: 6.4rem;
+                font-size: 3.2rem;
+            }
+
+         
+
+            li {
+                font-size: 2.8rem;
+                line-height: 3.4rem;
+                margin-bottom: 1.4rem;
+                padding-left: 2.6rem;
+                &::before {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    top: 1.7rem;
+                }
+            }
+
+            ul {
+                margin-bottom: 2.4rem; 
+            }
+        }
+
+        &__block {
+            width: 100%;
+
+            &-title {
+                font-size: 4.4rem;
+                font-weight: 700;
+                line-height: 5.6rem;
+                margin-bottom: 2.4rem;
+                width: 29rem;
+            }
+
+            &-text {
+                font-size: 2.4rem;
+                line-height: 3.4rem;
+                margin-bottom: 4.8rem;
+            }
+        }
+    }
+
+ }
