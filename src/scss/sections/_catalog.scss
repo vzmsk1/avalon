@@ -562,7 +562,9 @@
 
         .select {
             &__content {
-                display: block !important;
+                &:not(.account-page &) {
+                    display: block !important;
+                }
             }
 
             &__value {
