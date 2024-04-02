@@ -1,5 +1,4 @@
 .gallery {
-
     .container {
         width: 100%;
         padding-left: 10rem;
@@ -24,8 +23,11 @@
     }
 
     &__image {
-        width: 87.9rem;
-        height: 66rem;
+        width: 100%;
+        height: 85.3rem;
+        transform: scaleY(0.8);
+        transition: 0.3s transform ease-out;
+
         img {
             width: 100%;
             height: 100%;
@@ -35,16 +37,12 @@
 
     .swiper-slide-active {
         .gallery__image {
-            width: 113.7rem;
-            height: 85.3rem;
+            transform: scale(1);
         }
     }
 }
 
-
 @media (max-width: 48em) {
-
-
     .gallery {
         position: relative;
         .container {
@@ -58,23 +56,10 @@
             right: 2rem;
             z-index: 3;
         }
-        .swiper-slide-active {
-
-            .gallery__image {
-                width: 53.4rem;
-                height: 40rem;
-            }
-          
-        }
 
         &__image {
-            width: 46.8rem;
             height: 35.2rem;
+            transform: scale(1);
         }
     }
-
 }
-
-
-
-

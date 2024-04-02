@@ -131,8 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextEl: '.gallery__navigation .arrow-btn_next'
             },
             breakpoints: {
+                0: {
+                    spaceBetween: remToPx(2.4)
+                },
                 768: {
-                    slidesPerView: 1.5,
+                    slidesPerView: 1.6,
                     spaceBetween: remToPx(2.8),
                     loop: true
                 }
@@ -159,12 +162,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelector('.news-c')) {
         new Swiper('.news-c-swiper', {
-            modules: [Navigation],
+            modules: [Navigation, Pagination],
             speed: 1200,
             slidesPerView: 1,
             navigation: {
                 prevEl: '.news-c__navigation .arrow-btn_prev',
                 nextEl: '.news-c__navigation .arrow-btn_next'
+            },
+            pagination: {
+                el: '.news-c-pagination',
+                type: 'bullets',
+                clickable: true
             }
         });
     }

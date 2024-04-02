@@ -1,6 +1,10 @@
 .answers {
     &__title {
         margin-bottom: 5rem;
+
+        @include small-tablet {
+            margin-bottom: 5.8rem;
+        }
     }
 
     &__wrapper {
@@ -9,23 +13,34 @@
     }
 
     &__content {
-        display: flex;
         flex-direction: column;
-        width: 99.2rem;
-        min-width: 99.2rem;
+        max-width: 99.2rem;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
         background-color: $gray;
         padding: 6rem;
         height: fit-content;
+
+        @media (min-width: 48em) {
+            display: none;
+        }
+
+        @include small-tablet {
+            position: static;
+            max-width: 100%;
+        }
+
         strong {
             display: block;
             font-size: 2.4rem;
             font-weight: 600;
             margin-bottom: 2rem;
             line-height: 3.3rem;
+            text-transform: uppercase;
         }
 
-        
-        
         p {
             font-size: 1.8rem;
             line-height: 2.5rem;
@@ -36,7 +51,6 @@
         p:last-child {
             margin-bottom: 0;
         }
-
 
         ul {
             margin-bottom: 2rem;
@@ -51,7 +65,7 @@
             display: block;
             &::before {
                 position: absolute;
-                content:'';
+                content: '';
                 width: 0.8rem;
                 height: 0.8rem;
                 background-image: url(./assets/images/sections/services-main/tringls.svg);
@@ -67,57 +81,115 @@
         }
     }
 
-    &__box {
-        width: 70rem;
+    &__block {
+        width: 100%;
+        position: relative;
+    }
 
-        border-top: 0.1rem solid $grayTxt;
+    &__box {
+        width: 100%;
+
+        &.--active {
+            @media (min-width: 48em) {
+                .answers__content {
+                    display: block;
+                }
+
+                .answers__box-heading {
+                    span {
+                        margin-left: 3rem;
+                    }
+
+                    svg {
+                        &:first-child {
+                            opacity: 1;
+                        }
+
+                        &:last-child {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-heading {
+            border-top: 0.1rem solid $grayTxt;
+            max-width: 70rem;
+            width: 100%;
+            position: relative;
+        }
+
         &-btn {
             display: flex;
-            align-items:center;
-            justify-content: space-between;
+            align-items: center;
             width: 100%;
             padding-top: 3.2rem;
             padding-bottom: 3.2rem;
+
+            @include small-tablet {
+                padding-top: 4rem;
+                justify-content: space-between;
+            }
+
             span {
                 display: block;
                 font-size: 2rem;
                 font-weight: 600;
+                margin-left: 0;
+                transition: 0.3s margin-left ease-out;
             }
 
             svg {
                 width: 2.4rem;
                 height: 2.4rem;
-                transition: 0.2s ease-in-out;
+                position: absolute;
+                top: 50%;
+
+                @include small-tablet {
+                    position: static;
+                    transition: 0.3s transform ease-out;
+
+                    &:first-child {
+                        display: none;
+                    }
+                }
+
+                @media (min-width: 48em) {
+                    transform: translateY(-50%);
+                    transition: 0.3s opacity ease-out;
+                    opacity: 0;
+
+                    &:last-child {
+                        right: 0;
+                        opacity: 1;
+                    }
+
+                    &:first-child {
+                        left: 0;
+                        opacity: 0;
+                    }
+                }
             }
-
-
         }
 
-
-        ._is-active {
-            svg {
-                transform: rotate(90deg);
-                transition: 0.2s ease-in-out;
+        @include small-tablet {
+            ._is-active {
+                svg {
+                    transform: rotate(-90deg);
+                    transition: 0.2s ease-in-out;
+                }
             }
         }
-
-       
 
         &-text {
-             padding-bottom: 3.2rem;
+            padding-bottom: 3.2rem;
         }
-    }
-
-    &__box:last-child {
-        border-bottom: 0.1rem solid $grayTxt;
     }
 }
 
-
 @media (max-width: 48em) {
-
     .answers {
-
         &__wrapper {
             flex-direction: column-reverse;
         }
@@ -152,12 +224,18 @@
             }
 
             ul {
-                margin-bottom: 2.4rem; 
+                margin-bottom: 2.4rem;
             }
         }
 
         &__box {
             width: 100%;
+
+            @include small-tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
 
             &-btn {
                 span {

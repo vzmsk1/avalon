@@ -144,4 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
             bookmarkMenu.classList.toggle('--active');
         });
     }
+
+    if (document.querySelector('.answers')) {
+        Array.from(document.querySelectorAll('.answers__box'), (box) => {
+            box.addEventListener('click', () => {
+                resetActiveClasses();
+
+                box.classList.add('--active');
+            });
+
+            function resetActiveClasses() {
+                Array.from(document.querySelectorAll('.answers__box'), (box) => {
+                    box.classList.remove('--active');
+                });
+            }
+        });
+    }
 });
