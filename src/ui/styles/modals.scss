@@ -6,15 +6,18 @@
     left: 0;
     width: 100%;
     height: 100%;
+    visibility: hidden;
     background-color: rgba(23, 23, 23, 0);
     backdrop-filter: blur(0);
-    pointer-events: none;
     transition:
         background-color 0.8s ease,
         backdrop-filter 0.5s ease;
-    .modal-show & {
+    .modal-show &,
+    ._show-menu &,
+    ._show-contacts & {
         background-color: rgba(23, 23, 23, 0.3);
         backdrop-filter: blur(1.6rem);
+        visibility: visible;
     }
 }
 

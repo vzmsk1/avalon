@@ -1,4 +1,4 @@
-import { bodyLock, bodyLockStatus, bodyUnlock } from '../utils/utils';
+import { bodyLock, bodyLockToggle, bodyUnlock } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.communication')) {
@@ -49,6 +49,116 @@ document.addEventListener('DOMContentLoaded', () => {
             filtersMenu.classList.remove('--active');
 
             bodyUnlock();
+        });
+    }
+
+    const searchInput = document.querySelector('.search__input input');
+    const searchMenu = document.querySelector('.header__search-menu');
+
+    searchInput.addEventListener('focusin', (event) => {
+        document.documentElement.classList.add('_show-search');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === searchInput || event.target.closest('.search-btn')) {
+            document.documentElement.classList.add('_show-search');
+
+            if (window.innerWidth <= 768) {
+                bodyLock();
+            }
+
+            return;
+        }
+
+        document.documentElement.classList.remove('_show-search');
+        bodyUnlock();
+    });
+
+    searchMenu.addEventListener('click', (event) => event.stopPropagation());
+
+    if (document.querySelector('.catalog')) {
+        //add selection item on change checkbox
+        const selectionList = document.querySelector('.catalog__selection-list');
+        const checkboxes = document.querySelectorAll('.catalog__filters-block-item input');
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', ({ target: { value, checked } }) => {
+                const html = `
+                <li data-name="${value}" class="catalog__selection-item txt txt_16">
+                    <button>
+                        <span>${value}</span>
+                        <img src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </li>
+            `;
+
+                if (checked) {
+                    selectionList.insertAdjacentHTML('beforeend', html);
+
+                    removeSelectionItemOnClick();
+
+                    return;
+                }
+
+                removeSelectionItem(value);
+                removeSelectionItemOnClick();
+            });
+
+            function removeSelectionItem(value) {
+                document.querySelector(`[data-name="${value}"]`).remove();
+            }
+
+            function removeSelectionItemOnClick() {
+                Array.from(document.querySelectorAll('[data-name]'), (item) => {
+                    item.addEventListener('click', () => {
+                        const name = item.dataset.name;
+
+                        item.remove();
+
+                        removeSelectionCheckbox(name);
+                    });
+
+                    function removeSelectionCheckbox(value) {
+                        document.querySelector(`.catalog__filters-block-item input[value="${value}"]`).checked = false;
+                    }
+                });
+            }
+        });
+
+        //reset filters
+        const resetButton = document.querySelector('.catalog__filters-button.--reset');
+
+        resetButton.addEventListener('click', () => {
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+
+                selectionList.innerHTML = '';
+            });
+        });
+    }
+
+    if (document.querySelector('.detailed')) {
+        const bookmarkMenu = document.querySelector('.detailed__block-bookmark-menu');
+        const bookmarkMenuButton = document.querySelector('.detailed__block-bookmark');
+
+        bookmarkMenuButton.addEventListener('click', () => {
+            bookmarkMenu.classList.toggle('--active');
+        });
+    }
+
+    if (document.querySelector('.answers')) {
+        Array.from(document.querySelectorAll('.answers__box'), (box) => {
+            box.addEventListener('click', () => {
+                resetActiveClasses();
+
+                box.classList.add('--active');
+            });
+
+            function resetActiveClasses() {
+                Array.from(document.querySelectorAll('.answers__box'), (box) => {
+                    box.classList.remove('--active');
+                });
+            }
         });
     }
 });

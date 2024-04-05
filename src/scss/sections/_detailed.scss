@@ -81,6 +81,16 @@
             flex: 1 1 100%;
             width: 100%;
         }
+
+        &-subcontent {
+            @include small-tablet {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 1.6rem;
+            }
+        }
     }
 
     &__title {
@@ -100,6 +110,7 @@
             font-weight: 400;
             font-size: 2.8rem;
             line-height: 121%;
+            margin-bottom: 0;
         }
     }
 
@@ -135,6 +146,7 @@
             gap: 0.8rem;
             width: 100%;
             justify-content: space-between;
+            position: relative;
 
             @include small-tablet {
                 justify-content: flex-end;
@@ -155,15 +167,127 @@
         }
 
         &-bookmark {
-            @include sizes(6rem, 6rem);
+            width: 6rem;
+            height: 6rem;
 
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: $gray;
 
+            @include small-tablet {
+                width: 8rem;
+                height: 8rem;
+            }
+
             svg {
                 @include sizes(2.4rem, 2.4rem);
+
+                @include small-tablet {
+                    @include sizes(4.8rem, 4.8rem);
+                }
+            }
+
+            &-wrapper {
+                @include hover {
+                    .detailed__block-bookmark-menu {
+                        opacity: 1;
+                        user-select: auto;
+                        pointer-events: auto;
+                    }
+                }
+            }
+
+            &-menu {
+                position: absolute;
+                left: 0;
+                top: calc(100% + 0.8rem);
+                width: 100%;
+                padding: 2.4rem;
+                background-color: $white;
+                border: 0.1rem solid #a1a2a9;
+                z-index: 5;
+                opacity: 0;
+                transition:
+                    0.3s opacity ease-out,
+                    0.3s transform ease-out;
+                user-select: none;
+                pointer-events: none;
+
+                @include small-tablet {
+                    position: fixed;
+                    bottom: 0;
+                    padding: 3.2rem 2.4rem;
+                    top: auto;
+                    transform: translateY(100%);
+                    opacity: 1;
+                    pointer-events: auto;
+                    user-select: auto;
+                    z-index: 51;
+
+                    &.--active {
+                        transform: translateY(0);
+                    }
+                }
+
+                &::after {
+                    @include pseudo {
+                        inset: 0;
+                        top: -0.8rem;
+                        width: 100%;
+                        z-index: -1;
+
+                        @include small-tablet {
+                            display: none;
+                        }
+                    }
+                }
+
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                    margin-bottom: 1.6rem;
+
+                    @include small-tablet {
+                        gap: 4.8rem;
+                        margin-bottom: 4.8rem;
+                    }
+                }
+
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    &-counter {
+                        font-size: 1.6rem;
+                        color: #000001;
+
+                        @include small-tablet {
+                            font-size: 2.48rem;
+                            line-height: 121%;
+                        }
+                    }
+                }
+
+                &-link {
+                    margin-bottom: 2.4rem;
+
+                    @include small-tablet {
+                        margin-bottom: 4.8rem;
+                    }
+                }
+
+                &-button {
+                    padding: 1.6rem;
+                    width: 100%;
+
+                    @include small-tablet {
+                        padding: 3.3rem;
+                    }
+                }
             }
         }
 

@@ -9,7 +9,7 @@
         <h1 class="catalog__title h h_h1">Световое оборудование</h1>
 
         <ul class="catalog__categories-list">
-            <div class="catalog__categories-list-wrap">
+            <div class="catalog__categories-list-inner">
                 <li class="catalog__categories-item categories-item">
                     <a href="#" class="categories-item__inner">
                         <figure class="categories-item__image">
@@ -49,7 +49,7 @@
                     </a>
                 </li>
             </div>
-            <div class="catalog__categories-list-wrap catalog__categories-list-wrap--two">
+            <div class="catalog__categories-list-inner catalog__categories-list-inner--two">
                 <li class="catalog__categories-item categories-item">
                     <a href="#" class="categories-item__inner">
                         <figure class="categories-item__image">
@@ -89,10 +89,10 @@
                     </a>
                 </li>
             </div>
-           
+            
         </ul>
-        <button class="catalog__products-button-categories catalog__products-button">
-            <span>Смотреть все</span>
+        <button class="catalog__categories-all">
+            Смотреть все
         </button>
         <div class="catalog__content">
             <aside class="catalog__filters">
@@ -128,19 +128,34 @@
                             <ul class="catalog__filters-block-list">
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="APOGEE"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">APOGEE</span>
                                     </label>
                                 </li>
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="ARTURIA"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">ARTURIA </span>
                                     </label>
                                 </li>
                                 <li class="catalog__filters-block-item">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="form[]" class="checkbox__input" />
+                                        <input
+                                            type="checkbox"
+                                            value="Alctron"
+                                            name="form[]"
+                                            class="checkbox__input"
+                                        />
                                         <span class="checkbox__txt">Alctron</span>
                                     </label>
                                 </li>
@@ -361,11 +376,11 @@
                                 <span class="txt txt_20 txt_semibold">Применить</span>
                             </button>
 
-                            <label for="reset-button">
-                                <input id="reset-button" type="reset" value="Сбросить" />
+                            <button type="button" class="catalog__filters-button --reset">
+                                <span> Сбросить </span>
 
                                 <img src="./assets/images/icons/trash.svg" alt="" />
-                            </label>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -387,43 +402,7 @@
                 </div>
 
                 <div class="catalog__selection">
-                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list">
-                        <!-- <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li>
-                        <li class="catalog__selection-item txt txt_16">
-                            <button>
-                                <span>Alctron</span>
-
-                                <img src="./assets/images/icons/close.svg" alt="" />
-                            </button>
-                        </li> -->
-                    </ul>
+                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list"></ul>
 
                     <div class="catalog__selection-sorting">
                         <div class="dropdown">
@@ -436,6 +415,8 @@
                     </div>
 
                     <button type="button" class="catalog__selection-button _mobile-only">
+                        <span> Фильтры </span>
+
                         <svg
                             width="24"
                             height="24"

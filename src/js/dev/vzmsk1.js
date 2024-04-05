@@ -1,9 +1,17 @@
 // swiper
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 // utils
-import { _slideToggle, _slideUp, removeClasses, remToPx } from '../utils/utils';
+import {
+    _slideToggle,
+    _slideUp,
+    bodyLockToggle,
+    bodyUnlock,
+    menuClose,
+    removeClasses,
+    remToPx
+} from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', function () {
     const doc = document.documentElement;
@@ -15,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const initSliders = () => {
         if (document.querySelector('.hero__carousel')) {
             new Swiper('.hero__carousel', {
-                modules: [Pagination, EffectFade, Autoplay, Navigation],
+                modules: [Pagination, EffectFade, Autoplay],
                 speed: 800,
                 loop: true,
                 autoplay: {
@@ -28,19 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 pagination: {
                     el: '.hero__carousel-pagination',
-                    type: mm.matches ? 'fraction' : 'bullets',
+                    type: 'bullets',
                     renderBullet: function (index, className) {
                         const idx = index >= 10 ? ++index : '0' + ++index;
-                        return `<span class="${className}">${idx}</span>`;
-                    },
-                    formatFractionCurrent: function (number) {
-                        return number;
+                        return `<span class="${className}">${mm.matches ? '' : idx}</span>`;
                     },
                     clickable: true
-                },
-                navigation: {
-                    prevEl: '.hero__slider-navigation .arrow-btn_prev',
-                    nextEl: '.hero__slider-navigation .arrow-btn_next'
                 }
             });
         }
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 slide.classList.add('_large');
             }
             new Swiper('.places__slider', {
-                modules: [Navigation, Autoplay],
+                modules: [Navigation, Autoplay, Pagination],
                 speed: 800,
                 loop: true,
                 autoplay: {
@@ -65,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextEl: '.places__slider-navigation .arrow-btn_next'
                 },
                 breakpoints: {
+                    0: {
+                        centeredSlides: true,
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.places__carousel-pagination',
+                            type: 'bullets',
+                            clickable: true
+                        }
+                    },
                     768: {
                         freeMode: true,
                         slidesPerView: 'auto'
@@ -75,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.querySelectorAll('.shopify-carousel__slider').length) {
             document.querySelectorAll('.shopify-carousel__slider').forEach((slider) => {
                 new Swiper(slider, {
-                    modules: [Navigation, Autoplay],
+                    modules: [Navigation, Autoplay, Pagination],
                     speed: 800,
                     loop: true,
                     autoplay: {
@@ -87,6 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         prevEl: slider.closest('section').querySelector('.arrow-btn_prev'),
                         nextEl: slider.closest('section').querySelector('.arrow-btn_next')
                     },
+                    pagination: {
+                        el: slider.closest('section').querySelector('.slider-pagination'),
+                        type: 'bullets',
+                        clickable: true
+                    },
                     breakpoints: {
                         768: {
                             slidesPerView: 4
@@ -97,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (document.querySelector('.news__slider')) {
             new Swiper('.news__slider', {
-                modules: [Navigation, Autoplay],
+                modules: [Navigation, Autoplay, Pagination],
                 speed: 800,
                 rewind: true,
                 autoplay: {
@@ -108,6 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 navigation: {
                     prevEl: '.news__slider-navigation .arrow-btn_prev',
                     nextEl: '.news__slider-navigation .arrow-btn_next'
+                },
+                pagination: {
+                    el: doc.querySelector('.news__slider-pagination'),
+                    type: 'bullets',
+                    clickable: true
                 },
                 breakpoints: {
                     768: {
@@ -283,6 +303,14 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     setCurrentYear();
 
+    // close mobile search
+    if (document.querySelector('.header__close-search-btn')) {
+        document.querySelector('.header__close-search-btn').addEventListener('click', function () {
+            document.documentElement.classList.remove('_show-search');
+            bodyUnlock();
+        });
+    }
+
     // handler functions
     const mouseoverHandler = (e) => {
         const target = e.target;
@@ -307,9 +335,41 @@ document.addEventListener('DOMContentLoaded', function () {
             if (subnav) subnav.classList.add('_is-active');
         }
     };
+    const clickHandler = (e) => {
+        // show mobile contacts
+        if (e.target.closest('.menu-bar__item-content_contacts')) {
+            document.documentElement.classList.toggle('_show-contacts');
+            bodyLockToggle();
+        }
+        if (
+            document.documentElement.classList.contains('_show-contacts') &&
+            !e.target.closest('.menu-bar__item-content_contacts') &&
+            !e.target.closest('.menu-bar__contacts')
+        ) {
+            document.documentElement.classList.remove('_show-contacts');
+            bodyUnlock();
+        }
+    };
+
+    document.querySelector('.header__close-search-btn').addEventListener('click', function () {
+        document.documentElement.classList.remove('_show-search');
+        bodyUnlock();
+    });
 
     // document events
     document.addEventListener('mouseover', mouseoverHandler);
+    window.addEventListener('click', clickHandler);
     // on media query change
-    mm.addEventListener('change', initSliders);
+    mm.addEventListener('change', function () {
+        initSliders();
+
+        if (!mm.matches) {
+            if (document.documentElement.classList.contains('_show-menu')) {
+                menuClose();
+            }
+            if (document.documentElement.classList.contains('_show-search')) {
+                bodyUnlock();
+            }
+        }
+    });
 });

@@ -29,12 +29,9 @@ body {
 @import './set';
 
 // body
-body {
-    .lock & {
+html {
+    &.lock {
         overflow: hidden;
-        touch-action: none;
-    }
-    .loaded & {
     }
 }
 
@@ -164,3 +161,102 @@ main {
 @import './dev/markusDM.scss';
 @import './dev/ukik0.scss';
 @import './dev/kie6er.scss';
+
+.products-list-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 4rem;
+    transform: translateY(100%);
+
+    // .products-list-header__inner
+
+    &__inner {
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        column-gap: 6rem;
+        row-gap: 7.3rem;
+        background-color: #ffffff;
+        box-shadow: 1.2rem 2rem 11rem rgba(74, 75, 99, 0.15);
+        border-radius: 1.5rem;
+    }
+
+    // .products-list-header__group
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+    }
+
+    // .products-list-header__heading
+
+    &__heading {
+        padding-bottom: 0.8rem;
+        font-size: 2rem;
+        line-height: 150%;
+        text-transform: uppercase;
+        width: 100%;
+        border-bottom: 1px solid rgba(150, 150, 150, 0.6);
+    }
+
+    // .products-list-header__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+    }
+
+    // .products-list-header__list-item
+
+    &__list-item {
+    }
+
+    // .products-list-header__list-link
+
+    &__list-link {
+        line-height: 160%;
+        color: #636163;
+    }
+}
+
+.services-list-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 4rem;
+    transform: translateY(100%);
+
+    // .services-list-header__inner
+
+    &__inner {
+        padding: 4rem;
+        background-color: #ffffff;
+        box-shadow: 1.2rem 2rem 11rem rgba(74, 75, 99, 0.15);
+        border-radius: 1.5rem;
+    }
+
+    // .services-list-header__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+
+    // .services-list-header__list-item
+
+    &__list-item {
+    }
+
+    // .services-list-header__list-link
+
+    &__list-link {
+        font-size: 2rem;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #636163;
+    }
+}
