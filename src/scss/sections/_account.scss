@@ -10,16 +10,24 @@
 
     &__body {
         display: grid;
-        grid-template-columns: 3fr 8fr;
-        align-items: start;
-        column-gap: 2.8rem;
 
-        &.grid {
-            grid-template-columns: 3fr 5fr 4fr;
+        width: 100%;
+
+        @media (min-width: 48em) {
+            grid-template-columns: 3fr 8fr;
+            align-items: start;
+            column-gap: 2.8rem;
+
+            &.grid {
+                grid-template-columns: 3fr 5fr 4fr;
+            }
         }
     }
 
     &__side-bar {
+        @media (max-width: 48em) {
+            display: none;
+        }
     }
 
     &__aside {
@@ -106,15 +114,29 @@
     }
 }
 
-.cart-account {
+.order-account {
     display: flex;
     flex-direction: column;
-    row-gap: 7.8rem;
+    row-gap: 7.5rem;
+
+    &__btn {
+        @media (max-width: 48em) {
+            display: none;
+        }
+    }
 
     &__group {
         display: flex;
         flex-direction: column;
         row-gap: 5rem;
+
+        @media (max-width: 48em) {
+            row-gap: 2.4rem;
+
+            &:last-child {
+                row-gap: 4rem;
+            }
+        }
     }
 
     &__head {
@@ -123,13 +145,28 @@
         align-items: flex-end;
     }
 
+    &__heading {
+        @media (max-width: 48em) {
+            &.h {
+                font-size: 4.4rem;
+            }
+        }
+    }
+
     &__table {
     }
 
     &__footer {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
+        row-gap: 2.4rem;
+
+        @media (min-width: 48em) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: normal;
+        }
     }
 
     &__summary-weight {
@@ -137,43 +174,65 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
+
+        @media (max-width: 48em) {
+            margin-left: 0;
+
+            order: -1;
+            gap: 1.6rem;
+        }
     }
 
     &__pricing-info {
         position: relative;
-        padding: 0.8rem 2.4rem;
-        background-color: $gray;
 
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            width: 2.1rem;
-            height: 3.8rem;
-            background-color: $black;
-        }
+        @media (min-width: 48em) {
+            padding: 0.8rem 2.4rem;
 
-        &::before {
-            top: 0;
-            left: 0;
-            clip-path: polygon(0 100%, 0 0, 100% 0);
-        }
+            background-color: $gray;
 
-        &::after {
-            right: 0;
-            bottom: 0;
-            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2.1rem;
+                height: 3.8rem;
+                background-color: $black;
+            }
+
+            &::before {
+                top: 0;
+                left: 0;
+                clip-path: polygon(0 100%, 0 0, 100% 0);
+            }
+
+            &::after {
+                right: 0;
+                bottom: 0;
+                clip-path: polygon(0 100%, 100% 100%, 100% 0);
+            }
         }
     }
 
     &__pricing-info-txt {
-        max-width: 35.9rem;
+        @media (min-width: 48em) {
+            max-width: 35.9rem;
+        }
     }
 
     &__total {
         display: flex;
         align-items: flex-end;
         column-gap: 1rem;
+
+        @media (max-width: 48em) {
+            order: -1;
+            column-gap: 2.4rem;
+
+            font-weight: 600;
+            font-size: 3.6rem;
+            line-height: 5rem;
+        }
     }
 
     &__total-price {
@@ -188,21 +247,43 @@
             text-transform: uppercase;
             transform: translateY(0.3rem);
         }
+
+        @media (max-width: 48em) {
+            column-gap: 2.4rem;
+
+            span {
+                font-size: 4.4rem;
+                transform: none;
+            }
+        }
     }
 
     &__discount {
         color: $grayTxt;
+
+        @media (max-width: 48em) {
+            font-size: 2.8rem;
+            line-height: 4rem;
+        }
     }
 }
 
-.table-cart-account {
+.table-order-account {
     display: grid;
-    row-gap: 2.8rem;
+
+    @media (min-width: 48em) {
+        row-gap: 2.8rem;
+    }
 
     &__name {
         text-decoration: underline;
         text-decoration-skip-ink: none;
         width: fit-content;
+
+        @media (min-width: 48em) {
+            line-height: 5rem;
+            text-transform: uppercase;
+        }
     }
 
     &__heading {
@@ -264,29 +345,98 @@
     }
 
     &__row {
+        position: relative;
+
         display: grid;
-        grid-template-columns: 4fr repeat(5, 1fr);
-        align-items: center;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+
         column-gap: 2rem;
 
-        &:not(:last-child) {
-            padding-bottom: 2.8rem;
+        width: 100%;
+
+        @media (min-width: 48em) {
+            grid-template-columns: 4fr repeat(5, 1fr);
+            align-items: center;
+
+            &:not(:last-child) {
+                padding-bottom: 2.8rem;
+                border-bottom: 1px solid $grayTxt;
+            }
+        }
+
+        @media (max-width: 48em) {
+            padding: 2.4rem 0;
+
             border-bottom: 1px solid $grayTxt;
+
+            &:first-child {
+                display: none;
+            }
+            &:nth-child(2) {
+                border-top: 1px solid $grayTxt;
+            }
+        }
+    }
+
+    &__txt {
+        @media (max-width: 48em) {
+            font-size: 2.8rem;
+            line-height: 4rem;
+
+            &_total {
+                grid-column: 1 / 2;
+                grid-row: 3/4;
+
+                font-weight: 700;
+                font-size: 4rem;
+                line-height: 7rem;
+            }
         }
     }
 
     &__quantity {
         justify-self: start;
+
+        @media (max-width: 48em) {
+            position: absolute;
+            bottom: 2.4rem;
+            right: 0;
+
+            + .table-order-account__txt {
+                margin-bottom: 6rem;
+
+                grid-column: 1 / 2;
+
+                &::before {
+                    content: 'Вес ';
+
+                    font-size: 2.8rem;
+                    line-height: 4rem;
+                }
+            }
+        }
     }
 
     &__group {
         display: flex;
         flex-direction: column;
         row-gap: 0.4rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 2.5rem;
+
+            row-gap: 0.8rem;
+        }
     }
 
     &__subtitle {
         color: $grayTxt;
+
+        @media (max-width: 48em) {
+            font-size: 2.4rem;
+            line-height: 5rem;
+        }
     }
 
     &__delete-btn {
@@ -296,39 +446,150 @@
             width: 2.4rem;
             height: 2.4rem;
         }
+
+        @media (max-width: 48em) {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            align-self: start;
+
+            svg {
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
     }
 }
 
-.form-cart-account {
+.form-order-account {
     display: flex;
     flex-direction: column;
 
+    .select {
+        &._is-filled .select__content {
+            display: inline-block;
+        }
+        .select__content {
+            display: none;
+        }
+    }
+
     &__dropdown {
-        grid-column: 1/2;
+        @media (min-width: 48em) {
+            grid-column: 1/2;
+        }
     }
 
     &__fields {
-        margin-bottom: 2.8rem;
+        margin-bottom: 4.8rem;
+
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.8rem;
+        row-gap: 2.4rem;
+
+        width: 100%;
+
+        @media (min-width: 48em) {
+            margin-bottom: 2.8rem;
+
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.8rem;
+        }
     }
 
     &__input {
         &.input_textarea {
-            grid-column: 2 / 3;
-            grid-row: 1 / 4;
-            height: 100%;
             border: 1px solid $grayTxt;
+            height: 30.2rem;
 
             textarea {
+                height: 100%;
+            }
+        }
+
+        @media (min-width: 48em) {
+            &.input_textarea {
+                grid-column: 2 / 3;
+                grid-row: 1 / 4;
                 height: 100%;
             }
         }
     }
 
     &__btn {
-        align-self: flex-start;
+        @media (min-width: 48em) {
+            align-self: flex-start;
+        }
+    }
+}
+
+.project-empty-account {
+    padding-top: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 48em) {
+        padding-top: 5.3rem;
+        padding-left: 16rem;
+
+        flex-direction: row;
+        column-gap: 18.9rem;
+    }
+
+    &__icon {
+        svg {
+            width: 23.3rem;
+            height: 26rem;
+        }
+
+        @media (max-width: 48em) {
+            margin-bottom: 5.4rem;
+
+            svg {
+                width: 19rem;
+                height: 20rem;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media (max-width: 48em) {
+            align-items: center;
+
+            width: 100%;
+
+            text-align: center;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 2rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 3rem;
+
+        max-width: 37.8rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 6rem;
+
+            max-width: 50.8rem;
+        }
+    }
+
+    &__btn {
+        @media (max-width: 48em) {
+            width: 100%;
+        }
     }
 }
 
@@ -341,28 +602,88 @@
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 6.4rem;
+
+            row-gap: 3.2rem;
+        }
     }
 
     &__btn {
-        align-self: flex-start;
+        @media (min-width: 48em) {
+            align-self: flex-start;
+        }
     }
 }
 
 .item-projects-account {
+    position: relative;
     padding: 3.2rem;
     display: flex;
     flex-direction: column;
     row-gap: 3.2rem;
     background-color: $gray;
 
+    @media (max-width: 48em) {
+        padding: 3.2rem 2.4rem;
+
+        row-gap: 4.8rem;
+    }
+
+    &__options-btn {
+        svg {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+
+        @media (min-width: 48em) {
+            display: none;
+        }
+    }
+
     &__head {
         display: flex;
         justify-content: space-between;
     }
 
+    &__heading {
+        font-size: 3.6rem;
+
+        @media (max-width: 48em) {
+            font-size: 4rem;
+            line-height: 7rem;
+        }
+    }
+
     &__actions {
         display: flex;
         column-gap: 3.2rem;
+
+        @media (max-width: 48em) {
+            position: absolute;
+            top: 9rem;
+            right: 2rem;
+
+            flex-direction: column;
+
+            width: 21.2rem;
+            border: 1px solid $grayTxt;
+
+            background-color: $white;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
+            ._is-active & {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
 
     &__action {
@@ -375,30 +696,65 @@
             width: 2.4rem;
             height: 2.4rem;
         }
+
+        @media (max-width: 48em) {
+            padding: 3rem 0;
+
+            justify-content: center;
+
+            svg {
+                display: none;
+            }
+        }
     }
 
     &__body {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        row-gap: 4.8rem;
+
+        @media (min-width: 48em) {
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &__info {
         display: flex;
-        column-gap: 3.2rem;
-        flex: 1 1 auto;
+        flex-direction: column;
+        row-gap: 5rem;
+
+        @media (min-width: 48em) {
+            flex-direction: row;
+            column-gap: 3.2rem;
+            flex: 1 1 auto;
+        }
     }
 
     &__group {
         display: flex;
         flex-direction: column;
         row-gap: 0.2rem;
+
+        @media (max-width: 48em) {
+            row-gap: 1rem;
+        }
     }
 
     &__subtitle {
         color: $grayTxt;
+
+        @media (max-width: 48em) {
+            line-height: 3.6rem;
+        }
     }
 
     &__txt {
-        max-width: 24.4rem;
+        line-height: 3.6rem;
+
+        @media (min-width: 48em) {
+            max-width: 24.4rem;
+            line-height: 1;
+        }
     }
 }

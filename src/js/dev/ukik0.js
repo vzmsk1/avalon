@@ -1,4 +1,4 @@
-import { bodyLock, bodyLockToggle, bodyUnlock } from '../utils/utils';
+import { bodyLock, bodyUnlock } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.communication')) {
@@ -43,13 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
             bodyLock();
         });
 
-        filtersCloseButton.addEventListener('click', (event) => {
-            event.preventDefault();
+        if (filtersCloseButton) {
+            filtersCloseButton.addEventListener('click', (event) => {
+                event.preventDefault();
 
-            filtersMenu.classList.remove('--active');
+                filtersMenu.classList.remove('--active');
 
-            bodyUnlock();
-        });
+                bodyUnlock();
+            });
+        }
     }
 
     const searchInput = document.querySelector('.search__input input');
@@ -128,13 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
         //reset filters
         const resetButton = document.querySelector('.catalog__filters-button.--reset');
 
-        resetButton.addEventListener('click', () => {
-            checkboxes.forEach((checkbox) => {
-                checkbox.checked = false;
+        if (resetButton) {
+            resetButton.addEventListener('click', () => {
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = false;
 
-                selectionList.innerHTML = '';
+                    selectionList.innerHTML = '';
+                });
             });
-        });
+        }
     }
 
     if (document.querySelector('.detailed')) {
