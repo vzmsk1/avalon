@@ -23,6 +23,9 @@
         background-color: $gray;
     }
 
+
+  
+
     &__title {
         &:not(.account-page &) {
             margin-bottom: 5rem;
@@ -33,14 +36,19 @@
         }
     }
 
+    
+
     &__categories {
         &-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem 2.8rem;
+           display: flex;
+           flex-direction: column;
+           @media (max-width: 48em) { 
+                flex-direction: initial;
+           }
+          
 
             &:not(.account-page &) {
-                margin-bottom: 10rem;
+                margin-bottom: 0rem;
 
                 @include small-tablet {
                     display: flex;
@@ -51,10 +59,31 @@
                     margin-right: -2.4rem;
                     padding-right: 2.4rem;
                     margin-bottom: 4rem;
-
+                    
                     @include hide-scrollbar();
                 }
             }
+        }
+
+        &-item {
+            width: 40.9rem;
+            @media (max-width: 48em) { 
+                width: 42.6rem;
+                margin-right: 1.6rem;
+            }
+        }
+
+        &-list-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &-list-wrap:nth-child(1) {
+            margin-bottom: 2rem;
+        }
+
+        &-list-wrap:nth-child(2) {
+            margin-bottom: 2rem;
         }
     }
 
@@ -449,6 +478,40 @@
                 }
             }
         }
+
+        &-button-categories {
+            margin: initial;
+            margin-bottom: 10rem;
+            position: relative;
+            padding-right: 2.8rem;
+            &::after {
+                content: "";
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 2.4rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url(./assets/images/icons/arr-down-black.svg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: transform 0.4s ease;
+            }
+
+            @media (max-width: 48em) { 
+                display: none;
+            }
+        }
+
+
+
+        &-button-categories.active {
+            &::after {
+                transform: rotate(180deg);
+                transition: transform 0.4s ease;
+            }
+        }
     }
 
     &__banner {
@@ -796,4 +859,8 @@
 
     &__showmore-btn-txt {
     }
+
+
+
+    
 }
