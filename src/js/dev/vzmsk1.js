@@ -3,15 +3,7 @@ import Swiper from 'swiper';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 // utils
-import {
-    _slideToggle,
-    _slideUp,
-    bodyLockToggle,
-    bodyUnlock,
-    menuClose,
-    removeClasses,
-    remToPx
-} from '../utils/utils';
+import { _slideToggle, _slideUp, bodyLockToggle, bodyUnlock, menuClose, removeClasses, remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', function () {
     const doc = document.documentElement;
@@ -303,11 +295,42 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     setCurrentYear();
 
+    // show project modal
+    if (document.querySelector('.catalog__products')) {
+        document.querySelector('.catalog__products').addEventListener('click', function (e) {
+            const target = e.target;
+
+            if (target.closest('.product-card-horizontal__add-btn')) {
+                removeClasses(document.querySelectorAll('.modal-product-card-horizontal'), '_is-active');
+                target.closest('.product-card-horizontal').querySelector('.modal-product-card-horizontal').classList.toggle('_is-active');
+            } else if (document.querySelector('.modal-product-card-horizontal._is-active') && !target.closest('.modal-product-card-horizontal')) {
+                document.querySelector('.modal-product-card-horizontal._is-active').classList.remove('_is-active');
+            }
+            if (target.closest('.modal-product-card-horizontal__btn')) {
+                target.closest('.product-card-horizontal').querySelector('.modal-product-card-horizontal').classList.remove('_is-active');
+            }
+        });
+    }
+
     // close mobile search
     if (document.querySelector('.header__close-search-btn')) {
         document.querySelector('.header__close-search-btn').addEventListener('click', function () {
             document.documentElement.classList.remove('_show-search');
             bodyUnlock();
+        });
+    }
+
+    // show option menu (project item)
+    if (document.querySelector('.account__projects')) {
+        document.querySelector('.account__projects').addEventListener('click', function (e) {
+            const target = e.target;
+
+            if (target.closest('.item-projects-account__options-btn')) {
+                removeClasses(document.querySelectorAll('.item-projects-account'), '_is-active');
+                target.closest('.item-projects-account').classList.add('_is-active');
+            } else if (document.querySelector('.item-projects-account._is-active') && !target.closest('.item-projects-account__actions')) {
+                document.querySelector('.item-projects-account._is-active').classList.remove('_is-active');
+            }
         });
     }
 
@@ -318,11 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // header catalog menu
         if (target.closest('.header__catalog-btn')) {
             doc.classList.add('_show-catalog');
-        } else if (
-            doc.classList.contains('_show-catalog') &&
-            !target.closest('.header__catalog-menu') &&
-            !target.closest('.header__catalog-btn')
-        ) {
+        } else if (doc.classList.contains('_show-catalog') && !target.closest('.header__catalog-menu') && !target.closest('.header__catalog-btn')) {
             doc.classList.remove('_show-catalog');
         }
         if (target.closest('[data-nav-sublink-index]')) {

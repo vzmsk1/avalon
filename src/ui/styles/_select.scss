@@ -10,13 +10,37 @@
     }
 
     &_field {
-        .select__value {
-            padding: 2rem;
-            justify-content: space-between;
-            height: 6rem;
-            border: 1px solid $grayTxt;
-            font-size: 1.6rem;
-            color: $grayTxt;
+        .select {
+            &__value {
+                padding: 2rem;
+                justify-content: space-between;
+                height: 6rem;
+                border: 1px solid $grayTxt;
+                font-size: 1.6rem;
+                color: $grayTxt;
+
+                @media (max-width: 48em) {
+                    padding: 3rem 4rem;
+
+                    height: 10rem;
+
+                    font-size: 2.8rem;
+
+                    &._has-label::before {
+                        max-width: 52.4rem;
+                    }
+                }
+            }
+            &__options {
+                @media (max-width: 48em) {
+                    top: calc(100% + 0.8rem);
+
+                    padding: 2.6rem 0;
+                }
+            }
+            &__option {
+                padding: 1.4rem 4rem;
+            }
         }
         ._is-filled {
             .select__value::before {
@@ -86,6 +110,12 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: transform 0.3s ease;
+
+            @media (max-width: 48em) {
+                flex: 0 0 3.5rem;
+                width: 3.5rem;
+                height: 3.5rem;
+            }
         }
         &._has-label {
             &::before {
@@ -118,10 +148,7 @@
     &__content {
         margin-right: auto;
         // hide / show selected value
-        &:not(.dropdown_field &) {
-            display: none;
-        }
-        &:not(._is-filled &) {
+        &:not(.dropdown_field &, ._is-filled &, .account-page &) {
             display: none;
         }
     }

@@ -1,4 +1,74 @@
 .catalog {
+    .account-page & {
+        .catalog {
+            &__filters-bottom {
+                display: none;
+            }
+
+            @media (max-width: 48em) {
+                &__side-bar {
+                    display: none;
+                }
+                &__cards {
+                    margin-bottom: 6.6rem;
+                }
+                &__products-button {
+                    margin-bottom: 6.4rem;
+                }
+                &__options {
+                    margin-bottom: 2.4rem;
+                }
+                &__filters {
+                    z-index: 200;
+
+                    max-width: none;
+                    height: 100%;
+                }
+                &__search {
+                    margin-right: 0;
+                    margin-bottom: 8.4rem;
+
+                    flex: 0 0 auto;
+
+                    .input__field {
+                        height: 100%;
+
+                        font-size: 3.6rem;
+
+                        &::placeholder {
+                            font-size: 3.6rem;
+                        }
+                    }
+                    .input {
+                        height: 100%;
+                    }
+                }
+                &__selection {
+                    margin-bottom: 6.4rem;
+
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: 6.4rem;
+                }
+                &__selection-list {
+                    grid-row: 2 / 3;
+                    grid-column: span 2;
+                }
+                &__selection-button {
+                    justify-self: end;
+                }
+                &__selection-sorting {
+                    justify-self: start;
+                }
+            }
+        }
+        @media (min-width: 48em) {
+            .catalog__filters-heading-button {
+                display: none;
+            }
+        }
+    }
+
     &__options {
         display: flex;
         column-gap: 2.8rem;
@@ -21,6 +91,12 @@
     &__option-wrap {
         padding: 2.5rem 3.2rem;
         background-color: $gray;
+
+        @media (max-width: 48em) {
+            width: 100%;
+
+            font-size: 2.8rem;
+        }
     }
 
     &__title {
@@ -75,12 +151,13 @@
         @include small-tablet {
             max-width: 100%;
             position: fixed;
-            inset: 0;
+            top: 0;
+            right: 0;
             z-index: 50;
             background-color: $white;
             padding-top: 4.8rem;
             overflow-x: scroll;
-            transform: translateX(100%);
+            transform: translateX(110%);
             transition: 0.3s transform ease-out;
 
             &.--active {
@@ -418,6 +495,10 @@
         @include small-tablet {
             max-width: 100%;
             gap: 6.4rem;
+
+            .account-page & {
+                gap: normal;
+            }
         }
 
         &-button {
@@ -671,17 +752,59 @@
     flex-direction: column;
     row-gap: 2.4rem;
 
+    &__close-btn {
+        justify-self: end;
+
+        svg {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+
+        @media (min-width: 48em) {
+            display: none;
+        }
+    }
+
+    &__heading-wrap {
+        margin-bottom: 2.4rem;
+
+        @media (max-width: 48em) {
+            margin-bottom: 3.2rem;
+
+            display: grid;
+            grid-template-columns: 4.8rem 1fr 4.8rem;
+        }
+    }
+
     &__group-checkbox {
         position: absolute;
         top: 0.2rem;
         left: 0;
         width: 2.2rem;
         height: 2.2rem;
+
+        @media (max-width: 48em) {
+            top: 1rem;
+        }
     }
 
     &__heading {
-        padding-bottom: 2.4rem;
-        border-bottom: 1px solid $grayTxt;
+        display: block;
+
+        @media (max-width: 48em) {
+            &.h {
+                justify-self: center;
+                grid-column: 2/3;
+
+                font-size: 4.4rem;
+                font-weight: 700;
+            }
+        }
+
+        @media (min-width: 48em) {
+            padding-bottom: 2.4rem;
+            border-bottom: 1px solid $grayTxt;
+        }
     }
 
     &__content {
@@ -707,6 +830,10 @@
                 position: static;
                 opacity: 1;
             }
+        }
+
+        @media (max-width: 48em) {
+            row-gap: 4.8rem;
         }
     }
 
@@ -742,10 +869,25 @@
             transform: rotate(90deg);
             transition: transform 0.3s ease;
         }
+
+        @media (max-width: 48em) {
+            padding-bottom: 4.8rem;
+            padding-left: 6rem;
+
+            &::after {
+                flex: 0 0 4.8rem;
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
     }
 
     &__list {
         padding-left: 3rem;
+
+        @media (max-width: 48em) {
+            padding-left: 6rem;
+        }
     }
 
     &__item {
@@ -770,6 +912,13 @@
                     height: calc(100% - 2rem);
                     width: 1px;
                     background-color: $grayTxt;
+
+                    @media (max-width: 48em) {
+                        top: 4.7rem;
+                        left: 2rem;
+
+                        height: calc(100% - 4.7rem);
+                    }
                 }
             }
             > .categories-catalog__checkbox {
@@ -793,14 +942,39 @@
                     transform: rotate(90deg);
                     transition: transform 0.3s ease;
                 }
+
+                @media (max-width: 48em) {
+                    padding-left: 6rem;
+
+                    font-size: 3rem;
+
+                    &::after {
+                        flex: 0 0 4.8rem;
+                        width: 4.8rem;
+                        height: 4.8rem;
+                    }
+                }
+            }
+            .categories-catalog__item:last-child {
+                @media (max-width: 48em) {
+                    margin-bottom: 4rem;
+                }
             }
         }
 
         &:first-child {
             padding-top: 2rem;
+
+            @media (max-width: 48em) {
+                padding-top: 4.8rem;
+            }
         }
         &:not(:last-child) {
             margin-bottom: 1.6rem;
+
+            @media (max-width: 48em) {
+                margin-bottom: 3.2rem;
+            }
         }
     }
 
