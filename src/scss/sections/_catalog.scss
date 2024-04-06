@@ -111,12 +111,10 @@
 
     &__categories {
         &-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem 2.8rem;
+            display: block;
 
             &:not(.account-page &) {
-                margin-bottom: 10rem;
+                
 
                 @include small-tablet {
                     display: flex;
@@ -130,6 +128,49 @@
 
                     @include hide-scrollbar();
                 }
+            }
+        }
+
+        &-list-inner {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-item {
+            width: 40.9rem;
+            @media (max-width: 48em) { 
+                width: 42.6rem;
+                margin-right: 1.6rem;
+            }
+        }
+
+        &-all {
+            font-size: 2rem;
+            font-weight: 600;
+            padding-right: 2.7rem;
+            position: relative;
+            margin-bottom: 10rem;
+            @media (max-width: 48em) { 
+                display: none;
+            }
+            &::after {
+                position: absolute;
+                content:'';
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url(../assets/images/icons/arr-down-black.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                right: 0;
+                transition: transform 0.4s ease;
+            }
+        }
+
+        &-all.active {
+            &::after {
+                transform: rotate(180deg);
+                transition: transform 0.4s ease;
             }
         }
     }
@@ -344,7 +385,10 @@
 
         &-button {
             width: fit-content;
-
+            display: none;
+            @media (max-width: 48em) { 
+                display: flex;
+            }
             @include small-tablet {
                 width: 100%;
             }
@@ -484,6 +528,8 @@
             }
         }
     }
+
+    
 
     &__products {
         max-width: 128.3rem;
@@ -636,7 +682,9 @@
         align-items: center;
         justify-content: space-between;
         min-height: 4rem;
-
+        @media (max-width: 48em) {
+            flex-wrap: wrap;
+         }
         @include small-tablet {
             min-height: initial;
         }
@@ -673,7 +721,11 @@
             flex-wrap: wrap;
             gap: 1.6rem;
             max-width: 70rem;
-
+            @media (max-width: 48em) {
+                order: 3;
+                width: 100%;
+                margin-top: 2rem;
+            }
             @include small-tablet {
                 max-width: 100%;
                 white-space: nowrap;

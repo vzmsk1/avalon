@@ -3,50 +3,61 @@
         <nav class="breadcrumbs">
             <a href="#" class="breadcrumbs__link txt txt_16">Главная</a>
             <a href="#" class="breadcrumbs__link txt txt_16">Каталог</a>
-            <span class="breadcrumbs__txt breadcrumbs__link_chapter txt txt_16">Световое оборудование</span>
+            <div class="breadcrumbs__select">
+                <button class="breadcrumbs__select-btn breadcrumbs__txt breadcrumbs__link_chapter txt txt_16">Световое оборудование</button>
+                <ul class="breadcrumbs__select-lists">
+                    <li><a href="#">Световое оборудование</a></li>
+                    <li><a href="#">Световое оборудование</a></li>
+                    <li><a href="#">Световое оборудование</a></li>
+                    <li><a href="#">Световое оборудование</a></li>
+                </ul>
+           </div>
         </nav>
 
         <h1 class="catalog__title h h_h1">Световое оборудование</h1>
 
         <ul class="catalog__categories-list">
-            <li class="catalog__categories-item categories-item">
-                <a href="#" class="categories-item__inner">
-                    <figure class="categories-item__image">
-                        <img src="./assets/images/sections/categories/category-item-image-1.png" alt="" />
-                    </figure>
-
-                    <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
-                </a>
-            </li>
-            <li class="catalog__categories-item categories-item">
-                <a href="#" class="categories-item__inner">
-                    <figure class="categories-item__image">
-                        <img src="./assets/images/sections/categories/category-item-image-2.png" alt="" />
-                    </figure>
-
-                    <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
-                </a>
-            </li>
-            <li class="catalog__categories-item categories-item">
-                <a href="#" class="categories-item__inner">
-                    <figure class="categories-item__image">
-                        <img src="./assets/images/sections/categories/category-item-image-1.png" alt="" />
-                    </figure>
-
-                    <span class="categories-item__title txt txt_18 txt_semibold">
-                        Генераторы спецэффектов
-                    </span>
-                </a>
-            </li>
-            <li class="catalog__categories-item categories-item">
-                <a href="#" class="categories-item__inner">
-                    <figure class="categories-item__image">
-                        <img src="./assets/images/sections/categories/category-item-image-3.png" alt="" />
-                    </figure>
-
-                    <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
-                </a>
-            </li>
+            <div class="catalog__categories-list-inner">
+                <li class="catalog__categories-item categories-item">
+                    <a href="#" class="categories-item__inner">
+                        <figure class="categories-item__image">
+                            <img src="./assets/images/sections/categories/category-item-image-1.png" alt="" />
+                        </figure>
+    
+                        <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                    </a>
+                </li>
+                <li class="catalog__categories-item categories-item">
+                    <a href="#" class="categories-item__inner">
+                        <figure class="categories-item__image">
+                            <img src="./assets/images/sections/categories/category-item-image-2.png" alt="" />
+                        </figure>
+    
+                        <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                    </a>
+                </li>
+                <li class="catalog__categories-item categories-item">
+                    <a href="#" class="categories-item__inner">
+                        <figure class="categories-item__image">
+                            <img src="./assets/images/sections/categories/category-item-image-1.png" alt="" />
+                        </figure>
+    
+                        <span class="categories-item__title txt txt_18 txt_semibold">
+                            Генераторы спецэффектов
+                        </span>
+                    </a>
+                </li>
+                <li class="catalog__categories-item categories-item">
+                    <a href="#" class="categories-item__inner">
+                        <figure class="categories-item__image">
+                            <img src="./assets/images/sections/categories/category-item-image-3.png" alt="" />
+                        </figure>
+    
+                        <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                    </a>
+                </li>
+            </div>
+           <div class="catalog__categories-list-inner catalog__categories-list-inner--two">
             <li class="catalog__categories-item categories-item">
                 <a href="#" class="categories-item__inner">
                     <figure class="categories-item__image">
@@ -85,7 +96,12 @@
                     <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
                 </a>
             </li>
+           </div>
+           
         </ul>
+        <button class="catalog__categories-all">
+            Смотреть все
+        </button>
 
         <div class="catalog__content">
             <aside class="catalog__filters">
@@ -364,6 +380,7 @@
                     </div>
 
                     <div class="catalog__filters-bottom">
+                        <!-- <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list"></ul> -->
                         <div class="catalog__filters-buttons">
                             <button type="submit" class="catalog__filters-button btn btn_primary">
                                 <span class="txt txt_20 txt_semibold">Применить</span>
@@ -395,7 +412,7 @@
                 </div>
 
                 <div class="catalog__selection">
-                    <ul data-da=".catalog__filters-bottom,768,first" class="catalog__selection-list"></ul>
+                    <ul data-da=".catalog__filters-bottom,first" class="catalog__selection-list"></ul>
 
                     <div class="catalog__selection-sorting">
                         <div class="dropdown">

@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             breakpoints: {
                 0: {
-                    slidesPerView: 1
+                    slidesPerView: 1.5
                 }
             }
         });

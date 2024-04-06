@@ -305,12 +305,13 @@
                 overscroll-behavior: contain;
 
                 @include small-tablet {
-                    padding: 3.2rem 2.4rem;
+                    padding: 3.2rem 0rem;
                     gap: 4.8rem;
                     height: auto;
                     max-height: initial;
                     min-height: auto;
-                    border: 1px solid #a1a2a9;
+                    
+
                 }
 
                 &:has(.header__search-menu-empty) {
@@ -750,7 +751,9 @@
     background-color: $black;
     transform: translateX(-50%) translateY(calc(100% + 10rem));
     transition: transform 0.5s ease;
-
+    @media (max-width: 48em) { 
+       display: none;
+    }
     @media (min-width: 48em) {
         display: none;
     }

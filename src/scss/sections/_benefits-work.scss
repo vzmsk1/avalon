@@ -14,10 +14,12 @@
         padding: 3.2rem;
         display: flex;
         flex-direction: column;
-        &-number {
-            font-size: 2.4rem;
-            font-weight: 600;
+
+        &-icon {
+            width: 2.4rem;
+            height: 2.4rem;
         }
+        
 
         &-text {
             margin-top: auto;
@@ -101,8 +103,9 @@
             padding: 2.4rem;
             height: 26.8rem;
 
-            &-number {
-                font-size: 3.4rem;
+            &-icon {
+                width: 4.8rem;
+                height: 4.8rem;
             }
             &-text {
                 font-size: 3.4rem;
