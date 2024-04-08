@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // show option menu (project item)
-    if (document.querySelector('.account__projects')) {
-        document.querySelector('.account__projects').addEventListener('click', function (e) {
+    if (document.querySelector('.account')) {
+        document.querySelector('.account').addEventListener('click', function (e) {
             const target = e.target;
 
             if (target.closest('.item-projects-account__options-btn')) {

@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://api-maps.yandex.ru/v3/?apikey=136cf658-5cab-4ec1-8934-49c6ce4baa7c&lang=ru_RU"></script>
+        <title>Главная</title>
+    <script defer src="main.js"></script></head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+    <div class="header__top-bar">
+        <div class="header__container container">
+            <ul class="header__contacts-list">
+                <li class="header__contacts-item">
+                    <a href="tel:84952856896" class="header__contacts-item-txt i-link">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.50022C13.8448 3.50022 13.6917 3.47148 14 3.50022C17.4281 3.81982 19.6931 5.93054 20 9.50022C20.0276 9.8213 21 10.6205 21 11.5002V12.5002C21 12.9235 20.5935 13.5002 21 13.5002C21.4065 13.5002 22 12.9235 22 12.5002V11.5002C22 10.6859 22.0342 9.89836 22 9.50022C21.6296 5.19199 18.1373 1.88595 14 1.50022C13.6176 1.46457 13.7821 1.50021 13 1.50022H12C11.5935 1.50022 11 2.07695 11 2.50022C11 2.92349 11.5935 3.50022 12 3.50022H13Z" fill="#000001"></path>
+                            <path d="M7.00001 4.50022C5.96756 3.51236 4.03245 3.51236 3.00001 4.50022C2.95773 4.54068 3.05861 4.43918 3.00001 4.50022L2.00001 5.50022C1.11376 6.42308 0.728117 7.22618 1.00001 8.50022C2.54262 15.7287 8.05824 21.8939 15 23.5002C16.2235 23.7833 17.1138 23.4231 18 22.5002L19 21.5002C18.9611 21.5443 19.0587 21.4391 19 21.5002C19.9487 20.4251 19.9487 18.5753 19 17.5002C18.9611 17.4562 19.0587 17.5613 19 17.5002L18 15.5002C16.999 14.4578 15.2978 14.9112 14 15.5002C13.257 15.8375 12.5731 15.097 12 14.5002L9.00001 12.5002C8.42691 11.9035 8.67615 10.2739 9.00001 9.50022C9.5657 8.14885 9.00106 6.54263 8.00001 5.50022L7.00001 4.50022C7.04229 4.54068 6.94139 4.43917 7.00001 4.50022Z" fill="#000001"></path>
+                            <path d="M12 5.50022C11.5935 5.50022 12 5.07695 12 5.50022C12 5.92349 11.5935 6.50022 12 6.50022H13C12.9715 6.4998 13.0856 6.50022 13 6.50022C15.2566 6.53388 16.9677 8.15037 17 10.5002C17.0004 10.5299 17 11.4111 17 11.5002C17 11.9235 17.5935 12.5002 18 12.5002C18.4065 12.5002 19 11.9235 19 11.5002C19 11.4208 19.0006 10.5424 19 10.5002C18.9563 7.32102 16.0531 5.54575 13 5.50022C12.9595 5.49962 13.0763 5.50022 13 5.50022H12Z" fill="#000001"></path>
+                        </svg>
+                        <span class="i-link__txt txt txt_semibold _desktop-only">8 (495) 285 68 96</span>
+                    </a>
+                </li>
+                <li class="header__contacts-item">
+                    <a href="mailto:avalon222@gmail.com" class="header__contacts-item-txt i-link">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.00003 6.5C1.66681 7.73998 2.00003 9.86008 2.00003 12.5C2.00003 16.2497 2.04511 18.1857 3.00003 19.5C3.30843 19.9245 3.57555 20.1916 4.00003 20.5C5.31436 21.4549 7.2503 21.5 11 21.5H13C16.7498 21.5 18.6857 21.4549 20 20.5C20.4245 20.1916 20.6916 19.9245 21 19.5C21.9549 18.1857 22 16.2497 22 12.5C22 9.85129 22.3366 7.74097 22 6.5L20 8.5C18.3678 10.1323 17.1323 11.6361 16 12.5C14.8411 13.3842 13.2655 14.5 12 14.5C10.7346 14.5 9.15896 13.3842 8.00003 12.5C6.86777 11.6361 5.6323 10.1323 4.00003 8.5L2.00003 7.5V6.5Z" fill="#000001"></path>
+                            <path d="M3.00003 5.5H4.00003L5.00003 7.5C6.68169 9.18166 7.95722 10.7044 9.00003 11.5C10.0255 12.2824 11.1944 12.5 12 12.5C12.8056 12.5 13.9745 12.2824 15 11.5C16.0428 10.7044 17.3184 9.18166 19 7.5L21 5.5C20.6916 5.07553 20.4245 4.8084 20 4.5C18.6857 3.54509 16.7498 3.5 13 3.5H11C7.2503 3.5 5.31436 3.54509 4.00003 4.5C3.57555 4.8084 3.30843 5.07553 3.00003 5.5Z" fill="#000001"></path>
+                        </svg>
+                        <span class="i-link__txt txt txt_semibold">avalon222@gmail.com</span>
+                    </a>
+                </li>
+            </ul>
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link txt txt_semibold">Новости</a>
+                <a href="#" class="header__nav-link txt txt_semibold">Портфолио</a>
+                <a href="#" class="header__nav-link txt txt_semibold">О нас</a>
+                <a href="#" class="header__nav-link txt txt_semibold">Услуги</a>
+                <a href="#" class="header__nav-link txt txt_semibold">Контакты</a>
+            </nav>
+        </div>
+    </div>
+    <div class="header__inner">
+        <div class="header__container container">
+            <div class="header__group">
+                <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo-img _desktop-only"><img src="./assets/images/mm-logo.svg" alt="" class="header__logo-img _mobile-only"></a>
+                <div class="header__mm-actions">
+                    <button type="button" class="header__mm-item search-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_861_16173" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#000001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M21 21L17 17" stroke="#000001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </mask>
+                            <g mask="url(#mask0_861_16173)">
+                                <path d="M0 0H24V24H0V0Z" fill="#000001"></path>
+                            </g>
+                        </svg>
+                    </button>
+                    <button type="button" class="header__mm-item header__mm-item_hamburger-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="2" fill="#000001"></rect>
+                            <rect x="2" y="11" width="20" height="2" fill="#000001"></rect>
+                            <rect x="2" y="18" width="20" height="2" fill="#000001"></rect>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="header__content">
+                <div class="header__row header__row_upper">
+                    <a href="#" class="header__catalog-btn catalog-btn">
+                        <span class="catalog-btn__icon">
+                            <img src="./assets/images/icons/catalog.svg" alt="" class="catalog-btn__icon-img">
+                            <img src="./assets/images/icons/cross.svg" alt="" class="catalog-btn__icon-img catalog-btn__icon-img_cross">
+                        </span>
+                        <span class="catalog-btn__txt txt txt_20">Каталог</span>
+                    </a>
+                    <button type="button" class="header__hamburger _mobile-only">
+                        <img src="./assets/images/icons/menu.svg" alt="" class="header__hamburger-icon">
+                    </button>
+                    <form data-da=".header__search-menu,768,1" action="#" class="header__search search">
+                        <div class="search__input input">
+                            <input data-validate="" data-required="" autocomplete="off" type="search" name="form[]" placeholder="Поиск ..." class="input__field">
+                        </div>
+                        <button type="submit" class="search__btn">
+                            <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.5 29C25.9183 29 29.5 25.4183 29.5 21C29.5 16.5817 25.9183 13 21.5 13C17.0817 13 13.5 16.5817 13.5 21C13.5 25.4183 17.0817 29 21.5 29Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M31.5 31L27.5 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="header__actions">
+                        <a data-da=".header__mm-actions,768,first" href="#" class="header__actions-item">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 3C14.1073 3 10 6.03298 10 10C10 13.967 14.1073 17 18 17C21.8927 17 25 13.967 25 10C25 6.03298 21.8927 3 18 3Z" fill="#000001"></path>
+                                <path d="M13 20C9.10728 20 6 23.033 6 27C6 30.967 9.10728 34 13 34H22C25.8927 34 29 30.967 29 27C29 23.033 25.8927 20 22 20H13Z" fill="#000001"></path>
+                            </svg>
+                            <span class="header__actions-item-txt txt txt_14 txt_semibold">Войти</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="header__row header__row_lower">
+                    <div class="header__catalog-chapters">
+                        <a href="#" class="header__catalog-chapter txt txt_16">Световое оборудование</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Микрофоны</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Механическое оборудование</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Мультикор</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Мультикор</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Фермы и стойки</a>
+                        <a href="#" class="header__catalog-chapter txt txt_16">Пульты</a>
+                    </div>
+                    <button type="button" class="header__call-btn btn btn_primary">
+                        <span class="txt txt_20 txt_semibold">Заказать звонок</span>
+                    </button>
+                </div>
+            </div>
+            <div class="header__search-menu">
+                <div class="header__search-menu-head">
+                    <a href="#" class="header__logo"><img src="./assets/images/logo.svg" alt="" class="header__logo-img _desktop-only"><img src="./assets/images/mm-logo.svg" alt="" class="header__logo-img _mobile-only"></a>
+                    <button type="button" class="header__close-search-btn">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.25 5.5L12.25 12.5M12.25 12.5L19.25 5.5M12.25 12.5L5.25 19.5M12.25 12.5L19.25 19.5" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header__search-menu-wrapper">
+                    <ul class="header__search-menu-list">
+                        <li class="header__search-menu-item txt_18">
+                            <a href="#"> Involight MH FXWash122 </a>
+                        </li>
+                        <li class="header__search-menu-item txt_18">
+                            <a href="#"> Involight MH FXWash1123 </a>
+                        </li>
+                        <li class="header__search-menu-item txt_18">
+                            <a href="#"> Involight MH FXWash1912 </a>
+                        </li>
+                    </ul>
+
+                    <div class="header__search-menu-block">
+                        <span class="header__search-menu-title txt_20 txt_semibold"> Найти в категории </span>
+
+                        <ul class="header__search-menu-categories-list">
+                            <li class="header__search-menu-categories-item">
+                                <a href="#">
+                                    <figure class="header__search-menu-categories-item-icon">
+                                        <img src="../assets/images/icons/grid.svg" alt="">
+                                    </figure>
+
+                                    <span class="txt_18">Световое оборудование</span>
+                                </a>
+                            </li>
+
+                            <li class="header__search-menu-categories-item">
+                                <a href="#">
+                                    <figure class="header__search-menu-categories-item-icon">
+                                        <img src="../assets/images/icons/grid.svg" alt="">
+                                    </figure>
+
+                                    <span class="txt_18">Механическое оборудование</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="header__search-menu-block">
+                        <span class="header__search-menu-title txt_20 txt_semibold"> Товары </span>
+
+                        <ul class="header__search-menu-products-list">
+                            <li class="header__search-menu-products-item">
+                                <a href="#">
+                                    <figure class="header__search-menu-products-item-image">
+                                        <img src="./assets/images/sections/header/product-item-image-1.webp" alt="">
+                                    </figure>
+
+                                    <div class="header__search-menu-products-item-info">
+                                        <span class="header__search-menu-products-item-title"> Involight OB200 LED </span>
+
+                                        <div class="header__search-menu-products-item-bottom">
+                                            <p class="txt_20 txt_semibold">
+                                                194 400
+
+                                                <sup> ₽ </sup>
+                                            </p>
+
+                                            <button type="button" class="header__search-menu-products-item-button">
+                                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.66699 18L14.9599 12.7071C15.2932 12.3738 15.4599 12.2071 15.4599 12C15.4599 11.7929 15.2932 11.6262 14.9599 11.2929L9.66699 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="header__search-menu-products-item">
+                                <a href="#">
+                                    <figure class="header__search-menu-products-item-image">
+                                        <img src="./assets/images/sections/header/product-item-image-2.webp" alt="">
+                                    </figure>
+
+                                    <div class="header__search-menu-products-item-info">
+                                        <span class="header__search-menu-products-item-title"> Involight OB200 LED </span>
+
+                                        <div class="header__search-menu-products-item-bottom">
+                                            <p class="txt_20 txt_semibold">
+                                                194 400
+
+                                                <sup> ₽ </sup>
+                                            </p>
+
+                                            <button type="button" class="header__search-menu-products-item-button">
+                                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.66699 18L14.9599 12.7071C15.2932 12.3738 15.4599 12.2071 15.4599 12C15.4599 11.7929 15.2932 11.6262 14.9599 11.2929L9.66699 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="header__search-menu-products-item">
+                                <a href="#">
+                                    <figure class="header__search-menu-products-item-image">
+                                        <img src="./assets/images/sections/header/product-item-image-3.webp" alt="">
+                                    </figure>
+
+                                    <div class="header__search-menu-products-item-info">
+                                        <span class="header__search-menu-products-item-title"> Involight OB200 LED </span>
+
+                                        <div class="header__search-menu-products-item-bottom">
+                                            <p class="txt_20 txt_semibold">
+                                                194 400
+
+                                                <sup> ₽ </sup>
+                                            </p>
+
+                                            <button type="button" class="header__search-menu-products-item-button">
+                                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.66699 18L14.9599 12.7071C15.2932 12.3738 15.4599 12.2071 15.4599 12C15.4599 11.7929 15.2932 11.6262 14.9599 11.2929L9.66699 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--                    <div class="header__search-menu-empty">-->
+                    <!--                        <figure class="header__search-menu-empty-icon">-->
+                    <!--                            <img src="../assets/images/icons/search.svg" alt="" />-->
+                    <!--                        </figure>-->
+
+                    <!--                        <p class="txt_24">К сожалению, по вашему запросу ничего не найдено</p>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__catalog-menu catalog-menu-header">
+        <div class="catalog-menu-header__inner">
+            <nav class="catalog-menu-header__nav">
+                <a href="#" data-nav-sublink-index="1" class="catalog-menu-header__nav-sublink _is-active"><span class="txt txt_semibold">Световое оборудование</span></a>
+                <a href="#" data-nav-sublink-index="2" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Микрофоны</span></a>
+                <a href="#" data-nav-sublink-index="3" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Механическое оборудование</span></a>
+                <a href="#" data-nav-sublink-index="4" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Механическое оборудование</span></a>
+                <a href="#" data-nav-sublink-index="5" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Мультикор</span></a>
+                <a href="#" data-nav-sublink-index="6" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Фермы и стойки</span></a>
+                <a href="#" data-nav-sublink-index="7" class="catalog-menu-header__nav-sublink"><span class="txt txt_semibold">Пульты</span></a>
+            </nav>
+            <div class="catalog-menu-header__content">
+                <div data-subnav-index="1" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="2" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="3" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="4" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="5" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="6" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-subnav-index="7" class="catalog-menu-header__subnav">
+                    <ul class="catalog-menu-header__items">
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Световые приборы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Системы управления </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Генераторы спецэффектов </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лазерные системы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Лампы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-3.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Технологическое освещение </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-1.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Прожекторы </span>
+                            </a>
+                        </li>
+                        <li class="catalog__categories-item categories-item">
+                            <a href="#" class="categories-item__inner">
+                                <figure class="categories-item__image">
+                                    <img src="./assets/images/sections/categories/category-item-image-2.webp" alt="">
+                                </figure>
+
+                                <span class="categories-item__title txt txt_18 txt_semibold"> Зеркальные шары </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__hamburger-menu hamburger-menu">
+        <div class="hamburger-menu__inner">
+            <button type="button" class="hamburger-menu__close-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 5L12 12M12 12L19 5M12 12L5 19M12 12L19 19" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <nav class="hamburger-menu__nav">
+                <ul class="hamburger-menu__nav-list">
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">Новости</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">ПортфолиО</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">О компании</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">Услуги</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">Контакты</a>
+                    </li>
+                </ul>
+
+                <ul class="hamburger-menu__nav-list">
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">Личный кабинет</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">Корзина</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">проекты</a>
+                    </li>
+                    <li class="hamburger-menu__nav-item">
+                        <a href="#" class="hamburger-menu__nav-link">заказы</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header__menu-bar menu-bar">
+        <ul class="menu-bar__list">
+            <li class="menu-bar__item menu-bar__item-content_hamburger">
+                <button type="button" class="menu-bar__item-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="4" width="20" height="2" fill="white"></rect>
+                        <rect x="2" y="11" width="20" height="2" fill="white"></rect>
+                        <rect x="2" y="18" width="20" height="2" fill="white"></rect>
+                    </svg>
+                </button>
+            </li>
+            <li class="menu-bar__item menu-bar__item-content_search search-btn">
+                <button type="button" class="menu-bar__item-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_769_91475" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#000001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M21 21L17 17" stroke="#000001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </mask>
+                        <g mask="url(#mask0_769_91475)">
+                            <path d="M0 0H24V24H0V0Z" fill="white"></path>
+                        </g>
+                    </svg>
+                </button>
+            </li>
+            <li class="menu-bar__item menu-bar__item-content_contacts">
+                <button type="button" class="menu-bar__item-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.9901 2.75C13.8509 2.75 14.2319 2.75076 14.5461 2.77889C18.0394 3.09165 20.808 5.86017 21.1207 9.35348C21.1489 9.66768 21.1496 10.0487 21.1496 10.9095V11.8995C21.1496 12.3137 21.4854 12.6495 21.8996 12.6495C22.3138 12.6495 22.6496 12.3137 22.6496 11.8995V10.8591C22.6496 10.0622 22.6496 9.60934 22.6147 9.21971C22.2373 5.00365 18.896 1.66234 14.6799 1.28486C14.2902 1.24998 13.8374 1.24999 13.0404 1.25H12.0001C11.5859 1.25 11.2501 1.58579 11.2501 2C11.2501 2.41422 11.5859 2.75 12.0001 2.75L12.9901 2.75Z" fill="white"></path>
+                        <path d="M7.11183 4.0253C6.05974 3.05857 4.44259 3.05857 3.3905 4.0253C3.34742 4.06489 3.30142 4.11089 3.2417 4.17063L2.34419 5.06813C1.44108 5.97125 1.06196 7.27317 1.33902 8.51995C2.91099 15.5938 8.43553 21.1183 15.5094 22.6903C16.7562 22.9674 18.0581 22.5883 18.9612 21.6851L19.8586 20.7877C19.9184 20.728 19.9644 20.6819 20.004 20.6388C20.9708 19.5867 20.9708 17.9696 20.004 16.9175C19.9644 16.8744 19.9184 16.8284 19.8586 16.7686L18.3894 15.2993C17.3693 14.2792 15.8287 13.9875 14.5063 14.564C13.7492 14.894 12.8672 14.7269 12.2832 14.1429L9.88639 11.7461C9.30239 11.1621 9.13536 10.2802 9.46538 9.52308C10.0418 8.20062 9.75009 6.66009 8.72999 5.63999L7.26066 4.17065C7.20092 4.1109 7.15492 4.06489 7.11183 4.0253Z" fill="white"></path>
+                        <path d="M12.7071 4.78554C12.2929 4.78554 11.9571 5.12132 11.9571 5.53553C11.9571 5.94975 12.2929 6.28553 12.7071 6.28553H13.2728C13.36 6.28553 13.3957 6.28555 13.4248 6.28597C15.7244 6.3189 17.5806 8.1751 17.6135 10.4747C17.6139 10.5037 17.614 10.5395 17.614 10.6267V11.1924C17.614 11.6066 17.9497 11.9424 18.364 11.9424C18.7782 11.9424 19.114 11.6066 19.114 11.1924V10.6194C19.114 10.5417 19.114 10.4944 19.1134 10.4532C19.0688 7.342 16.5575 4.83068 13.4463 4.78612C13.405 4.78553 13.3577 4.78553 13.28 4.78554H12.7071Z" fill="white"></path>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+        <div class="menu-bar__contacts">
+            <ul class="menu-bar__contacts-list">
+                <li class="menu-bar__contacts-item menu-bar__contacts-item_tel">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.9901 2.75C13.8509 2.75 14.2319 2.75076 14.5461 2.77889C18.0394 3.09165 20.808 5.86017 21.1207 9.35348C21.1489 9.66768 21.1496 10.0487 21.1496 10.9095V11.8995C21.1496 12.3137 21.4854 12.6495 21.8996 12.6495C22.3138 12.6495 22.6496 12.3137 22.6496 11.8995V10.8591C22.6496 10.0622 22.6496 9.60934 22.6147 9.21971C22.2373 5.00365 18.896 1.66234 14.6799 1.28486C14.2902 1.24998 13.8374 1.24999 13.0404 1.25H12.0001C11.5859 1.25 11.2501 1.58579 11.2501 2C11.2501 2.41422 11.5859 2.75 12.0001 2.75L12.9901 2.75Z" fill="#000001"></path>
+                        <path d="M7.11183 4.0253C6.05974 3.05857 4.44259 3.05857 3.3905 4.0253C3.34742 4.06489 3.30142 4.11089 3.2417 4.17063L2.34419 5.06813C1.44108 5.97125 1.06196 7.27317 1.33902 8.51995C2.91099 15.5938 8.43553 21.1183 15.5094 22.6903C16.7562 22.9674 18.0581 22.5883 18.9612 21.6851L19.8586 20.7877C19.9184 20.728 19.9644 20.6819 20.004 20.6388C20.9708 19.5867 20.9708 17.9696 20.004 16.9175C19.9644 16.8744 19.9184 16.8284 19.8586 16.7686L18.3894 15.2993C17.3693 14.2792 15.8287 13.9875 14.5063 14.564C13.7492 14.894 12.8672 14.7269 12.2832 14.1429L9.88639 11.7461C9.30239 11.1621 9.13536 10.2802 9.46538 9.52308C10.0418 8.20062 9.75009 6.66009 8.72999 5.63999L7.26066 4.17065C7.20092 4.1109 7.15492 4.06489 7.11183 4.0253Z" fill="#000001"></path>
+                        <path d="M12.7071 4.78554C12.2929 4.78554 11.9571 5.12132 11.9571 5.53553C11.9571 5.94975 12.2929 6.28553 12.7071 6.28553H13.2728C13.36 6.28553 13.3957 6.28555 13.4248 6.28597C15.7244 6.3189 17.5806 8.1751 17.6135 10.4747C17.6139 10.5037 17.614 10.5395 17.614 10.6267V11.1924C17.614 11.6066 17.9497 11.9424 18.364 11.9424C18.7782 11.9424 19.114 11.6066 19.114 11.1924V10.6194C19.114 10.5417 19.114 10.4944 19.1134 10.4532C19.0688 7.342 16.5575 4.83068 13.4463 4.78612C13.405 4.78553 13.3577 4.78553 13.28 4.78554H12.7071Z" fill="#000001"></path>
+                    </svg>
+
+                    <a href="tel:7900000000" class="menu-bar__contacts-item-txt"> +7 (900) 00 00-00 </a>
+                </li>
+                <li class="menu-bar__contacts-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.33322 6.40947C2 7.64946 2 9.36008 2 12C2 15.7497 2 17.6246 2.95491 18.9389C3.26331 19.3634 3.6366 19.7367 4.06107 20.0451C5.3754 21 7.25027 21 11 21H13C16.7497 21 18.6246 21 19.9389 20.0451C20.3634 19.7367 20.7367 19.3634 21.0451 18.9389C22 17.6246 22 15.7497 22 12C22 9.35129 22 7.63806 21.6634 6.39709L19.5607 8.49986C17.9284 10.1321 16.6492 11.4113 15.517 12.2752C14.3581 13.1594 13.2653 13.6789 11.9999 13.6789C10.7344 13.6789 9.64167 13.1594 8.48274 12.2752C7.35048 11.4113 6.07131 10.1321 4.43904 8.49984L2.48385 6.54466L2.33322 6.40947Z" fill="#000001"></path>
+                        <path d="M3 5L3.10885 5.09007L3.51587 5.45535L5.45913 7.39861C7.14079 9.08027 8.34981 10.287 9.39261 11.0827C10.4181 11.8651 11.1942 12.1789 11.9999 12.1789C12.8055 12.1789 13.5816 11.8651 14.6071 11.0827C15.6499 10.287 16.8589 9.08027 18.5406 7.39861L20.8485 5.0907L20.9741 4.96579C20.6657 4.54132 20.3634 4.26331 19.9389 3.95491C18.6246 3 16.7497 3 13 3H11C7.25027 3 5.3754 3 4.06107 3.95491C3.6366 4.26331 3.3084 4.57553 3 5Z" fill="#000001"></path>
+                    </svg>
+
+                    <a href="mailto:forexample@.com" class="menu-bar__contacts-item-txt">forexample@.com</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+            <main>
+                <section class="services-main">
+    <div class="container">
+        <h2 class="services-main__title h h_2 mob">Комплексное оснащение объектов "под ключ"</h2>
+        <div class="services-main__wrapper">
+            <div class="services-main__content">
+                <h2 class="services-main__title h h_2 desk">Комплексное оснащение объектов "под ключ"</h2>
+                <div class="services-main__text">Берем на себя все работы по подбору и просчету оборудования, анализу и проектированию объекта. Произведем все работы и обучим ваш персонал.  Мы выполняем оснащение объектов под ключ для следующих объектов: кафе, бары и рестораны, театры и ДК, конференц-залы и переговорные, школы, университеты и другие образовательные учреждения, клубы и дискотеки, спортивные объекты, концерты, парки и скверы.</div>
+                <button class="services-main__btn btn btn_primary">
+                    <span class="txt txt_20 txt_semibold">Оставить заявку</span>
+                </button>
+            </div>
+            <div class="services-main__image">
+                <img class="desk" src="./assets/images/sections/services-main/bg1.webp" alt="">
+                <img class="mob" src="./assets/images/sections/services-main/bg2.webp" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="about-service">
+    <div class="container">
+        <div class="about-service__wrapper">
+            <div class="about-service__content">
+                <h2 class="about-service__title h h_h1">Об усуге</h2>
+                <p>Комплексное оснащение объектов "под ключ" означает, что мы выполним все этапы подбора,
+                    проектирования, поставки, монтажа и запуска оборудования. Это позволяет сократить время и стоимость
+                    проекта за счет оптимизации и согласованности всех процессов.
+                </p>
+                <p>Оснащение объектов "под ключ" предполагает полное комплексное решение задачи по оснащению объекта,
+                    включая проектирование, поставку, монтаж и настройку необходимого оборудования и систем. Данная
+                    услуга позволяет получить готовый объект, полностью готовый к эксплуатации.
+                </p>
+                <strong>Оснащение объектов "под ключ" включает
+                </strong>
+                <ul>
+                    <li>Подбор оборудования под определенные цели и задачи;
+                    </li>
+                    <li>Поставку оборудования;
+                    </li>
+                    <li>Монтажные работы;
+                    </li>
+                    <li>Пуско-наладочные работы;
+                    </li>
+                    <li>Обучение персонала;
+                    </li>
+                    <li>PAN движение: 540° + 16 бит.</li>
+                </ul>
+                <p>Для успешного оснащения объекта под ключ, важно выбрать хороших поставщиков оборудования и
+                    материалов, профессиональных инженеров и специалистов для проведения монтажных и пусконаладочных
+                    работ. Оснащение объектов звуковым, световыми, сценическим и медиавизуальным оборудованием -
+                    основное направлением деятельности компании Lightdec. Мы работаем с объектами любой сложности и
+                    готовы приступить на любом этапе.</p>
+            </div>
+
+            <div class="about-service__block">
+                <div class="about-service__block-title">
+                    <strong>Заказать услугу</strong>
+                    <span>Поможем подобрать походящее оборудование</span>
+                </div>
+                <form data-dev="" action="#" class="request__form">
+                    <div class="request__form-fields">
+                        <label data-hint="Заполните поле" class="input">
+                            <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Имя" class="input__field">
+                        </label>
+
+                        <label data-hint="Заполните поле" class="input">
+                            <input data-tel-mask="" data-validate="" data-required="" autocomplete="off" type="tel" name="form[]" placeholder="Телефон" class="input__field">
+                        </label>
+                    </div>
+
+                    <p class="request__form-description txt_14 txt_semibold">
+                        Нажимая на кнопку, Вы принимаете условия пользовательского соглашения
+                    </p>
+
+                    <button type="submit" class="request__form-button btn btn_primary">
+                        <span class="txt txt_20 txt_semibold">Заказать звонок</span>
+                    </button>
+                </form>
+                <div class="about-service__block-image">
+                    <img src="./assets/images/sections/services-main/form.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="benefits-work">
+    <div class="container">
+        <div class="benefits-work__title h h_h2">Преимущества работы с АВАЛОН
+        </div>
+        <!-- <div class="benefits-work__navigation swiper-navigation">
+            <button type="button" class="arrow-btn arrow-btn_prev">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M22 11.6205C22 11.2063 21.6642 10.8705 21.25 10.8705L11 10.8705L11 8.75588C11 6.47382 8.38084 5.18473 6.57253 6.57677L2.85125 9.44141C1.42123 10.5422 1.42123 12.6988 2.85125 13.7996L6.57253 16.6643C8.38085 18.0563 11 16.7672 11 14.4852L11 12.3705L21.25 12.3705C21.6642 12.3705 22 12.0348 22 11.6205Z"
+                        fill="#000001"
+                    />
+                </svg>
+            </button>
+            <button type="button" class="arrow-btn arrow-btn_next">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M22 11.6205C22 11.2063 21.6642 10.8705 21.25 10.8705L11 10.8705L11 8.75588C11 6.47382 8.38084 5.18473 6.57253 6.57677L2.85125 9.44141C1.42123 10.5422 1.42123 12.6988 2.85125 13.7996L6.57253 16.6643C8.38085 18.0563 11 16.7672 11 14.4852L11 12.3705L21.25 12.3705C21.6642 12.3705 22 12.0348 22 11.6205Z"
+                        fill="#000001"
+                    />
+                </svg>
+            </button>
+        </div> -->
+        <div class="benefits-work__wrapper">
+            <div class="benefits-work__box">
+               <div class="benefits-work__box-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    
+                    <defs>
+                        <clipPath id="clip789_45305">
+                            <rect id="Hicon / Linear / Profile 1" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                        </clipPath>
+                    </defs>
+                    <g clip-path="url(#clip789_45305)">
+                        <path id="Vector" d="M11.5 10C9.29 10 7.5 8.2 7.5 6C7.5 3.79 9.29 2 11.5 2C13.7 2 15.5 3.79 15.5 6C15.5 8.2 13.7 10 11.5 10ZM14.5 13C16.7 13 18.5 14.79 18.5 17C18.5 19.2 16.7 21 14.5 21L8.5 21C6.29 21 4.5 19.2 4.5 17C4.5 14.79 6.29 13 8.5 13L14.5 13Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                    </g>
+                </svg>
+               </div>
+               <div class="benefits-work__box-text">Профильные специалисты в области борьбы с шумом в штате</div>  
+            </div>
+
+            <div class="benefits-work__box">
+                <div class="benefits-work__box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        
+                        <defs>
+                            <clipPath id="clip789_45309">
+                                <rect id="Hicon / Outline / Verified" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip789_45309)">
+                            <path id="Vector" d="M7.93 2.75C8.95 -0.83 14.04 -0.83 15.06 2.75C15.39 3.9 16.56 4.58 17.72 4.29C21.33 3.38 23.88 7.78 21.28 10.46C20.45 11.32 20.45 12.67 21.28 13.53C23.88 16.21 21.33 20.61 17.72 19.7C16.56 19.41 15.39 20.09 15.06 21.24C14.04 24.82 8.95 24.82 7.93 21.24C7.6 20.09 6.43 19.41 5.27 19.7C1.66 20.61 -0.89 16.21 1.71 13.53C2.54 12.67 2.54 11.32 1.71 10.46C-0.89 7.78 1.66 3.38 5.27 4.29C6.43 4.58 7.6 3.9 7.93 2.75ZM13.62 3.16C13.01 1.03 9.98 1.03 9.37 3.16C8.82 5.09 6.85 6.23 4.91 5.74C2.75 5.2 1.24 7.82 2.79 9.42C4.18 10.85 4.18 13.14 2.79 14.57C1.24 16.17 2.75 18.79 4.91 18.25C6.85 17.76 8.82 18.9 9.37 20.83C9.98 22.96 13.01 22.96 13.62 20.83C14.16 18.9 16.14 17.76 18.08 18.25C20.24 18.79 21.75 16.17 20.2 14.57C18.81 13.14 18.81 10.85 20.2 9.42C21.75 7.82 20.24 5.2 18.08 5.74C16.14 6.23 14.16 5.09 13.62 3.16ZM15.98 8.42C16.29 8.68 16.34 9.16 16.07 9.48L12.58 13.67C12.25 14.06 11.95 14.42 11.67 14.67C11.37 14.94 11 15.18 10.5 15.18C10 15.18 9.62 14.94 9.32 14.67C9.04 14.42 8.74 14.06 8.41 13.67L6.92 11.88C6.65 11.56 6.7 11.08 7.01 10.82C7.33 10.55 7.81 10.6 8.07 10.91L9.53 12.67C9.91 13.12 10.13 13.39 10.32 13.56C10.41 13.63 10.46 13.67 10.48 13.68C10.49 13.68 10.49 13.68 10.5 13.68C10.5 13.68 10.5 13.68 10.51 13.68C10.53 13.67 10.58 13.63 10.67 13.56C10.86 13.39 11.08 13.12 11.46 12.67L14.92 8.52C15.18 8.2 15.66 8.15 15.98 8.42Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="benefits-work__box-text">Более 15 лет практического опыта</div>  
+            </div>
+
+            <div class="benefits-work__box">
+                <div class="benefits-work__box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                        <defs>
+                            <clipPath id="clip789_45313">
+                                <rect id="Hicon / Outline / Image" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip789_45313)">
+                            <path id="Vector" d="M11.54 2.25C13.38 2.25 14.82 2.25 15.96 2.37C17.12 2.5 18.07 2.76 18.87 3.34C19.36 3.7 19.79 4.13 20.15 4.62C20.73 5.42 21 6.37 21.12 7.53C21.25 8.67 21.25 10.11 21.25 11.95L21.25 12C21.25 12.94 21.25 13.76 21.23 14.5C21.18 16.65 21.02 18.18 20.15 19.37C19.79 19.86 19.36 20.29 18.87 20.65C18.07 21.23 17.12 21.5 15.96 21.62C14.82 21.75 13.38 21.75 11.54 21.75L11.45 21.75C9.61 21.75 8.17 21.75 7.03 21.62C5.87 21.5 4.92 21.23 4.12 20.65C3.65 20.31 3.23 19.89 2.88 19.43C2.87 19.41 2.86 19.39 2.84 19.37C2.26 18.57 2 17.62 1.87 16.46C1.75 15.32 1.75 13.88 1.75 12.04L1.75 11.95C1.75 10.11 1.75 8.67 1.87 7.53C2 6.37 2.26 5.42 2.84 4.62C3.2 4.13 3.63 3.7 4.12 3.34C4.92 2.76 5.87 2.5 7.03 2.37C8.17 2.25 9.61 2.25 11.45 2.25L11.54 2.25ZM7.19 3.86C6.16 3.97 5.5 4.19 5 4.56C4.64 4.82 4.32 5.14 4.06 5.5C3.69 6 3.47 6.66 3.36 7.69C3.25 8.75 3.25 10.1 3.25 12C3.25 13.89 3.25 15.25 3.36 16.3C3.4 16.67 3.45 16.99 3.52 17.27C3.8 16.74 4.03 16.35 4.3 16.02C5.36 14.71 6.95 13.93 8.64 13.9C9.27 13.88 9.94 14.02 11.04 14.24L11.17 14.26C11.34 13.98 11.49 13.75 11.65 13.56C13.56 11.2 16.97 10.74 19.44 12.49C19.54 12.56 19.64 12.64 19.75 12.73C19.75 12.5 19.75 12.25 19.75 12C19.75 10.1 19.74 8.75 19.63 7.69C19.52 6.66 19.3 6 18.93 5.5C18.67 5.14 18.35 4.82 17.99 4.56C17.49 4.19 16.83 3.97 15.8 3.86C14.75 3.75 13.39 3.75 11.5 3.75C9.6 3.75 8.25 3.75 7.19 3.86ZM7.75 9C7.75 7.48 8.98 6.25 10.5 6.25C12.01 6.25 13.25 7.48 13.25 9C13.25 10.51 12.01 11.75 10.5 11.75C8.98 11.75 7.75 10.51 7.75 9ZM10.5 7.75C9.81 7.75 9.25 8.3 9.25 9C9.25 9.69 9.81 10.25 10.5 10.25C11.18 10.25 11.75 9.69 11.75 9C11.75 8.3 11.18 7.75 10.5 7.75ZM19.72 14.78C19.11 14.17 18.82 13.89 18.57 13.72C16.75 12.42 14.23 12.76 12.81 14.5C12.66 14.69 12.48 14.97 12.16 15.53C12.06 15.71 11.95 15.91 11.82 16.14L9.5 20.24C10.09 20.25 10.75 20.25 11.5 20.25C13.39 20.25 14.75 20.24 15.8 20.13C16.83 20.02 17.49 19.8 17.99 19.43C18.35 19.17 18.67 18.85 18.93 18.49C19.47 17.76 19.66 16.75 19.72 14.78ZM7.81 20.18C7.82 20.16 7.83 20.14 7.84 20.13L10.38 15.64C9.48 15.46 9.05 15.39 8.67 15.4C7.42 15.42 6.25 16 5.46 16.97C5.18 17.31 4.95 17.77 4.39 18.89C4.57 19.09 4.78 19.27 5 19.43C5.5 19.8 6.16 20.02 7.19 20.13C7.39 20.15 7.59 20.17 7.81 20.18Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                            <path id="Vector" d="M15.96 2.37C17.12 2.5 18.07 2.76 18.87 3.34C19.36 3.7 19.79 4.13 20.15 4.62C20.73 5.42 21 6.37 21.12 7.53C21.25 8.67 21.25 10.11 21.25 11.95L21.25 12C21.25 12.94 21.25 13.76 21.23 14.5C21.18 16.65 21.02 18.18 20.15 19.37C19.79 19.86 19.36 20.29 18.87 20.65C18.07 21.23 17.12 21.5 15.96 21.62C14.82 21.75 13.38 21.75 11.54 21.75L11.45 21.75C9.61 21.75 8.17 21.75 7.03 21.62C5.87 21.5 4.92 21.23 4.12 20.65C3.65 20.31 3.23 19.89 2.88 19.43C2.87 19.41 2.86 19.39 2.84 19.37C2.26 18.57 2 17.62 1.87 16.46C1.75 15.32 1.75 13.88 1.75 12.04L1.75 11.95C1.75 10.11 1.75 8.67 1.87 7.53C2 6.37 2.26 5.42 2.84 4.62C3.2 4.13 3.63 3.7 4.12 3.34C4.92 2.76 5.87 2.5 7.03 2.37C8.17 2.25 9.61 2.25 11.45 2.25L11.54 2.25C13.38 2.25 14.82 2.25 15.96 2.37ZM5 4.56C4.64 4.82 4.32 5.14 4.06 5.5C3.69 6 3.47 6.66 3.36 7.69C3.25 8.75 3.25 10.1 3.25 12C3.25 13.89 3.25 15.25 3.36 16.3C3.4 16.67 3.45 16.99 3.52 17.27C3.8 16.74 4.03 16.35 4.3 16.02C5.36 14.71 6.95 13.93 8.64 13.9C9.27 13.88 9.94 14.02 11.04 14.24L11.17 14.26C11.34 13.98 11.49 13.75 11.65 13.56C13.56 11.2 16.97 10.74 19.44 12.49C19.54 12.56 19.64 12.64 19.75 12.73C19.75 12.5 19.75 12.25 19.75 12C19.75 10.1 19.74 8.75 19.63 7.69C19.52 6.66 19.3 6 18.93 5.5C18.67 5.14 18.35 4.82 17.99 4.56C17.49 4.19 16.83 3.97 15.8 3.86C14.75 3.75 13.39 3.75 11.5 3.75C9.6 3.75 8.25 3.75 7.19 3.86C6.16 3.97 5.5 4.19 5 4.56ZM18.57 13.72C16.75 12.42 14.23 12.76 12.81 14.5C12.66 14.69 12.48 14.97 12.16 15.53C12.06 15.71 11.95 15.91 11.82 16.14L9.5 20.24C10.09 20.25 10.75 20.25 11.5 20.25C13.39 20.25 14.75 20.24 15.8 20.13C16.83 20.02 17.49 19.8 17.99 19.43C18.35 19.17 18.67 18.85 18.93 18.49C19.47 17.76 19.66 16.75 19.72 14.78C19.11 14.17 18.82 13.89 18.57 13.72ZM7.84 20.13L10.38 15.64C9.48 15.46 9.05 15.39 8.67 15.4C7.42 15.42 6.25 16 5.46 16.97C5.18 17.31 4.95 17.77 4.39 18.89C4.57 19.09 4.78 19.27 5 19.43C5.5 19.8 6.16 20.02 7.19 20.13C7.39 20.15 7.59 20.17 7.81 20.18C7.82 20.16 7.83 20.14 7.84 20.13ZM10.5 6.25C12.01 6.25 13.25 7.48 13.25 9C13.25 10.51 12.01 11.75 10.5 11.75C8.98 11.75 7.75 10.51 7.75 9C7.75 7.48 8.98 6.25 10.5 6.25ZM9.25 9C9.25 9.69 9.81 10.25 10.5 10.25C11.18 10.25 11.75 9.69 11.75 9C11.75 8.3 11.18 7.75 10.5 7.75C9.81 7.75 9.25 8.3 9.25 9Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.000000"></path>
+                        </g>
+                    </svg>
+                    
+                </div>
+                <div class="benefits-work__box-text">Обширное портфолио выполненных проектов</div>  
+            </div>
+
+            <div class="benefits-work__box">
+                <div class="benefits-work__box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                       
+                        <defs>
+                            <clipPath id="clip789_45317">
+                                <rect id="Hicon / Linear / Voice Shape 2" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip789_45317)">
+                            <path id="Vector" d="M11.5 8L11.5 16M14.5 9L14.5 15M17.5 11L17.5 13M8.5 9L8.5 15M5.5 11L5.5 13M16.39 3.02C16.54 3.1 16.68 3.18 16.82 3.27C17.83 3.92 18.47 5.03 19.75 7.23C21.02 9.44 21.66 10.54 21.72 11.75C21.72 11.91 21.72 12.08 21.72 12.24C21.66 13.45 21.02 14.55 19.75 16.76C18.47 18.96 17.83 20.07 16.82 20.72C16.68 20.81 16.54 20.89 16.39 20.97C15.32 21.52 14.04 21.52 11.5 21.52C8.95 21.52 7.67 21.52 6.6 20.97C6.45 20.89 6.31 20.81 6.17 20.72C5.16 20.07 4.52 18.96 3.25 16.76C1.97 14.55 1.33 13.45 1.27 12.24C1.27 12.08 1.27 11.91 1.27 11.75C1.33 10.54 1.97 9.44 3.25 7.23C4.52 5.03 5.16 3.92 6.17 3.27C6.31 3.18 6.45 3.1 6.6 3.02C7.67 2.47 8.95 2.47 11.5 2.47C14.04 2.47 15.32 2.47 16.39 3.02Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                        </g>
+                    </svg>
+                    
+                </div>
+                <div class="benefits-work__box-text">Лицензированное ПО для акустического моделирования и вычислений</div>  
+            </div>
+
+            <div class="benefits-work__box">
+                <div class="benefits-work__box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                       
+                        <defs>
+                            <clipPath id="clip789_45321">
+                                <rect id="Hicon / Linear / Microphone 3" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip789_45321)">
+                            <path id="Vector" d="M15.5 10C15.5 12.2 13.7 14 11.5 14C9.29 14 7.5 12.2 7.5 10L7.5 6C7.5 3.79 9.29 2 11.5 2C13.7 2 15.5 3.79 15.5 6L15.5 10ZM19.5 10C19.5 14.41 15.91 18 11.5 18C7.08 18 3.5 14.41 3.5 10M11.5 18L11.5 19L11.5 21L11.5 21.65M9.5 22L10.28 21.8C10.68 21.7 11.09 21.65 11.5 21.65C11.9 21.65 12.31 21.7 12.71 21.8L13.5 22M10 10L10.23 9.92C11.05 9.64 11.94 9.64 12.76 9.92L13 10M9.5 6.5L10.28 6.3C11.08 6.1 11.91 6.1 12.71 6.3L13.5 6.5" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                        </g>
+                    </svg>
+                    
+                </div>
+                <div class="benefits-work__box-text">Специализированное оборудование с метрологическими характеристиками</div>  
+            </div>
+            <div class="benefits-work__box">
+                <div class="benefits-work__box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        
+                        <defs>
+                            <clipPath id="clip789_45325">
+                                <rect id="Hicon / Outline / Group 3" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                            </clipPath>
+                        </defs>
+                        <g clip-path="url(#clip789_45325)">
+                            <path id="Vector" d="M7.25 10.38C7.09 10.13 6.79 10 6.5 10C5.25 10 4.25 8.99 4.25 7.75C4.25 6.5 5.25 5.5 6.5 5.5C6.79 5.5 7.09 5.36 7.25 5.11C7.25 5.1 7.26 5.08 7.27 5.07C7.53 4.66 7.4 4.07 6.91 4.02C6.77 4 6.64 4 6.5 4C4.42 4 2.75 5.67 2.75 7.75C2.75 9.82 4.42 11.5 6.5 11.5C6.64 11.5 6.77 11.49 6.91 11.47C7.4 11.42 7.53 10.83 7.27 10.42C7.26 10.41 7.25 10.39 7.25 10.38ZM11.5 4C9.42 4 7.75 5.67 7.75 7.75C7.75 9.82 9.42 11.5 11.5 11.5C13.57 11.5 15.25 9.82 15.25 7.75C15.25 5.67 13.57 4 11.5 4ZM15.72 10.42C15.46 10.83 15.59 11.42 16.08 11.47C16.22 11.49 16.35 11.5 16.5 11.5C18.57 11.5 20.25 9.82 20.25 7.75C20.25 5.67 18.57 4 16.5 4C16.35 4 16.22 4 16.08 4.02C15.59 4.07 15.46 4.66 15.72 5.07C15.73 5.08 15.74 5.1 15.74 5.11C15.9 5.36 16.2 5.5 16.5 5.5C17.74 5.5 18.75 6.5 18.75 7.75C18.75 8.99 17.74 10 16.5 10C16.2 10 15.9 10.13 15.74 10.38C15.74 10.39 15.73 10.41 15.72 10.42ZM9.25 7.75C9.25 6.5 10.25 5.5 11.5 5.5C12.74 5.5 13.75 6.5 13.75 7.75C13.75 8.99 12.74 10 11.5 10C10.25 10 9.25 8.99 9.25 7.75ZM3.67 18C3.89 18 4.09 18.12 4.2 18.31C4.48 18.77 4.18 19.5 3.64 19.5L3.5 19.5C1.42 19.5 -0.25 17.82 -0.25 15.75C-0.25 13.67 1.42 12 3.5 12L3.64 12C4.18 12 4.48 12.72 4.2 13.18C4.09 13.37 3.89 13.5 3.67 13.5L3.5 13.5C2.25 13.5 1.25 14.5 1.25 15.75C1.25 16.99 2.25 18 3.5 18L3.67 18ZM19.35 19.5C18.81 19.5 18.51 18.77 18.79 18.31C18.9 18.12 19.1 18 19.32 18L19.5 18C20.74 18 21.75 16.99 21.75 15.75C21.75 14.5 20.74 13.5 19.5 13.5L19.32 13.5C19.1 13.5 18.9 13.37 18.79 13.18C18.51 12.72 18.81 12 19.35 12L19.5 12C21.57 12 23.25 13.67 23.25 15.75C23.25 17.82 21.57 19.5 19.5 19.5L19.35 19.5ZM4.75 16.75C4.75 14.67 6.42 13 8.5 13L14.5 13C16.57 13 18.25 14.67 18.25 16.75C18.25 18.82 16.57 20.5 14.5 20.5L8.5 20.5C6.42 20.5 4.75 18.82 4.75 16.75ZM8.5 14.5C7.25 14.5 6.25 15.5 6.25 16.75C6.25 17.99 7.25 19 8.5 19L14.5 19C15.74 19 16.75 17.99 16.75 16.75C16.75 15.5 15.74 14.5 14.5 14.5L8.5 14.5Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                            <path id="Vector" d="M9.25 7.75C9.25 8.99 10.25 10 11.5 10C12.74 10 13.75 8.99 13.75 7.75C13.75 6.5 12.74 5.5 11.5 5.5C10.25 5.5 9.25 6.5 9.25 7.75ZM11.5 4C13.57 4 15.25 5.67 15.25 7.75C15.25 9.82 13.57 11.5 11.5 11.5C9.42 11.5 7.75 9.82 7.75 7.75C7.75 5.67 9.42 4 11.5 4ZM8.5 13L14.5 13C16.57 13 18.25 14.67 18.25 16.75C18.25 18.82 16.57 20.5 14.5 20.5L8.5 20.5C6.42 20.5 4.75 18.82 4.75 16.75C4.75 14.67 6.42 13 8.5 13ZM6.25 16.75C6.25 17.99 7.25 19 8.5 19L14.5 19C15.74 19 16.75 17.99 16.75 16.75C16.75 15.5 15.74 14.5 14.5 14.5L8.5 14.5C7.25 14.5 6.25 15.5 6.25 16.75ZM6.5 10C6.79 10 7.09 10.13 7.25 10.38C7.25 10.39 7.26 10.41 7.27 10.42C7.53 10.83 7.4 11.42 6.91 11.47C6.77 11.49 6.64 11.5 6.5 11.5C4.42 11.5 2.75 9.82 2.75 7.75C2.75 5.67 4.42 4 6.5 4C6.64 4 6.77 4 6.91 4.02C7.4 4.07 7.53 4.66 7.27 5.07C7.26 5.08 7.25 5.1 7.25 5.11C7.09 5.36 6.79 5.5 6.5 5.5C5.25 5.5 4.25 6.5 4.25 7.75C4.25 8.99 5.25 10 6.5 10ZM3.67 18C3.89 18 4.09 18.12 4.2 18.31C4.48 18.77 4.18 19.5 3.64 19.5L3.5 19.5C1.42 19.5 -0.25 17.82 -0.25 15.75C-0.25 13.67 1.42 12 3.5 12L3.64 12C4.18 12 4.48 12.72 4.2 13.18C4.09 13.37 3.89 13.5 3.67 13.5L3.5 13.5C2.25 13.5 1.25 14.5 1.25 15.75C1.25 16.99 2.25 18 3.5 18L3.67 18ZM16.08 11.47C15.59 11.42 15.46 10.83 15.72 10.42C15.73 10.41 15.74 10.39 15.74 10.38C15.9 10.13 16.2 10 16.5 10C17.74 10 18.75 8.99 18.75 7.75C18.75 6.5 17.74 5.5 16.5 5.5C16.2 5.5 15.9 5.36 15.74 5.11C15.74 5.1 15.73 5.08 15.72 5.07C15.46 4.66 15.59 4.07 16.08 4.02C16.22 4 16.35 4 16.5 4C18.57 4 20.25 5.67 20.25 7.75C20.25 9.82 18.57 11.5 16.5 11.5C16.35 11.5 16.22 11.49 16.08 11.47ZM19.35 19.5C18.81 19.5 18.51 18.77 18.79 18.31C18.9 18.12 19.1 18 19.32 18L19.5 18C20.74 18 21.75 16.99 21.75 15.75C21.75 14.5 20.74 13.5 19.5 13.5L19.32 13.5C19.1 13.5 18.9 13.37 18.79 13.18C18.51 12.72 18.81 12 19.35 12L19.5 12C21.57 12 23.25 13.67 23.25 15.75C23.25 17.82 21.57 19.5 19.5 19.5L19.35 19.5Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.000000"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="benefits-work__box-text">Членство СРО по проектной деятельности</div>  
+            </div>
+        </div>
+        <div class="benefits-work-swiper swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                
+                                <defs>
+                                    <clipPath id="clip789_45305">
+                                        <rect id="Hicon / Linear / Profile 1" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45305)">
+                                    <path id="Vector" d="M11.5 10C9.29 10 7.5 8.2 7.5 6C7.5 3.79 9.29 2 11.5 2C13.7 2 15.5 3.79 15.5 6C15.5 8.2 13.7 10 11.5 10ZM14.5 13C16.7 13 18.5 14.79 18.5 17C18.5 19.2 16.7 21 14.5 21L8.5 21C6.29 21 4.5 19.2 4.5 17C4.5 14.79 6.29 13 8.5 13L14.5 13Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                                </g>
+                            </svg>
+                           </div>
+                        <div class="benefits-work__box-text">Профильные специалисты в области борьбы с шумом в штате</div>  
+                     </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                
+                                <defs>
+                                    <clipPath id="clip789_45309">
+                                        <rect id="Hicon / Outline / Verified" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45309)">
+                                    <path id="Vector" d="M7.93 2.75C8.95 -0.83 14.04 -0.83 15.06 2.75C15.39 3.9 16.56 4.58 17.72 4.29C21.33 3.38 23.88 7.78 21.28 10.46C20.45 11.32 20.45 12.67 21.28 13.53C23.88 16.21 21.33 20.61 17.72 19.7C16.56 19.41 15.39 20.09 15.06 21.24C14.04 24.82 8.95 24.82 7.93 21.24C7.6 20.09 6.43 19.41 5.27 19.7C1.66 20.61 -0.89 16.21 1.71 13.53C2.54 12.67 2.54 11.32 1.71 10.46C-0.89 7.78 1.66 3.38 5.27 4.29C6.43 4.58 7.6 3.9 7.93 2.75ZM13.62 3.16C13.01 1.03 9.98 1.03 9.37 3.16C8.82 5.09 6.85 6.23 4.91 5.74C2.75 5.2 1.24 7.82 2.79 9.42C4.18 10.85 4.18 13.14 2.79 14.57C1.24 16.17 2.75 18.79 4.91 18.25C6.85 17.76 8.82 18.9 9.37 20.83C9.98 22.96 13.01 22.96 13.62 20.83C14.16 18.9 16.14 17.76 18.08 18.25C20.24 18.79 21.75 16.17 20.2 14.57C18.81 13.14 18.81 10.85 20.2 9.42C21.75 7.82 20.24 5.2 18.08 5.74C16.14 6.23 14.16 5.09 13.62 3.16ZM15.98 8.42C16.29 8.68 16.34 9.16 16.07 9.48L12.58 13.67C12.25 14.06 11.95 14.42 11.67 14.67C11.37 14.94 11 15.18 10.5 15.18C10 15.18 9.62 14.94 9.32 14.67C9.04 14.42 8.74 14.06 8.41 13.67L6.92 11.88C6.65 11.56 6.7 11.08 7.01 10.82C7.33 10.55 7.81 10.6 8.07 10.91L9.53 12.67C9.91 13.12 10.13 13.39 10.32 13.56C10.41 13.63 10.46 13.67 10.48 13.68C10.49 13.68 10.49 13.68 10.5 13.68C10.5 13.68 10.5 13.68 10.51 13.68C10.53 13.67 10.58 13.63 10.67 13.56C10.86 13.39 11.08 13.12 11.46 12.67L14.92 8.52C15.18 8.2 15.66 8.15 15.98 8.42Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="benefits-work__box-text">Более 15 лет практического опыта</div>  
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
+                                <defs>
+                                    <clipPath id="clip789_45313">
+                                        <rect id="Hicon / Outline / Image" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45313)">
+                                    <path id="Vector" d="M11.54 2.25C13.38 2.25 14.82 2.25 15.96 2.37C17.12 2.5 18.07 2.76 18.87 3.34C19.36 3.7 19.79 4.13 20.15 4.62C20.73 5.42 21 6.37 21.12 7.53C21.25 8.67 21.25 10.11 21.25 11.95L21.25 12C21.25 12.94 21.25 13.76 21.23 14.5C21.18 16.65 21.02 18.18 20.15 19.37C19.79 19.86 19.36 20.29 18.87 20.65C18.07 21.23 17.12 21.5 15.96 21.62C14.82 21.75 13.38 21.75 11.54 21.75L11.45 21.75C9.61 21.75 8.17 21.75 7.03 21.62C5.87 21.5 4.92 21.23 4.12 20.65C3.65 20.31 3.23 19.89 2.88 19.43C2.87 19.41 2.86 19.39 2.84 19.37C2.26 18.57 2 17.62 1.87 16.46C1.75 15.32 1.75 13.88 1.75 12.04L1.75 11.95C1.75 10.11 1.75 8.67 1.87 7.53C2 6.37 2.26 5.42 2.84 4.62C3.2 4.13 3.63 3.7 4.12 3.34C4.92 2.76 5.87 2.5 7.03 2.37C8.17 2.25 9.61 2.25 11.45 2.25L11.54 2.25ZM7.19 3.86C6.16 3.97 5.5 4.19 5 4.56C4.64 4.82 4.32 5.14 4.06 5.5C3.69 6 3.47 6.66 3.36 7.69C3.25 8.75 3.25 10.1 3.25 12C3.25 13.89 3.25 15.25 3.36 16.3C3.4 16.67 3.45 16.99 3.52 17.27C3.8 16.74 4.03 16.35 4.3 16.02C5.36 14.71 6.95 13.93 8.64 13.9C9.27 13.88 9.94 14.02 11.04 14.24L11.17 14.26C11.34 13.98 11.49 13.75 11.65 13.56C13.56 11.2 16.97 10.74 19.44 12.49C19.54 12.56 19.64 12.64 19.75 12.73C19.75 12.5 19.75 12.25 19.75 12C19.75 10.1 19.74 8.75 19.63 7.69C19.52 6.66 19.3 6 18.93 5.5C18.67 5.14 18.35 4.82 17.99 4.56C17.49 4.19 16.83 3.97 15.8 3.86C14.75 3.75 13.39 3.75 11.5 3.75C9.6 3.75 8.25 3.75 7.19 3.86ZM7.75 9C7.75 7.48 8.98 6.25 10.5 6.25C12.01 6.25 13.25 7.48 13.25 9C13.25 10.51 12.01 11.75 10.5 11.75C8.98 11.75 7.75 10.51 7.75 9ZM10.5 7.75C9.81 7.75 9.25 8.3 9.25 9C9.25 9.69 9.81 10.25 10.5 10.25C11.18 10.25 11.75 9.69 11.75 9C11.75 8.3 11.18 7.75 10.5 7.75ZM19.72 14.78C19.11 14.17 18.82 13.89 18.57 13.72C16.75 12.42 14.23 12.76 12.81 14.5C12.66 14.69 12.48 14.97 12.16 15.53C12.06 15.71 11.95 15.91 11.82 16.14L9.5 20.24C10.09 20.25 10.75 20.25 11.5 20.25C13.39 20.25 14.75 20.24 15.8 20.13C16.83 20.02 17.49 19.8 17.99 19.43C18.35 19.17 18.67 18.85 18.93 18.49C19.47 17.76 19.66 16.75 19.72 14.78ZM7.81 20.18C7.82 20.16 7.83 20.14 7.84 20.13L10.38 15.64C9.48 15.46 9.05 15.39 8.67 15.4C7.42 15.42 6.25 16 5.46 16.97C5.18 17.31 4.95 17.77 4.39 18.89C4.57 19.09 4.78 19.27 5 19.43C5.5 19.8 6.16 20.02 7.19 20.13C7.39 20.15 7.59 20.17 7.81 20.18Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                                    <path id="Vector" d="M15.96 2.37C17.12 2.5 18.07 2.76 18.87 3.34C19.36 3.7 19.79 4.13 20.15 4.62C20.73 5.42 21 6.37 21.12 7.53C21.25 8.67 21.25 10.11 21.25 11.95L21.25 12C21.25 12.94 21.25 13.76 21.23 14.5C21.18 16.65 21.02 18.18 20.15 19.37C19.79 19.86 19.36 20.29 18.87 20.65C18.07 21.23 17.12 21.5 15.96 21.62C14.82 21.75 13.38 21.75 11.54 21.75L11.45 21.75C9.61 21.75 8.17 21.75 7.03 21.62C5.87 21.5 4.92 21.23 4.12 20.65C3.65 20.31 3.23 19.89 2.88 19.43C2.87 19.41 2.86 19.39 2.84 19.37C2.26 18.57 2 17.62 1.87 16.46C1.75 15.32 1.75 13.88 1.75 12.04L1.75 11.95C1.75 10.11 1.75 8.67 1.87 7.53C2 6.37 2.26 5.42 2.84 4.62C3.2 4.13 3.63 3.7 4.12 3.34C4.92 2.76 5.87 2.5 7.03 2.37C8.17 2.25 9.61 2.25 11.45 2.25L11.54 2.25C13.38 2.25 14.82 2.25 15.96 2.37ZM5 4.56C4.64 4.82 4.32 5.14 4.06 5.5C3.69 6 3.47 6.66 3.36 7.69C3.25 8.75 3.25 10.1 3.25 12C3.25 13.89 3.25 15.25 3.36 16.3C3.4 16.67 3.45 16.99 3.52 17.27C3.8 16.74 4.03 16.35 4.3 16.02C5.36 14.71 6.95 13.93 8.64 13.9C9.27 13.88 9.94 14.02 11.04 14.24L11.17 14.26C11.34 13.98 11.49 13.75 11.65 13.56C13.56 11.2 16.97 10.74 19.44 12.49C19.54 12.56 19.64 12.64 19.75 12.73C19.75 12.5 19.75 12.25 19.75 12C19.75 10.1 19.74 8.75 19.63 7.69C19.52 6.66 19.3 6 18.93 5.5C18.67 5.14 18.35 4.82 17.99 4.56C17.49 4.19 16.83 3.97 15.8 3.86C14.75 3.75 13.39 3.75 11.5 3.75C9.6 3.75 8.25 3.75 7.19 3.86C6.16 3.97 5.5 4.19 5 4.56ZM18.57 13.72C16.75 12.42 14.23 12.76 12.81 14.5C12.66 14.69 12.48 14.97 12.16 15.53C12.06 15.71 11.95 15.91 11.82 16.14L9.5 20.24C10.09 20.25 10.75 20.25 11.5 20.25C13.39 20.25 14.75 20.24 15.8 20.13C16.83 20.02 17.49 19.8 17.99 19.43C18.35 19.17 18.67 18.85 18.93 18.49C19.47 17.76 19.66 16.75 19.72 14.78C19.11 14.17 18.82 13.89 18.57 13.72ZM7.84 20.13L10.38 15.64C9.48 15.46 9.05 15.39 8.67 15.4C7.42 15.42 6.25 16 5.46 16.97C5.18 17.31 4.95 17.77 4.39 18.89C4.57 19.09 4.78 19.27 5 19.43C5.5 19.8 6.16 20.02 7.19 20.13C7.39 20.15 7.59 20.17 7.81 20.18C7.82 20.16 7.83 20.14 7.84 20.13ZM10.5 6.25C12.01 6.25 13.25 7.48 13.25 9C13.25 10.51 12.01 11.75 10.5 11.75C8.98 11.75 7.75 10.51 7.75 9C7.75 7.48 8.98 6.25 10.5 6.25ZM9.25 9C9.25 9.69 9.81 10.25 10.5 10.25C11.18 10.25 11.75 9.69 11.75 9C11.75 8.3 11.18 7.75 10.5 7.75C9.81 7.75 9.25 8.3 9.25 9Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.000000"></path>
+                                </g>
+                            </svg>
+                            
+                        </div>
+                        <div class="benefits-work__box-text">Обширное портфолио выполненных проектов</div>  
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                               
+                                <defs>
+                                    <clipPath id="clip789_45317">
+                                        <rect id="Hicon / Linear / Voice Shape 2" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45317)">
+                                    <path id="Vector" d="M11.5 8L11.5 16M14.5 9L14.5 15M17.5 11L17.5 13M8.5 9L8.5 15M5.5 11L5.5 13M16.39 3.02C16.54 3.1 16.68 3.18 16.82 3.27C17.83 3.92 18.47 5.03 19.75 7.23C21.02 9.44 21.66 10.54 21.72 11.75C21.72 11.91 21.72 12.08 21.72 12.24C21.66 13.45 21.02 14.55 19.75 16.76C18.47 18.96 17.83 20.07 16.82 20.72C16.68 20.81 16.54 20.89 16.39 20.97C15.32 21.52 14.04 21.52 11.5 21.52C8.95 21.52 7.67 21.52 6.6 20.97C6.45 20.89 6.31 20.81 6.17 20.72C5.16 20.07 4.52 18.96 3.25 16.76C1.97 14.55 1.33 13.45 1.27 12.24C1.27 12.08 1.27 11.91 1.27 11.75C1.33 10.54 1.97 9.44 3.25 7.23C4.52 5.03 5.16 3.92 6.17 3.27C6.31 3.18 6.45 3.1 6.6 3.02C7.67 2.47 8.95 2.47 11.5 2.47C14.04 2.47 15.32 2.47 16.39 3.02Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                                </g>
+                            </svg>
+                            
+                        </div>
+                        <div class="benefits-work__box-text">Лицензированное ПО для акустического моделирования и вычислений</div>  
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                               
+                                <defs>
+                                    <clipPath id="clip789_45321">
+                                        <rect id="Hicon / Linear / Microphone 3" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45321)">
+                                    <path id="Vector" d="M15.5 10C15.5 12.2 13.7 14 11.5 14C9.29 14 7.5 12.2 7.5 10L7.5 6C7.5 3.79 9.29 2 11.5 2C13.7 2 15.5 3.79 15.5 6L15.5 10ZM19.5 10C19.5 14.41 15.91 18 11.5 18C7.08 18 3.5 14.41 3.5 10M11.5 18L11.5 19L11.5 21L11.5 21.65M9.5 22L10.28 21.8C10.68 21.7 11.09 21.65 11.5 21.65C11.9 21.65 12.31 21.7 12.71 21.8L13.5 22M10 10L10.23 9.92C11.05 9.64 11.94 9.64 12.76 9.92L13 10M9.5 6.5L10.28 6.3C11.08 6.1 11.91 6.1 12.71 6.3L13.5 6.5" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.500000"></path>
+                                </g>
+                            </svg>
+                            
+                        </div>
+                        <div class="benefits-work__box-text">Специализированное оборудование с метрологическими характеристиками</div>  
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="benefits-work__box">
+                        <div class="benefits-work__box-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                
+                                <defs>
+                                    <clipPath id="clip789_45325">
+                                        <rect id="Hicon / Outline / Group 3" width="24.000000" height="24.000000" transform="translate(-0.500000 0.000000)" fill="white" fill-opacity="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#clip789_45325)">
+                                    <path id="Vector" d="M7.25 10.38C7.09 10.13 6.79 10 6.5 10C5.25 10 4.25 8.99 4.25 7.75C4.25 6.5 5.25 5.5 6.5 5.5C6.79 5.5 7.09 5.36 7.25 5.11C7.25 5.1 7.26 5.08 7.27 5.07C7.53 4.66 7.4 4.07 6.91 4.02C6.77 4 6.64 4 6.5 4C4.42 4 2.75 5.67 2.75 7.75C2.75 9.82 4.42 11.5 6.5 11.5C6.64 11.5 6.77 11.49 6.91 11.47C7.4 11.42 7.53 10.83 7.27 10.42C7.26 10.41 7.25 10.39 7.25 10.38ZM11.5 4C9.42 4 7.75 5.67 7.75 7.75C7.75 9.82 9.42 11.5 11.5 11.5C13.57 11.5 15.25 9.82 15.25 7.75C15.25 5.67 13.57 4 11.5 4ZM15.72 10.42C15.46 10.83 15.59 11.42 16.08 11.47C16.22 11.49 16.35 11.5 16.5 11.5C18.57 11.5 20.25 9.82 20.25 7.75C20.25 5.67 18.57 4 16.5 4C16.35 4 16.22 4 16.08 4.02C15.59 4.07 15.46 4.66 15.72 5.07C15.73 5.08 15.74 5.1 15.74 5.11C15.9 5.36 16.2 5.5 16.5 5.5C17.74 5.5 18.75 6.5 18.75 7.75C18.75 8.99 17.74 10 16.5 10C16.2 10 15.9 10.13 15.74 10.38C15.74 10.39 15.73 10.41 15.72 10.42ZM9.25 7.75C9.25 6.5 10.25 5.5 11.5 5.5C12.74 5.5 13.75 6.5 13.75 7.75C13.75 8.99 12.74 10 11.5 10C10.25 10 9.25 8.99 9.25 7.75ZM3.67 18C3.89 18 4.09 18.12 4.2 18.31C4.48 18.77 4.18 19.5 3.64 19.5L3.5 19.5C1.42 19.5 -0.25 17.82 -0.25 15.75C-0.25 13.67 1.42 12 3.5 12L3.64 12C4.18 12 4.48 12.72 4.2 13.18C4.09 13.37 3.89 13.5 3.67 13.5L3.5 13.5C2.25 13.5 1.25 14.5 1.25 15.75C1.25 16.99 2.25 18 3.5 18L3.67 18ZM19.35 19.5C18.81 19.5 18.51 18.77 18.79 18.31C18.9 18.12 19.1 18 19.32 18L19.5 18C20.74 18 21.75 16.99 21.75 15.75C21.75 14.5 20.74 13.5 19.5 13.5L19.32 13.5C19.1 13.5 18.9 13.37 18.79 13.18C18.51 12.72 18.81 12 19.35 12L19.5 12C21.57 12 23.25 13.67 23.25 15.75C23.25 17.82 21.57 19.5 19.5 19.5L19.35 19.5ZM4.75 16.75C4.75 14.67 6.42 13 8.5 13L14.5 13C16.57 13 18.25 14.67 18.25 16.75C18.25 18.82 16.57 20.5 14.5 20.5L8.5 20.5C6.42 20.5 4.75 18.82 4.75 16.75ZM8.5 14.5C7.25 14.5 6.25 15.5 6.25 16.75C6.25 17.99 7.25 19 8.5 19L14.5 19C15.74 19 16.75 17.99 16.75 16.75C16.75 15.5 15.74 14.5 14.5 14.5L8.5 14.5Z" fill="#2D264B" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                                    <path id="Vector" d="M9.25 7.75C9.25 8.99 10.25 10 11.5 10C12.74 10 13.75 8.99 13.75 7.75C13.75 6.5 12.74 5.5 11.5 5.5C10.25 5.5 9.25 6.5 9.25 7.75ZM11.5 4C13.57 4 15.25 5.67 15.25 7.75C15.25 9.82 13.57 11.5 11.5 11.5C9.42 11.5 7.75 9.82 7.75 7.75C7.75 5.67 9.42 4 11.5 4ZM8.5 13L14.5 13C16.57 13 18.25 14.67 18.25 16.75C18.25 18.82 16.57 20.5 14.5 20.5L8.5 20.5C6.42 20.5 4.75 18.82 4.75 16.75C4.75 14.67 6.42 13 8.5 13ZM6.25 16.75C6.25 17.99 7.25 19 8.5 19L14.5 19C15.74 19 16.75 17.99 16.75 16.75C16.75 15.5 15.74 14.5 14.5 14.5L8.5 14.5C7.25 14.5 6.25 15.5 6.25 16.75ZM6.5 10C6.79 10 7.09 10.13 7.25 10.38C7.25 10.39 7.26 10.41 7.27 10.42C7.53 10.83 7.4 11.42 6.91 11.47C6.77 11.49 6.64 11.5 6.5 11.5C4.42 11.5 2.75 9.82 2.75 7.75C2.75 5.67 4.42 4 6.5 4C6.64 4 6.77 4 6.91 4.02C7.4 4.07 7.53 4.66 7.27 5.07C7.26 5.08 7.25 5.1 7.25 5.11C7.09 5.36 6.79 5.5 6.5 5.5C5.25 5.5 4.25 6.5 4.25 7.75C4.25 8.99 5.25 10 6.5 10ZM3.67 18C3.89 18 4.09 18.12 4.2 18.31C4.48 18.77 4.18 19.5 3.64 19.5L3.5 19.5C1.42 19.5 -0.25 17.82 -0.25 15.75C-0.25 13.67 1.42 12 3.5 12L3.64 12C4.18 12 4.48 12.72 4.2 13.18C4.09 13.37 3.89 13.5 3.67 13.5L3.5 13.5C2.25 13.5 1.25 14.5 1.25 15.75C1.25 16.99 2.25 18 3.5 18L3.67 18ZM16.08 11.47C15.59 11.42 15.46 10.83 15.72 10.42C15.73 10.41 15.74 10.39 15.74 10.38C15.9 10.13 16.2 10 16.5 10C17.74 10 18.75 8.99 18.75 7.75C18.75 6.5 17.74 5.5 16.5 5.5C16.2 5.5 15.9 5.36 15.74 5.11C15.74 5.1 15.73 5.08 15.72 5.07C15.46 4.66 15.59 4.07 16.08 4.02C16.22 4 16.35 4 16.5 4C18.57 4 20.25 5.67 20.25 7.75C20.25 9.82 18.57 11.5 16.5 11.5C16.35 11.5 16.22 11.49 16.08 11.47ZM19.35 19.5C18.81 19.5 18.51 18.77 18.79 18.31C18.9 18.12 19.1 18 19.32 18L19.5 18C20.74 18 21.75 16.99 21.75 15.75C21.75 14.5 20.74 13.5 19.5 13.5L19.32 13.5C19.1 13.5 18.9 13.37 18.79 13.18C18.51 12.72 18.81 12 19.35 12L19.5 12C21.57 12 23.25 13.67 23.25 15.75C23.25 17.82 21.57 19.5 19.5 19.5L19.35 19.5Z" stroke="#000001" stroke-opacity="1.000000" stroke-width="1.000000"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="benefits-work__box-text">Членство СРО по проектной деятельности</div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="gallery">
+    <div class="container">
+        <div class="gallery__title h h_h1">Галерея</div>
+        <div class="gallery__wrapper">
+            <div class="gallery-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery__image">
+                            <img src="./assets/images/sections/gallery/img1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__image">
+                            <img src="./assets/images/sections/gallery/img2.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__image">
+                            <img src="./assets/images/sections/gallery/img1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__image">
+                            <img src="./assets/images/sections/gallery/img1.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="gallery__navigation swiper-navigation">
+                <button type="button" class="arrow-btn arrow-btn_prev">
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M22 11.6205C22 11.2063 21.6642 10.8705 21.25 10.8705L11 10.8705L11 8.75588C11 6.47382 8.38084 5.18473 6.57253 6.57677L2.85125 9.44141C1.42123 10.5422 1.42123 12.6988 2.85125 13.7996L6.57253 16.6643C8.38085 18.0563 11 16.7672 11 14.4852L11 12.3705L21.25 12.3705C21.6642 12.3705 22 12.0348 22 11.6205Z"
+                            fill="#000001"
+                        />
+                    </svg>
+                </button>
+                <button type="button" class="arrow-btn arrow-btn_next">
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M22 11.6205C22 11.2063 21.6642 10.8705 21.25 10.8705L11 10.8705L11 8.75588C11 6.47382 8.38084 5.18473 6.57253 6.57677L2.85125 9.44141C1.42123 10.5422 1.42123 12.6988 2.85125 13.7996L6.57253 16.6643C8.38085 18.0563 11 16.7672 11 14.4852L11 12.3705L21.25 12.3705C21.6642 12.3705 22 12.0348 22 11.6205Z"
+                            fill="#000001"
+                        />
+                    </svg>
+                </button>
+            </div> -->
+        </div>
+    </div>
+</section>
+                <section class="answers">
+    <div class="container">
+        <div class="answers__title h h_h1">Ответы на вопросы</div>
+        <div class="answers__wrapper">
+            <ul class="answers__block" data-accordion-single="" data-accordion="768,max">
+                <li class="answers__box --active">
+                    <div data-accordion-item="" class="answers__box-heading _is-active">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+                <li class="answers__box">
+                    <div data-accordion-item="" class="answers__box-heading">
+                        <button class="answers__box-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Консультирование на объектах</span>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18.0002L14.2929 12.7074C14.6262 12.374 14.7929 12.2074 14.7929 12.0002C14.7929 11.7931 14.6262 11.6265 14.2929 11.2931L9 6.00024" stroke="#000001" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="answers__content">
+                        <strong>Консультирование на объектах</strong>
+                        <p>Визит специалиста в области акустики сэкономит время и деньги заказчику, поскольку консультация позволяет:</p>
+                        <ul>
+                            <li>
+                                выявить при визуальном осмотре ошибки в технических решениях, оценить возможность и целесообразность реализации тех
+                                или иных мер для улучшения акустики,
+                            </li>
+                            <li>провести акустические измерения и расчеты для выработки оптимального технического решения.</li>
+                        </ul>
+                        <p>
+                            Если заказчик выбирает помещение для аренды или покупки под определенные цели, специалист по акустике может предоставить
+                            информацию, которая позволит принять взвешенное решение с точки зрения возможности и необходимости проведения мероприятий
+                            для обеспечения акустического комфорта.
+                        </p>
+                        <p>
+                            Итогом консультации является отчет, включающий в себя описание проблемных участков, возможные пути решения вопроса, при
+                            необходимости – стоимость дополнительных акустических измерений и смысл их проведения.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+                <section class="banner banner_extended">
+    <div class="banner__container container">
+        <div class="banner__text">
+            <span class="banner__heading h h_h1">Не можете определиться с выбором?</span>
+            <p class="banner__description txt txt_20 txt_semibold">Оставьте заявку и мы свяжемся c вами в ближайшее время, для подбора походящего оборудования</p>
+            <button type="button" class="banner__btn btn btn_primary">
+                <span class="txt txt_20 txt_semibold">Оставить заявку</span>
+            </button>
+        </div>
+        <div class="banner__image-wrap">
+            <img src="./assets/images/bg/7255.webp" alt="" class="banner__image">
+        </div>
+    </div>
+</section>
+            </main>
+            <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__content">
+            <div class="footer__logo-wrap">
+                <a href="#" class="footer__logo"><img src="./assets/images/logo.svg" alt="" class="footer__logo-img"></a>
+                <p class="footer__text txt txt_16">
+                    Продажа мощного сценического оборудования для потрясающих шоу
+                </p>
+            </div>
+            <nav class="footer__nav">
+                <ul data-accordion="768,max" data-accordion-single="" class="footer__nav-items">
+                    <li class="footer__nav-item">
+                        <span data-accordion-item="" class="footer__nav-heading txt txt_semibold">Каталог</span>
+                        <ul class="footer__subnav">
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Звуковое оборудование</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Световое оборудование</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Микрофоны</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Механическое оборудование</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Мультикор</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Мультикор</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Фермы и стойки</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer__nav-item">
+                        <span data-accordion-item="" class="footer__nav-heading txt txt_semibold">Услуги</span>
+                        <ul class="footer__subnav">
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Услуга 1</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Услуга 2</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Услуга 3</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Услуга 4</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Услуга 5</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer__nav-item">
+                        <span data-accordion-item="" class="footer__nav-heading txt txt_semibold">Покупателям</span>
+                        <ul class="footer__subnav">
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Портфолио</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Новости</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">О нас</a>
+                            </li>
+                            <li class="footer__subnav-item">
+                                <a href="#" class="footer__subnav-link txt txt_16">Контакты</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="footer__contacts-list">
+                <li class="footer__contacts-item">
+                    <a href="tel:84952856896" class="footer__contacts-item-txt i-link">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.50001C13.8448 3.50001 13.6917 3.47126 14 3.50001C17.4281 3.81961 19.6931 5.93033 20 9.50001C20.0276 9.82108 21 10.6203 21 11.5V12.5C21 12.9233 20.5935 13.5 21 13.5C21.4065 13.5 22 12.9233 22 12.5V11.5C22 10.6857 22.0342 9.89815 22 9.50001C21.6296 5.19178 18.1373 1.88573 14 1.50001C13.6176 1.46436 13.7821 1.49999 13 1.50001H12C11.5935 1.50001 11 2.07674 11 2.50001C11 2.92328 11.5935 3.50001 12 3.50001H13Z" fill="#000001"></path>
+                            <path d="M7.00001 4.50001C5.96756 3.51214 4.03245 3.51214 3.00001 4.50001C2.95773 4.54046 3.05861 4.43897 3.00001 4.50001L2.00001 5.50001C1.11376 6.42287 0.728117 7.22597 1.00001 8.50001C2.54262 15.7285 8.05824 21.8937 15 23.5C16.2235 23.7831 17.1138 23.4229 18 22.5L19 21.5C18.9611 21.5441 19.0587 21.4389 19 21.5C19.9487 20.4249 19.9487 18.5751 19 17.5C18.9611 17.456 19.0587 17.5611 19 17.5L18 15.5C16.999 14.4576 15.2978 14.9109 14 15.5C13.257 15.8372 12.5731 15.0968 12 14.5L9.00001 12.5C8.42691 11.9032 8.67615 10.2737 9.00001 9.50001C9.5657 8.14863 9.00106 6.54241 8.00001 5.50001L7.00001 4.50001C7.04229 4.54047 6.94139 4.43896 7.00001 4.50001Z" fill="#000001"></path>
+                            <path d="M12 5.50001C11.5935 5.50001 12 5.07674 12 5.50001C12 5.92328 11.5935 6.50001 12 6.50001H13C12.9715 6.49958 13.0856 6.50001 13 6.50001C15.2566 6.53366 16.9677 8.15016 17 10.5C17.0004 10.5297 17 11.4109 17 11.5C17 11.9233 17.5935 12.5 18 12.5C18.4065 12.5 19 11.9233 19 11.5C19 11.4206 19.0006 10.5422 19 10.5C18.9563 7.3208 16.0531 5.54554 13 5.50001C12.9595 5.4994 13.0763 5.50001 13 5.50001H12Z" fill="#000001"></path>
+                        </svg>
+                        <span class="i-link__txt txt txt_semibold">8 (495) 285 68 96</span>
+                    </a>
+                </li>
+                <li class="footer__contacts-item">
+                    <a href="mailto:avalon222@gmail.com" class="footer__contacts-item-txt i-link">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.00003 6.5C1.66681 7.73998 2.00003 9.86008 2.00003 12.5C2.00003 16.2497 2.04511 18.1857 3.00003 19.5C3.30843 19.9245 3.57555 20.1916 4.00003 20.5C5.31436 21.4549 7.2503 21.5 11 21.5H13C16.7498 21.5 18.6857 21.4549 20 20.5C20.4245 20.1916 20.6916 19.9245 21 19.5C21.9549 18.1857 22 16.2497 22 12.5C22 9.85129 22.3366 7.74097 22 6.5L20 8.5C18.3678 10.1323 17.1323 11.6361 16 12.5C14.8411 13.3842 13.2655 14.5 12 14.5C10.7346 14.5 9.15896 13.3842 8.00003 12.5C6.86777 11.6361 5.6323 10.1323 4.00003 8.5L2.00003 7.5V6.5Z" fill="#000001"></path>
+                            <path d="M3.00003 5.5H4.00003L5.00003 7.5C6.68169 9.18166 7.95722 10.7044 9.00003 11.5C10.0255 12.2824 11.1944 12.5 12 12.5C12.8056 12.5 13.9745 12.2824 15 11.5C16.0428 10.7044 17.3184 9.18166 19 7.5L21 5.5C20.6916 5.07553 20.4245 4.8084 20 4.5C18.6857 3.54509 16.7498 3.5 13 3.5H11C7.2503 3.5 5.31436 3.54509 4.00003 4.5C3.57555 4.8084 3.30843 5.07553 3.00003 5.5Z" fill="#000001"></path>
+                        </svg>
+                        <span class="i-link__txt txt txt_semibold">avalon222@gmail.com</span>
+                    </a>
+                </li>
+                <li class="footer__contacts-item">
+                    <span class="footer__contacts-item-txt i-link">
+                        <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 21.9121C8 21.9121 16 14.0939 16 8.16211C16 5.97407 15.1571 3.87565 13.6569 2.32848C12.1566 0.781303 10.1217 -0.0878906 8 -0.0878906C5.87827 -0.0878906 3.84344 0.781303 2.34315 2.32848C0.842855 3.87565 3.16163e-08 5.97407 0 8.16211C0 14.0939 8 21.9121 8 21.9121ZM8 12.2871C6.93913 12.2871 5.92172 11.8525 5.17157 11.0789C4.42143 10.3053 4 9.25613 4 8.16211C4 7.06809 4.42143 6.01888 5.17157 5.24529C5.92172 4.47171 6.93913 4.03711 8 4.03711C9.06087 4.03711 10.0783 4.47171 10.8284 5.24529C11.5786 6.01888 12 7.06809 12 8.16211C12 9.25613 11.5786 10.3053 10.8284 11.0789C10.0783 11.8525 9.06087 12.2871 8 12.2871Z" fill="#000001"></path>
+                        </svg>
+                        <span class="i-link__txt txt txt_semibold">Москва, улица Барклая дом 13 стр. 1</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__copyrights">
+            <span class="footer__copyrights-txt txt txt_16">© <span id="currentYear"></span> АВАЛОН</span>
+            <span class="footer__copyrights-info txt txt_16">Информация, размещенная на сайте, не является публичной офертой</span>
+            <a target="_blank" href="https://requestdesign.ru/" class="footer__rd-logo"><img src="./assets/images/request-design-logo.svg" alt="" class="footer__rd-logo-img"></a>
+        </div>
+    </div>
+</footer>
+
+            <div id="requestSentModal" aria-hidden="true" class="modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Спасибо, <br>
+                        что оставили заявку!</span>
+                    <p class="modal__text txt txt_16">Наш менеджер свяжется с Вами в ближайшее время</p>
+                    <a href="#" class="modal__btn btn btn_primary">
+                        <span class="txt txt_20 txt_semibold">На главную</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- заказ оформлен --->
+<div id="orderMadeModal" aria-hidden="true" class="modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Ваш заказ оформлен</span>
+                    <p class="modal__text txt txt_16">Наш менеджер свяжется с Вами в ближайшее время</p>
+                    <a href="#" class="modal__btn btn btn_primary">
+                        <span class="txt txt_20 txt_semibold">В личный кабинет</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

@@ -28,7 +28,6 @@ import './libs/swiper';
 import './dev/vzmsk1.js';
 import './dev/markusDM.js';
 import './dev/ukik0.js';
-import './dev/kie6er.js';
 
 // hamburger menu
 utils.menuInit();
