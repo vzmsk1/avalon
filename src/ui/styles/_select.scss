@@ -11,11 +11,15 @@
 
     &_field {
         .select {
+            &__content {
+                display: none;
+            }
             &__value {
                 padding: 2rem;
                 justify-content: space-between;
                 height: 6rem;
                 border: 1px solid $grayTxt;
+                background-color: $white;
                 font-size: 1.6rem;
                 color: $grayTxt;
 
@@ -43,6 +47,9 @@
             }
         }
         ._is-filled {
+            .select__content {
+                display: inline-block;
+            }
             .select__value::before {
                 display: none;
             }

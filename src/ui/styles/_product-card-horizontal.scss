@@ -74,6 +74,8 @@
     }
 
     &__heading {
+        margin-bottom: 2.4rem;
+
         @media (max-width: 48em) {
             max-width: 30rem;
 
@@ -86,7 +88,7 @@
         column-gap: 4rem;
 
         @media (min-width: 48em) {
-            margin-bottom: 4rem;
+            margin-bottom: 4.5rem;
         }
     }
 
@@ -164,6 +166,7 @@
     }
 
     &__total {
+        margin-top: 6rem;
         display: grid;
         grid-template-columns: repeat(2, auto);
         justify-items: end;

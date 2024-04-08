@@ -326,8 +326,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const target = e.target;
 
             if (target.closest('.item-projects-account__options-btn')) {
-                removeClasses(document.querySelectorAll('.item-projects-account'), '_is-active');
-                target.closest('.item-projects-account').classList.add('_is-active');
+                target.closest('.item-projects-account').classList.toggle('_is-active');
+
+                document.querySelectorAll('.item-projects-account').forEach((item) => {
+                    if (item !== target.closest('.item-projects-account')) {
+                        item.classList.remove('_is-active');
+                    }
+                });
             } else if (document.querySelector('.item-projects-account._is-active') && !target.closest('.item-projects-account__actions')) {
                 document.querySelector('.item-projects-account._is-active').classList.remove('_is-active');
             }
