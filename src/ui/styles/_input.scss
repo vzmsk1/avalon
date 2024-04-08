@@ -162,6 +162,8 @@ input:focus {
             color: $red;
 
             @media (max-width: 48em) {
+                bottom: -3rem;
+
                 font-size: 2rem;
             }
         }

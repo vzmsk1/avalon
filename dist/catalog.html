@@ -1768,6 +1768,76 @@
     </div>
 </div>
 
+<!-- новый проект добавлен -->
+<div id="projectAddedModal" aria-hidden="true" class="modal modal_project-added">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Новый проект Успешно добавлен!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- успешное восстановление пароля -->
+<div id="passwordRestoredModal" aria-hidden="true" class="modal modal_password-restored">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Успешно!</span>
+                    <p class="modal__text txt txt_16">На Ваш E-mail отправлено письмо с новым паролем!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="passwordRestoredModal2" aria-hidden="true" class="modal modal_password-restored">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Пароль Успешно восстановлен!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- аккаунта с таким e-mail не существует -->
+<div id="accountDoesNotExistModal" aria-hidden="true" class="modal modal_account-does-not-exist">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h">Аккаунта с таким E-mail не существует!</span>
+                    <p class="modal__text txt txt_16">Попробуйте войти еще раз или зарегестрируйтесь</p>
+                    <div class="modal__actions">
+                        <button type="button" class="modal__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Попробовать еще</span>
+                        </button>
+                        <a href="#" class="modal__link link">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- заказ оформлен --->
 <div id="orderMadeModal" aria-hidden="true" class="modal">
     <div class="modal__wrapper">
@@ -1782,6 +1852,172 @@
                     <a href="#" class="modal__btn btn btn_primary">
                         <span class="txt txt_20 txt_semibold">В личный кабинет</span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- добавить проект -->
+<div id="addProjectModal" aria-hidden="true" class="modal modal_add-project">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h h_h2">Добавить проект</span>
+                    <form action="#" data-dev="" data-select-single="" class="modal__form form-modal">
+                        <div data-hint="Заполните поле" class="form-modal__input input">
+                            <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Название проекта" class="input__field">
+                        </div>
+                        <div data-hint="Заполните поле" class="form-modal__input input">
+                            <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Адрес" class="input__field">
+                        </div>
+                        <div class="form-modal__dropdown dropdown dropdown_field">
+                            <select data-sel-label="Дата реализации" data-show-selection="" name="form[]">
+                                <option value="1">Выбор</option>
+                                <option value="2">Выбор</option>
+                                <option value="3">Выбор</option>
+                            </select>
+                        </div>
+                        <div class="form-modal__dropdown dropdown dropdown_field">
+                            <select data-sel-label="Тип контракта" data-show-selection="" name="form[]">
+                                <option value="1">Гос. закупки</option>
+                                <option value="2">Коммерческий</option>
+                            </select>
+                        </div>
+                        <div data-hint="Заполните поле" class="form-modal__input input">
+                            <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Конечный заказчик
+" class="input__field">
+                        </div>
+                        <button type="submit" class="form-modal__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Сохранить</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- удаление заказа -->
+<div id="deleteOrderModal" aria-hidden="true" class="modal modal_delete-item">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h h_h2">Уверены, что хотите отменить данный заказ?</span>
+                    <div class="modal__buttons">
+                        <button type="button" class="modal__btn btn btn_primary btn_primary_gray">
+                            <span class="txt txt_20 txt_semibold">Да</span>
+                        </button>
+                        <button type="button" class="modal__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Нет</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- удаление товара -->
+<div id="deleteProductModal" aria-hidden="true" class="modal modal_delete-item">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h h_h2">Уверены, что хотите Удалить данный товар?</span>
+                    <div class="modal__buttons">
+                        <button type="button" class="modal__btn btn btn_primary btn_primary_gray">
+                            <span class="txt txt_20 txt_semibold">Да</span>
+                        </button>
+                        <button type="button" class="modal__btn btn btn_primary">
+                            <span class="txt txt_20 txt_semibold">Нет</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- заказать звонок -->
+<div id="requestCallModal" aria-hidden="true" class="modal modal_request">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h h_h2">Заказать звонок</span>
+                    <form action="#" data-dev="" data-select-single="" class="modal__form form-modal">
+                        <div class="form-modal__fields">
+                            <div data-hint="Заполните поле" class="form-modal__input input">
+                                <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Имя" class="input__field">
+                            </div>
+                            <div data-hint="Заполните поле" class="form-modal__input input input_textarea _solid">
+                                <textarea placeholder="Комментарий" name="form[]" class="input__field"></textarea>
+                            </div>
+                            <div data-hint="Заполните поле" class="form-modal__input input">
+                                <input data-validate="" data-required="" data-tel-mask="" autocomplete="off" type="tel" name="form[]" placeholder="Телефон" class="input__field">
+                            </div>
+                        </div>
+                        <div class="form-modal__footer">
+                            <button type="submit" class="form-modal__btn btn btn_primary">
+                                <span class="txt txt_20 txt_semibold">Отправить</span>
+                            </button>
+                            <p class="form-modal__text">
+                                Нажимая на кнопку, Вы принимаете <a href="#" class="form-modal__text-link"> условия пользовательского соглашения</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- оставить заявку -->
+<div id="requestModal" aria-hidden="true" class="modal modal_request">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-thin.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="modal__heading h h_h2">Оставьте заявку</span>
+                    <form action="#" data-dev="" data-select-single="" class="modal__form form-modal">
+                        <div class="form-modal__fields">
+                            <div data-hint="Заполните поле" class="form-modal__input input">
+                                <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Имя" class="input__field">
+                            </div>
+                            <div data-hint="Заполните поле" class="form-modal__input input input_textarea _solid">
+                                <textarea placeholder="Ваш вопрос" name="form[]" class="input__field"></textarea>
+                            </div>
+                            <div data-hint="Заполните поле" class="form-modal__input input">
+                                <input data-validate="" data-required="" data-tel-mask="" autocomplete="off" type="tel" name="form[]" placeholder="Телефон" class="input__field">
+                            </div>
+                        </div>
+                        <div class="form-modal__footer">
+                            <button type="submit" class="form-modal__btn btn btn_primary">
+                                <span class="txt txt_20 txt_semibold">Отправить</span>
+                            </button>
+                            <p class="form-modal__text">
+                                Нажимая на кнопку, Вы принимаете <a href="#" class="form-modal__text-link"> условия пользовательского соглашения</a>
+                            </p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

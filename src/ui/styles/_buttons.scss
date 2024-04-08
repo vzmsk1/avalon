@@ -16,6 +16,12 @@
             transition: color 0.3s ease;
         }
 
+        &_gray {
+            border: 1.5px solid $grayTxt;
+
+            background-color: $grayTxt;
+        }
+
         &_white {
             border: 1.5px solid $gray;
 
@@ -36,7 +42,7 @@
         }
 
         @media (any-hover: hover) {
-            &:not(&[disabled], &._is-disabled, &_white) {
+            &:not(&[disabled], &._is-disabled, &_white, &_gray) {
                 &:hover {
                     background-color: $white;
 

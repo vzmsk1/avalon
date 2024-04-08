@@ -140,7 +140,7 @@
 
         @media (max-width: 48em) {
             margin-bottom: 4rem;
-            padding: 3rem 2.4rem;
+            padding: 3.5rem 2.4rem;
 
             .btn_secondary .txt {
                 font-size: 3.6rem;
@@ -172,6 +172,12 @@
             font-weight: 700;
         }
     }
+
+    &__btn {
+        @media (min-width: 48em) {
+            align-self: flex-start;
+        }
+    }
 }
 
 .order-account {
@@ -180,15 +186,9 @@
     row-gap: 7.5rem;
 
     &__table-wrap {
-        margin-bottom: 4rem;
-
         display: flex;
         flex-direction: column;
         row-gap: 5rem;
-
-        @media (max-width: 48em) {
-            margin-bottom: 4.8rem;
-        }
     }
 
     &__items {
@@ -204,7 +204,17 @@
         justify-content: space-between;
         align-items: center;
 
+        &_actions {
+            margin-top: 4rem;
+        }
+
         @media (max-width: 48em) {
+            margin-top: 4.8rem;
+
+            &:not(&_actions) {
+                align-items: flex-start;
+            }
+
             &_actions {
                 flex-direction: row;
             }
@@ -254,7 +264,7 @@
         row-gap: 5rem;
 
         @media (max-width: 48em) {
-            row-gap: 2.4rem;
+            row-gap: 4rem;
 
             &:last-child {
                 row-gap: 4rem;
