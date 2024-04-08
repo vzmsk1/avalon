@@ -310,8 +310,6 @@
                     height: auto;
                     max-height: initial;
                     min-height: auto;
-                    
-
                 }
 
                 &:has(.header__search-menu-empty) {
@@ -751,9 +749,6 @@
     background-color: $black;
     transform: translateX(-50%) translateY(calc(100% + 10rem));
     transition: transform 0.5s ease;
-    @media (max-width: 48em) { 
-       display: none;
-    }
     @media (min-width: 48em) {
         display: none;
     }

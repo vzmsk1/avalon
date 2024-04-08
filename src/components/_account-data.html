@@ -7,7 +7,7 @@
         <div class="account__body grid">
             <div class="account__side-bar side-bar-account">
                 <ul class="side-bar-account__list">
-                    <li class="side-bar-account__item _is-active">
+                    <li class="side-bar-account__item">
                         <a href="#" class="side-bar-account__item-content">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -47,7 +47,7 @@
                             <span class="side-bar-account__txt"> Проекты </span></a
                         >
                     </li>
-                    <li class="side-bar-account__item">
+                    <li class="side-bar-account__item _is-active">
                         <a href="#" class="side-bar-account__item-content">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -102,10 +102,15 @@
             <div class="account__content">
                 <div class="account__data data-account">
                     <form action="#" data-dev class="data-account__form">
-                        <span class="data-account__heading h h_h3">Общая информация</span>
+                        <div class="data-account__head">
+                            <span class="data-account__heading h h_h3">Контактные данные</span>
+                            <button data-da=".data-account__form,768,last" type="button" class="data-account__btn btn btn_secondary">
+                                <span class="txt txt_20 txt_semibold">Редактировать</span>
+                            </button>
+                        </div>
                         <form action="#" data-dev class="data-account__form-content">
                             <div class="data-account__fields">
-                                <div data-hint="Заполните поле" class="data-account__input input">
+                                <div data-hint="Заполните поле" class="data-account__input input input_locked">
                                     <input
                                         disabled
                                         value="Авалон"
@@ -116,7 +121,7 @@
                                         class="input__field"
                                     />
                                 </div>
-                                <div data-hint="Заполните поле" class="data-account__input input">
+                                <div data-hint="Заполните поле" class="data-account__input input input_locked">
                                     <input
                                         disabled
                                         value="avalon222@gmail.com"
@@ -127,7 +132,7 @@
                                         class="input__field"
                                     />
                                 </div>
-                                <div data-hint="Заполните поле" class="data-account__input input">
+                                <div data-hint="Заполните поле" class="data-account__input input input_locked">
                                     <input
                                         disabled
                                         value="+7 (000) 123 45-67"
@@ -139,7 +144,7 @@
                                         class="input__field"
                                     />
                                 </div>
-                                <div data-hint="Заполните поле" class="data-account__input input">
+                                <div data-hint="Заполните поле" class="data-account__input input input_locked">
                                     <input
                                         disabled
                                         value="1234567890"
@@ -150,7 +155,7 @@
                                         class="input__field"
                                     />
                                 </div>
-                                <div data-hint="Заполните поле" class="data-account__input input">
+                                <div data-hint="Заполните поле" class="data-account__input input input_locked">
                                     <input
                                         disabled
                                         value="Анна"
@@ -162,29 +167,25 @@
                                     />
                                 </div>
                             </div>
-                            <div class="data-account__actions">
-                                <button type="button" class="data-account__btn btn btn_secondary">
-                                    <span class="txt txt_20 txt_semibold">Редактировать</span>
-                                </button>
-                            </div>
                         </form>
                     </form>
                 </div>
             </div>
             <div class="account__aside">
-                <form action="#" data-dev class="data-account__form">
-                    <span class="data-account__heading h h_h3">Общая информация</span>
-                    <form action="#" data-dev class="data-account__form-content">
+                <div class="data-account__form">
+                    <span class="data-account__heading h h_h3">пароль</span>
+                    <div class="data-account__form-content">
                         <div class="data-account__fields">
-                            <div data-hint="Заполните поле" class="data-account__input input input_pass">
-                                <input autocomplete="off" type="password" name="form[]" placeholder="Текущий пароль" class="input__field" />
-                                <button type="button" class="input__pass-btn">
-                                    <img src="./assets/images/icons/view-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_show" />
-                                    <img src="./assets/images/icons/hide-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_hide" />
-                                </button>
-                            </div>
-                            <div data-hint="Заполните поле" class="data-account__input input input_pass">
-                                <input autocomplete="off" type="password" name="form[]" placeholder="Новый пароль" class="input__field" />
+                            <div class="data-account__input input input_pass">
+                                <input
+                                    readonly
+                                    value="1234"
+                                    autocomplete="off"
+                                    type="password"
+                                    name="form[]"
+                                    placeholder="Пароль"
+                                    class="input__field"
+                                />
                                 <button type="button" class="input__pass-btn">
                                     <img src="./assets/images/icons/view-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_show" />
                                     <img src="./assets/images/icons/hide-pass.svg" alt="" class="input__pass-btn-i input__pass-btn-i_hide" />
@@ -192,25 +193,26 @@
                             </div>
                         </div>
                         <div class="data-account__actions">
-                            <button type="submit" class="data-account__btn btn btn_primary">
+                            <button type="button" class="data-account__btn btn btn_primary">
                                 <span class="txt txt_20 txt_semibold">Сменить пароль</span>
                             </button>
-                            <a href="#" class="data-account__link link link_gray">Забыли пароль?</a>
                         </div>
-                    </form>
-                </form>
+                    </div>
+                </div>
                 <div class="account__sm-banner sm-banner">
                     <div class="sm-banner__content">
-                        <span class="sm-banner__heading txt txt_24">Подпишись на рассылку! Будь в курсе всех спец предложений</span>
+                        <span class="sm-banner__heading txt txt_24"
+                            >Оставьте заявку и мы свяжемся c вами в ближайшее время, для подбора походящего оборудования</span
+                        >
                         <button type="button" class="sm-banner__btn btn btn_primary">
-                            <span class="txt txt_20 txt_semibold">Подписаться</span>
+                            <span class="txt txt_20 txt_semibold">Оставить заявку</span>
                         </button>
                     </div>
                     <div class="sm-banner__bg">
                         <img src="./assets/images/bg/7254.webp" alt="" class="sm-banner__bg-img" />
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

@@ -1,117 +1,133 @@
 .btn {
-  display: inline-flex;
-  align-items: center;
+    display: inline-flex;
+    align-items: center;
 
-  &_primary {
-    padding: 1rem 3.2rem;
-    justify-content: center;
-    height: 6rem;
-    border: 1.5px solid $black;
-    text-align: center;
-    background-color: $black;
-    transition: background-color 0.3s ease;
+    &_primary {
+        padding: 1rem 3.2rem;
+        justify-content: center;
+        height: 6rem;
+        border: 1.5px solid $black;
+        text-align: center;
+        background-color: $black;
+        transition: background-color 0.3s ease;
 
-    .txt {
-      color: $white;
-      transition: color 0.3s ease;
-    }
-
-    @media (max-width: 48em) {
-      padding: 3.6rem;
-      height: 10rem;
-
-      .txt {
-        font-weight: 400;
-      }
-    }
-
-    @media (any-hover: hover) {
-      &:not(&[disabled], &._is-disabled) {
-        &:hover {
-          background-color: $white;
-
-          .txt {
-            color: $black;
-          }
+        .txt {
+            color: $white;
+            transition: color 0.3s ease;
         }
-      }
+
+        &_white {
+            border: 1.5px solid $gray;
+
+            background-color: $gray;
+
+            .txt {
+                color: $black;
+            }
+        }
+
+        @media (max-width: 48em) {
+            padding: 3.6rem;
+            height: 10rem;
+
+            .txt {
+                font-weight: 400;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:not(&[disabled], &._is-disabled, &_white) {
+                &:hover {
+                    background-color: $white;
+
+                    .txt {
+                        color: $black;
+                    }
+                }
+            }
+        }
     }
-  }
 
-  &_secondary {
-    margin-right: 1.6rem;
+    &_secondary {
+        margin-right: 1.6rem;
 
-    &::after {
-      content: '';
-      flex: 0 0 2.4rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      background-image: url("./assets/images/icons/arr-sm.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      transform: translateX(0.6rem);
-      transition: transform 0.3s ease;
-    }
-
-    @media (any-hover: hover) {
-      &:hover {
         &::after {
-          transform: translateX(0);
+            content: '';
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            background-image: url('./assets/images/icons/arr-sm.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(0.6rem);
+            transition: transform 0.3s ease;
         }
-      }
+
+        &_grey {
+            color: $grayTxt;
+
+            &::after {
+                background-image: url('./assets/images/icons/arr-sm-grey.svg');
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        @media (max-width: 48em) {
+            &::after {
+                flex: 0 0 4rem;
+                width: 4rem;
+                height: 4rem;
+            }
+        }
     }
 
-    @media (max-width: 48em) {
-
-      &::after {
-        flex: 0 0 4rem;
-        width: 4rem;
-        height: 4rem;
-      }
+    &[disabled],
+    &._is-disabled {
+        border: 1.5px solid $grayTxt;
+        background-color: $grayTxt;
     }
-  }
-
-  &[disabled],
-  &._is-disabled {
-    border: 1.5px solid $grayTxt;
-    background-color: $grayTxt;
-  }
-
 }
 
 .catalog-btn {
-  padding: 0.8rem;
-  padding-right: 1.2rem;
-  display: inline-flex;
-  align-items: center;
-  column-gap: 1.2rem;
-  height: 6rem;
-  background-color: $black;
-
-  &__icon {
+    padding: 0.8rem;
+    padding-right: 1.2rem;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    flex: 0 0 4.4rem;
-    width: 4.4rem;
-    height: 4.4rem;
-    background-color: $white;
-  }
+    column-gap: 1.2rem;
+    height: 6rem;
+    background-color: $black;
 
-  &__icon-img {
-    width: 2.4rem;
-    height: 2.4rem;
-
-    &_cross {
-      display: none;
-      flex: 0 0 4rem;
-      width: 4rem;
-      height: 4rem;
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 4.4rem;
+        width: 4.4rem;
+        height: 4.4rem;
+        background-color: $white;
     }
-  }
 
-  &__txt {
-    font-weight: 700;
-    color: $white;
-  }
+    &__icon-img {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        &_cross {
+            display: none;
+            flex: 0 0 4rem;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    &__txt {
+        font-weight: 700;
+        color: $white;
+    }
 }

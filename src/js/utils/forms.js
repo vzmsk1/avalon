@@ -27,10 +27,7 @@ class Validation {
 
         if (requiredFields.length) {
             requiredFields.forEach((requiredField) => {
-                if (
-                    (requiredField.offsetParent !== null || requiredField.tagName === 'SELECT') &&
-                    !requiredField.disabled
-                ) {
+                if ((requiredField.offsetParent !== null || requiredField.tagName === 'SELECT') && !requiredField.disabled) {
                     err += this.validateField(requiredField);
                 }
             });
@@ -174,7 +171,7 @@ class FormSubmition extends Validation {
 
     init() {
         const _this = this;
-        const passwordFields = document.querySelectorAll('[data-required="pass"]');
+        const passwordFields = document.querySelectorAll('.input_pass input');
 
         if (this.forms.length) {
             this.forms.forEach((form) => {
@@ -193,9 +190,7 @@ class FormSubmition extends Validation {
 
                 if (btn) {
                     btn.addEventListener('click', function () {
-                        const type = field.parentElement.classList.contains(_this.classes.IS_REVEALED)
-                            ? 'password'
-                            : 'text';
+                        const type = field.parentElement.classList.contains(_this.classes.IS_REVEALED) ? 'password' : 'text';
                         field.setAttribute('type', type);
                         field.parentElement.classList.toggle(_this.classes.IS_REVEALED);
                     });
@@ -234,12 +229,7 @@ class FormFields extends Validation {
                 target.parentElement.classList.remove(this.classes.HAS_ERROR);
             }
 
-            if (
-                target.type !== 'file' &&
-                target.type !== 'checkbox' &&
-                target.type !== 'radio' &&
-                !target.closest('.quantity')
-            ) {
+            if (target.type !== 'file' && target.type !== 'checkbox' && target.type !== 'radio' && !target.closest('.quantity')) {
                 target.closest('.input').classList.remove(this.classes.IS_FILLED);
             }
             this.removeError(target);
@@ -261,12 +251,7 @@ class FormFields extends Validation {
                 this.validateField(target);
             }
 
-            if (
-                target.type !== 'file' &&
-                target.type !== 'checkbox' &&
-                target.type !== 'radio' &&
-                !target.closest('.quantity')
-            ) {
+            if (target.type !== 'file' && target.type !== 'checkbox' && target.type !== 'radio' && !target.closest('.quantity')) {
                 if (!target.classList.contains(this.classes.HAS_ERROR) && target.value.trim()) {
                     target.closest('.input').classList.add(this.classes.IS_FILLED);
                 } else {

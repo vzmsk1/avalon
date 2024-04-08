@@ -32,6 +32,36 @@ input:focus {
         row-gap: 0.4rem;
     }
 
+    &_locked {
+        pointer-events: none;
+
+        .input__field[disabled],
+        .input__field {
+            color: #a1a2a9;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 2.2rem;
+            right: 2.2rem;
+
+            width: 1.6rem;
+            height: 1.6rem;
+
+            background: url('./assets/images/icons/lock.svg') center / contain no-repeat;
+
+            @media (max-width: 48em) {
+                top: 3.2rem;
+                row-gap: 4rem;
+
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
+    }
+
     &_edit {
         .input__field {
             &::placeholder {
@@ -92,6 +122,11 @@ input:focus {
         position: absolute;
         top: 2.2rem;
         right: 2rem;
+
+        @media (max-width: 48em) {
+            top: 3.2rem;
+            row-gap: 4rem;
+        }
     }
 
     &__pass-btn-i {
@@ -109,6 +144,11 @@ input:focus {
             &_hide {
                 display: inline-block;
             }
+        }
+
+        @media (max-width: 48em) {
+            width: 3.2rem;
+            height: 3.2rem;
         }
     }
 
