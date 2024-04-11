@@ -27,7 +27,7 @@
 
         li {
             display: grid;
-            min-height: 51rem;
+            min-height: 77.8rem;
 
             @include small-tablet {
                 min-height: initial;
@@ -37,10 +37,10 @@
             .home-page & {
                 @media (min-width: 48em) {
                     &:nth-child(3) {
-                        grid-row: span 2;
+                        
 
                         .categories__card-image {
-                            height: 75rem;
+                          
                             margin-top: auto;
                         }
                     }
@@ -75,6 +75,8 @@
                     }
                     &:not(:first-child) {
                         min-height: 24.6rem;
+                        display: flex;
+                        flex-direction: column;
                     }
                 }
             }
@@ -213,11 +215,12 @@
                 flex: 0 0 3.4rem;
                 background-size: cover;
                 background-position: center;
-
+               
                 @include small-tablet {
                     flex: 0 0 4.8rem;
                     width: 4.8rem;
                     height: 4.8rem;
+                    
                 }
             }
 
@@ -255,6 +258,89 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    &__column-one {
+        .categories__card {
+            &-image {
+                width: 27rem;
+                height: 48rem;
+                inset: initial;
+                right: 7.5rem;
+                bottom: 6.5rem;
+            }
+        }
+    }
+
+    &__card--top {
+        
+        .categories__card-image {
+            width: 68.2rem;
+            height: 13.486rem;
+            left: 8.372rem;
+            bottom: 0.814rem;
+            margin-top: auto;
+        }
+    }
+
+    &__cards-group-inner {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 48em) {
+            flex-direction: column;
+            row-gap: 3rem;
+        }
+    }
+
+    &__card-center {
+        min-height: 24.6rem;
+        width: 41.5rem;
+        @media (max-width: 48em) {
+            min-height: auto;
+            width: 100%;
+        }
+        .categories__card-image {
+            width: 20.5rem;
+            height: 14.9rem;
+            inset: initial;
+            position: absolute;
+            right: 0;
+            bottom: 1.4rem;
+        }
+    }
+
+    &__card-bottom {
+        .categories__card-image {
+            width: 65.3rem;
+            height: 17.6rem;
+            inset: initial;
+            position: absolute;
+            left: 12rem;
+            bottom: 0rem;
+        }
+    }
+
+    &__column-two {
+        .categories__card {
+
+        }
+        .categories__card-image {
+            width: 31.7rem;
+            height: 53.8rem;
+            inset: initial;
+            position: absolute;
+            left: 4.9rem;
+            bottom: 4.9rem;
+        }
+    }
+
+    &__card-title {
+        width: 100%;
+        width: fit-content;
+        &::after {
+            right: 3rem;
+    position: absolute;
         }
     }
 }

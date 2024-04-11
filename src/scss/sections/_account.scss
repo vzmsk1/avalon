@@ -133,7 +133,7 @@
         display: flex;
         flex-direction: column;
         background-color: $gray;
-
+        min-height: 28.9rem;
         .input_pass input {
             color: $black;
         }
@@ -154,7 +154,7 @@
     }
 
     &__fields {
-        margin-bottom: 2.8rem;
+       
         display: flex;
         flex-direction: column;
         row-gap: 2.8rem;
@@ -176,6 +176,7 @@
     &__btn {
         @media (min-width: 48em) {
             align-self: flex-start;
+            margin-top: 2.8rem;
         }
     }
 }
