@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import { remToPx } from '../utils/utils';
-import { Navigation, Thumbs, Autoplay, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Thumbs, Autoplay, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.brands')) {
@@ -127,9 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 1.3,
             loop: true,
             navigation: {
-                prevEl: '.gallery__navigation .arrow-btn_prev',
-                nextEl: '.gallery__navigation .arrow-btn_next'
+                prevEl: '.gallery__slider-navigation .arrow-btn_prev',
+                nextEl: '.gallery__slider-navigation .arrow-btn_next'
             },
+          
+
+            
             breakpoints: {
                 0: {
                     spaceBetween: remToPx(2.4)
@@ -173,6 +176,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: '.news-c-pagination',
                 type: 'bullets',
                 clickable: true
+            }
+        });
+    }
+
+
+    
+    if (document.querySelector('.portfolio-m-swiper')) {
+        // Initialize Swiper inside the DOMContentLoaded event listener
+        new Swiper('.portfolio-m-swiper', {
+            modules: [EffectFade, Navigation, Pagination],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 3000,
+            loop: true,
+            mousewheel: {
+                invert: false
+            },
+            navigation: {
+                prevEl: '.portfolio-m__slider-navigation .arrow-btn_prev',
+                nextEl: '.portfolio-m__slider-navigation .arrow-btn_next'
+            },
+
+            
+            pagination: {
+                el: '.portfolio-m__carousel-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            grabCursor: true,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 1,
+    
+                    spaceBetween: `${remToPx(0.8)}rem`
+                }
             }
         });
     }

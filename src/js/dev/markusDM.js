@@ -1,4 +1,8 @@
 import $ from 'jquery';
+import AirDatepicker from 'air-datepicker';
+
+
+
 $( document ).ready(function() {
     $('.news-p__btn').click(function() {
         var id = $(this).attr('data-tab');
@@ -50,3 +54,11 @@ $(".catalog__filters-slide-fields").keypress(function(event){
     if (event.charCode && event.charCode!=0 && event.charCode!=46 && (event.charCode < 48 || event.charCode > 57) )
       return false;
 });
+
+
+
+
+
+new AirDatepicker('#date-select', {
+   
+})
