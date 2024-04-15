@@ -29,10 +29,10 @@ class Modal {
         goHash: true,
       },
       on: {
-        beforeOpen: function () {},
-        afterOpen: function () {},
-        beforeClose: function () {},
-        afterClose: function () {},
+        beforeOpen: function () { },
+        afterOpen: function () { },
+        beforeClose: function () { },
+        afterClose: function () { },
       },
     };
     this.youTubeCode;
@@ -125,16 +125,14 @@ class Modal {
           `[${this.options.attributeCloseButton}]`
         );
         if (
-          !e.target.closest('#unconfirmedAgeModal') &&
-          !e.target.closest('#confirmAgeModal') &&
-          (buttonClose ||
-            (!e.target.closest(`.${this.options.classes.modalContent}`) &&
-              this.isOpen))
-        ) {
-          e.preventDefault();
-          this.close();
-          return;
-        }
+              !e.target.closest('.air-datepicker-global-container') &&
+              (buttonClose || (!e.target.closest(`.${this.options.classes.modalContent}`) && this.isOpen))
+          ) {
+              e.preventDefault();
+              this.close();
+              return;
+          }
+          
       }.bind(this)
     );
     document.addEventListener(
@@ -252,9 +250,9 @@ class Modal {
           const m = document.querySelector(this.hash);
           setTimeout(() => {
             (!this.bodyLock && !m.hasAttribute('data-bl-mobile')) ||
-            (!this.bodyLock &&
-              window.innerWidth <= 768 &&
-              m.hasAttribute('data-bl-mobile'))
+              (!this.bodyLock &&
+                window.innerWidth <= 768 &&
+                m.hasAttribute('data-bl-mobile'))
               ? bodyLock()
               : null;
           }, 0);
@@ -357,21 +355,21 @@ class Modal {
     )
       ? `.${window.location.hash.replace('#', '')}`
       : document.querySelector(`${window.location.hash}`)
-      ? `${window.location.hash}`
-      : null;
+        ? `${window.location.hash}`
+        : null;
 
     const buttons = document.querySelector(
       `[${this.options.attributeOpenButton} = "${classInHash}"]`
     )
       ? document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash}"]`
-        )
+        `[${this.options.attributeOpenButton} = "${classInHash}"]`
+      )
       : document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash.replace(
-            '.',
-            '#'
-          )}"]`
-        );
+        `[${this.options.attributeOpenButton} = "${classInHash.replace(
+          '.',
+          '#'
+        )}"]`
+      );
     if (buttons && classInHash) this.open(classInHash);
   }
   _setHash() {

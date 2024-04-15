@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 min: 20000,
                 max: 850000
             },
+            values: 0,
             step: 1,
             start: [20000, 550000],
             connect: true,
