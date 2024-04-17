@@ -188,13 +188,14 @@
     &__filters {
         max-width: 38.9rem;
         width: 100%;
-
+      
+       
         @include small-tablet {
             max-width: 100%;
             position: fixed;
             top: 0;
             right: 0;
-            z-index: 50;
+            z-index: 215;
             background-color: $white;
             padding-top: 4.8rem;
             overflow-x: scroll;
@@ -203,6 +204,7 @@
 
             &.--active {
                 transform: translateX(0);
+                height: 100%;
             }
 
             form {
@@ -555,7 +557,9 @@
             font-weight: 600;
             font-size: 2rem;
             line-height: 140%;
-
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 5rem;
             @include small-tablet {
                 font-weight: 400;
                 font-size: 3rem;
@@ -781,9 +785,26 @@
     }
 
     &__cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem 2.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        .product-card {
+            width: 40.9rem;
+            @media (max-width: 48em) {
+                width: 100%;
+            }
+        }
+        li {
+            margin-right: 2.8rem;
+            margin-bottom: 2rem;
+            @media (max-width: 48em) {
+                margin-right: 0;
+                margin-bottom: 3.2rem;
+            }
+        }
+
+        li:nth-child(3n) {
+            margin-right: 0;
+        }
 
         @include small-tablet {
             display: flex;
