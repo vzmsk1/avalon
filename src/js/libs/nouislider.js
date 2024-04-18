@@ -2,11 +2,18 @@ import noUiSlider from 'nouislider';
 
 export const rangeSlider = document.querySelector('.range-slider');
 document.addEventListener('DOMContentLoaded', () => {
+ 
+
+    const inputFrom = document.getElementById('from');
+    const inputTo = document.getElementById('to');
+    
     if (rangeSlider) {
+        console.log(typeof inputFrom.dataset.fromMin);
+        console.log(typeof inputTo.dataset.toMax);
         noUiSlider.create(rangeSlider, {
             range: {
-                min: 20000,
-                max: 850000
+                min: Number(inputFrom.dataset.fromMin),
+                max: Number(inputTo.dataset.toMax)
             },
             values: 0,
             step: 1,
@@ -22,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const inputFrom = document.getElementById('from');
-        const inputTo = document.getElementById('to');
+      
 
         const inputs = [inputFrom, inputTo];
 
