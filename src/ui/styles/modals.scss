@@ -408,3 +408,22 @@
         background-color: #efefef;
     }
 }
+
+
+#orderMadeModal {
+    .modal__body {
+        padding: 0;
+    }
+
+    .modal__inner {
+        padding: 6rem;
+        padding-bottom: 0;
+        @media (max-width: 48em) {
+            padding-top: 12rem;
+        }
+    }
+
+    .modal__project-image {
+        background-color: #efefef;
+    }
+}

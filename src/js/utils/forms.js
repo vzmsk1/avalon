@@ -109,11 +109,11 @@ class FormSubmition extends Validation {
         this.init();
     }
 
-    sendForm(form, responseResult = ``) {
+    sendForm(form, responseResult = null) {
         document.dispatchEvent(
             new CustomEvent('sendForm', {
                 detail: {
-                    form: form
+                    form: form, result: result
                 }
             })
         );
@@ -125,7 +125,7 @@ class FormSubmition extends Validation {
                 modal ? modules.modal.open(modal) : null;
             }
         }, 0);
-
+        if (!result.errors)
         this.clearFields(form);
 
         console.log('is sent');
@@ -153,6 +153,13 @@ class FormSubmition extends Validation {
 
                 if (response.ok) {
                     const result = await response.json();
+                    if (result.errors) {
+                        Object.keys(result.errors).forEach((error) => {
+                            const input = $(form).find(`[name="${error}"]`);
+                            input.closest('div')?.attr('data-hint', result.errors[error]);
+                            this.addError(input[0]);
+                        });
+                    }
                     form.classList.remove('_is-sending');
                     this.sendForm(form, result);
                 } else {
@@ -273,6 +280,8 @@ class FormFields extends Validation {
         document.body.addEventListener('focusout', this.handleFocusout.bind(this));
     }
 }
+
+
 
 // --------------------------------------------------------------------------
 

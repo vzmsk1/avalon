@@ -69,6 +69,13 @@
         }
     }
 
+
+    .pagination {
+        min-width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__options {
         display: flex;
         column-gap: 2.8rem;
@@ -366,7 +373,7 @@
 
                 @include small-tablet {
                     &:not(:last-of-type) {
-                        margin-bottom: 3.2rem;
+                       
                     }
                 }
             }
@@ -826,6 +833,32 @@
     flex-direction: column;
     row-gap: 2.4rem;
 
+
+    &__list-two {
+        padding-top: 1.6rem;
+        padding-left: 1rem;
+
+
+        .categories-catalog__item {
+            position: relative;
+            padding-left: 1.6rem;
+            
+            &::before {
+                position: absolute;
+                content:'';
+                width: 0.1rem;
+                height: 100%;
+                background-color: $grayTxt;
+                left: 0;
+            }
+        }
+
+        .categories-catalog__item:last-child {
+            padding-bottom: 0;
+            line-height: 0;
+        }
+    }
+
     &__close-btn {
         justify-self: end;
 
@@ -840,7 +873,7 @@
     }
 
     &__heading-wrap {
-        margin-bottom: 2.4rem;
+        
 
         @media (max-width: 48em) {
             margin-bottom: 3.2rem;
@@ -915,15 +948,20 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        border-bottom: 1px solid $grayTxt;
+        padding-bottom: 2.4rem;
+
+        @media (max-width: 48em) {
+            padding-bottom: 0;
+        }
     }
 
     &__subtitle {
-        padding-bottom: 2.4rem;
+        
         padding-left: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid $grayTxt;
         cursor: pointer;
 
         &._is-active {
@@ -958,15 +996,17 @@
 
     &__list {
         padding-left: 3rem;
-
+        padding-top: 2.4rem;
         @media (max-width: 48em) {
             padding-left: 6rem;
+            padding-top: 0;
+            padding-bottom: 2.4rem;
         }
     }
 
     &__item {
         display: block;
-
+        padding-bottom: 1.6rem;
         &._chapter {
             &._showmore {
                 > .categories-catalog__item-txt {
@@ -977,7 +1017,11 @@
             }
             > .categories-catalog__list {
                 position: relative;
-
+                @media (max-width: 48em) {
+                    padding-top: 2.4rem;
+                    padding-bottom: 0; 
+                }
+                
                 &::before {
                     content: '';
                     position: absolute;
@@ -988,10 +1032,7 @@
                     background-color: $grayTxt;
 
                     @media (max-width: 48em) {
-                        top: 4.7rem;
-                        left: 2rem;
-
-                        height: calc(100% - 4.7rem);
+                        left: 1.8rem;
                     }
                 }
             }
@@ -1030,6 +1071,9 @@
                 }
             }
             .categories-catalog__item:last-child {
+                padding-bottom: 0;
+                line-height: 0;
+                margin-bottom: 1.6rem;
                 @media (max-width: 48em) {
                     margin-bottom: 4rem;
                 }
@@ -1037,17 +1081,17 @@
         }
 
         &:first-child {
-            padding-top: 2rem;
+            
 
             @media (max-width: 48em) {
-                padding-top: 4.8rem;
+                
             }
         }
         &:not(:last-child) {
-            margin-bottom: 1.6rem;
-
+           
+            
             @media (max-width: 48em) {
-                margin-bottom: 3.2rem;
+                
             }
         }
     }

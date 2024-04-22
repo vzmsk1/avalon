@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             values: 0,
             step: 1,
-            start: [20000, 550000],
+            start: [Number(inputFrom.dataset.fromMin), 0.7 * Number(inputTo.dataset.toMax)],
             connect: true,
             format: {
                 to: function (value) {
-                    return Math.round(value).toLocaleString('ru-RU') + ' ₽';
+                    return Math.round(value).toLocaleString('ru-RU') + '₽';
                 },
                 from: function (value) {
-                    return value.replace(' ₽', '');
+                    return value.replace('₽', '');
                 }
             }
         });

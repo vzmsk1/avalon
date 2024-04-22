@@ -3,7 +3,7 @@
     display: flex;
     column-gap: 3.2rem;
     background-color: $gray;
-
+    width: 100%;
     @media (max-width: 48em) {
         padding: 3.2rem 2.4rem;
 
@@ -238,6 +238,46 @@
 
         @media (max-width: 48em) {
             column-gap: 1.6rem;
+        }
+    }
+}
+
+.product-card-horizontal.no-active {
+    // pointer-events: none;
+
+
+    .product-card-horizontal__add-btn {
+        pointer-events: none;
+        svg {
+            display: none;
+        }
+    }
+
+    .product-card-horizontal__image {
+        img {
+            opacity: 0.5;
+        }
+    }
+
+    .product-card-horizontal__quantity {
+        display: none;
+    }
+
+    .product-card-horizontal__discount {
+        display: none;
+    }
+
+    .product-card-horizontal__total {
+        column-gap: initial;
+    }
+}
+
+.product-card-horizontal.one-product {
+    .product-card-horizontal__quantity {
+        button {
+            &::before {
+             color: $grayTxt;
+            }
         }
     }
 }

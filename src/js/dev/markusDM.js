@@ -55,6 +55,11 @@ $(".catalog__filters-slide-fields").keypress(function(event){
       return false;
 });
 
+// $('.quantity__input input').each(function() {
+//     var val = parseInt($(this).text());
+//     if (val < 1)
+//     $(this).removeClass("one-product");
+// });
 
 
 
