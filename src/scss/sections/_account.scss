@@ -622,6 +622,21 @@
         }
     }
 
+    &__input input {
+        padding: 2rem;
+        height: 6rem;
+        border: 1px solid #a1a2a9;
+        background-color: #ffffff;
+        font-size: 1.6rem;
+        color: #a1a2a9;
+        display: block;
+        font-weight: 700;
+        &::placeholder {
+            color: #a1a2a9;
+        }
+        
+    }
+
     &__fields {
         margin-bottom: 4.8rem;
 

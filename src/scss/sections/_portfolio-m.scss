@@ -20,7 +20,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            opacity: 0;
+            opacity: 1;
             &::after {
                 content:'';
                 position: absolute;
@@ -28,12 +28,12 @@
                 width: 126.4rem;
                 height: 61.4rem;
                 clip-path: polygon(0 0, 83% 0, 100% 100%, 0% 100%);
-
                 backdrop-filter: blur(3px);
                 background: rgba(89, 88, 88, 0.59);
                 left: 0;
                 z-index: 1;
                 opacity: 0;
+               
             }
         }
 
@@ -50,6 +50,7 @@
             display: flex;
             flex-direction: column;
             opacity: 0;
+           
         }
 
         &-span {
@@ -108,41 +109,51 @@
         }
     }
 
+    &__box-desk-blur {
+        
+    }
+
     .swiper-slide-active {
         .portfolio-m__box-desk {
             &-image {
-                opacity: 1;
-                transition: opacity 1s;
                 &::after {
-                    transition: opacity 1.5s;
+                    animation: fadeIn 1s;
                     opacity: 1;
                 }
             }
 
             &-content {
-                transition: opacity 2.5s;
-                opacity: 1;
+                animation: fadeIn 1s ease;
+                animation-delay: 2s;
+                animation-fill-mode: forwards;
+                
             }
 
             &-span {
-                opacity: 1;
-                transition: opacity 3s;
+                animation: fadeIn 1s ease;
+                animation-delay: 2.5s;
+                animation-fill-mode: forwards;
             }
     
             &-title {
-                opacity: 1;
-                transition: opacity 3.1s;
+                // opacity: 1;
+              
+                animation: fadeIn 1s ease;
+                animation-delay: 2.7s;
+                animation-fill-mode: forwards;
             }
     
             &-text {
               
-                transition: opacity 3.3s;
-                opacity: 1;
+                animation: fadeIn 1s ease;
+                animation-delay: 3s;
+                animation-fill-mode: forwards;
             }
     
             &-button {
-                transition: opacity 3.3s;
-                opacity: 1;
+                animation: fadeIn 1s ease;
+                animation-delay: 3.2s;
+                animation-fill-mode: forwards;
                 &::after {
                     position: absolute;
                     content:'';
@@ -157,6 +168,12 @@
                 }
             }
         }
+    }
+
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
     }
 
 

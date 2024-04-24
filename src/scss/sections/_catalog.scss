@@ -141,15 +141,21 @@
         &-list-inner {
             margin-bottom: 2rem;
             display: flex;
-            justify-content: space-between;
+            
         }
 
         &-item {
             width: 40.9rem;
+            margin-right: 2.8rem;
             @media (max-width: 48em) { 
                 width: 42.6rem;
+                min-width: fit-content;
                 margin-right: 1.6rem;
             }
+        }
+
+        &-item:last-child {
+            margin-right: 0;
         }
 
         &-all {
@@ -390,13 +396,15 @@
                 align-items: center;
                 padding-right: 2.4rem;
             }
+
+            
         }
 
         &-button {
             width: fit-content;
             display: none;
             @media (max-width: 48em) { 
-                display: flex;
+               
             }
             @include small-tablet {
                 width: 100%;

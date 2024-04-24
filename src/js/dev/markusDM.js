@@ -63,7 +63,9 @@ $(".catalog__filters-slide-fields").keypress(function(event){
 
 
 
+var date = new Date();
+date.setDate(date.getDate() + 1)
 
 new AirDatepicker('#date-select', {
-   
+    minDate: date
 })

@@ -19,6 +19,7 @@
         @include small-tablet {
             height: 10.4rem;
             width: 12rem;
+            min-width: 12rem;
             max-width: 100%;
         }
 

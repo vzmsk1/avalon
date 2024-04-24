@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return Math.round(value).toLocaleString('ru-RU') + '₽';
                 },
                 from: function (value) {
-                    return value.replace('₽', '');
+                    return value.replace(' ₽', '');
                 }
             }
         });
@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         inputs.forEach((input, index) => {
+            input.addEventListener('click', () => {
+                input.value = "";
+            })
             input.addEventListener('change', (event) => {
                 const range = [null, null];
                 range[index] = event.currentTarget.value;
