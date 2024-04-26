@@ -25,11 +25,7 @@ export const getHash = () => {
 export const menuInit = () => {
     if (document.querySelector('.header__mm-item_hamburger-btn')) {
         document.addEventListener('click', function (e) {
-            if (
-                bodyLockStatus &&
-                (e.target.closest('.header__mm-item_hamburger-btn') ||
-                    e.target.closest('.menu-bar__item-content_hamburger'))
-            ) {
+            if (bodyLockStatus && (e.target.closest('.header__mm-item_hamburger-btn') || e.target.closest('.menu-bar__item-content_hamburger'))) {
                 menuOpen();
             } else if (
                 bodyLockStatus &&
@@ -72,13 +68,9 @@ export function headerScroll() {
             const scrollTop = window.scrollY;
             clearTimeout(timer);
             if (scrollTop >= header.offsetHeight) {
-                !document.documentElement.classList.contains('_header-scroll')
-                    ? document.documentElement.classList.add('_header-scroll')
-                    : null;
+                !document.documentElement.classList.contains('_header-scroll') ? document.documentElement.classList.add('_header-scroll') : null;
             } else {
-                document.documentElement.classList.contains('_header-scroll')
-                    ? document.documentElement.classList.remove('_header-scroll')
-                    : null;
+                document.documentElement.classList.contains('_header-scroll') ? document.documentElement.classList.remove('_header-scroll') : null;
             }
             scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
         });
@@ -364,33 +356,30 @@ export function showmore() {
         showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
         let showMoreContent = showMoreBlock.querySelectorAll('[data-showmore-content]');
         let showMoreButton = showMoreBlock.querySelectorAll('[data-showmore-button]');
-        showMoreContent = Array.from(showMoreContent).filter(
-            (item) => item.closest('[data-showmore]') === showMoreBlock
-        )[0];
-        showMoreButton = Array.from(showMoreButton).filter(
-            (item) => item.closest('[data-showmore]') === showMoreBlock
-        )[0];
+        showMoreContent = Array.from(showMoreContent).filter((item) => item.closest('[data-showmore]') === showMoreBlock)[0];
+        showMoreButton = Array.from(showMoreButton).filter((item) => item.closest('[data-showmore]') === showMoreBlock)[0];
         const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-        if (matchMedia.matches || !matchMedia) {
-            if (hiddenHeight < getOriginalHeight(showMoreContent)) {
-                _slideUp(showMoreContent, 0, hiddenHeight);
-                showMoreButton.hidden = false;
+
+        if (showMoreButton) {
+            if (matchMedia.matches || !matchMedia) {
+                if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                    _slideUp(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = false;
+                } else {
+                    _slideDown(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = true;
+                }
             } else {
                 _slideDown(showMoreContent, 0, hiddenHeight);
                 showMoreButton.hidden = true;
             }
-        } else {
-            _slideDown(showMoreContent, 0, hiddenHeight);
-            showMoreButton.hidden = true;
         }
     }
     function getHeight(showMoreBlock, showMoreContent) {
         let hiddenHeight = 0;
         const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : 'size';
         if (showMoreType === 'items') {
-            const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-                ? showMoreContent.dataset.showmoreContent
-                : 3;
+            const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
             const showMoreItems = showMoreContent.children;
             for (let index = 1; index < showMoreItems.length; index++) {
                 const showMoreItem = showMoreItems[index - 1];
@@ -398,9 +387,7 @@ export function showmore() {
                 if (index == showMoreTypeValue) break;
             }
         } else {
-            const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-                ? showMoreContent.dataset.showmoreContent
-                : 150;
+            const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
             hiddenHeight = showMoreTypeValue;
         }
         return hiddenHeight;
@@ -426,9 +413,7 @@ export function showmore() {
                 const showMoreButton = targetEvent.closest('[data-showmore-button]');
                 const showMoreBlock = showMoreButton.closest('[data-showmore]');
                 const showMoreContent = showMoreBlock.querySelector('[data-showmore-content]');
-                const showMoreSpeed = showMoreBlock.dataset.showmoreButton
-                    ? showMoreBlock.dataset.showmoreButton
-                    : '500';
+                const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : '500';
                 const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
                 if (!showMoreContent.classList.contains('_slide')) {
                     showMoreBlock.classList.contains('_showmore-active')
@@ -452,9 +437,7 @@ export const initInputMask = () => {
 
     if (maskElements.length) {
         maskElements.forEach((maskElement) => {
-            Inputmask({ mask: '+7 (999) 999-9999', showMaskOnHover: false, jitMasking: true }).mask(
-                maskElement
-            );
+            Inputmask({ mask: '+7 (999) 999-9999', showMaskOnHover: false, jitMasking: true }).mask(maskElement);
         });
     }
 };
