@@ -212,43 +212,64 @@ document.addEventListener('DOMContentLoaded', function () {
     /**
      * init quantity inputs
      */
-    const initQuantityInputs = () => {
-        if (document.querySelectorAll('.quantity').length) {
-            const min = 1;
-            const step = 1;
+    // const initQuantityInputs = () => {
+    //     if (document.querySelectorAll('.quantity').length) {
+    //         const min = 1;
+    //         const step = 1;
 
-            document.querySelectorAll('.quantity').forEach((input) => {
-                const inp = input.querySelector('input');
-                const btnminus = input.querySelector('.quantity__button_minus');
-                const btnplus = input.querySelector('.quantity__button_plus');
+    //         document.querySelectorAll('.quantity').forEach((input) => {
+    //             const inp = input.querySelector('input');
+    //             const btnminus = input.querySelector('.quantity__button_minus');
+    //             const btnplus = input.querySelector('.quantity__button_plus');
 
-                const qtyminus = (e) => {
-                    const current = Number(inp.value);
-                    let newval = current - step;
+    //             const qtyminus = (e) => {
+    //                 const current = Number(inp.value);
+    //                 let newval = current - step;
 
-                    if (newval < min) {
-                        newval = min;
-                    }
+    //                 if (newval < min) {
+    //                     newval = min;
+    //                 }
 
-                    inp.value = Number(newval);
-                    e.preventDefault();
-                };
+    //                 inp.value = Number(newval);
+    //                 e.preventDefault();
+    //             };
 
-                const qtyplus = (e) => {
-                    const current = Number(inp.value);
-                    const newval = current + step;
+    //             const qtyplus = (e) => {
+    //                 const current = Number(inp.value);
+    //                 const newval = current + step;
 
-                    inp.value = Number(newval);
-                    e.preventDefault();
-                };
+    //                 inp.value = Number(newval);
+    //                 e.preventDefault();
+    //             };
 
-                btnminus.addEventListener('click', qtyminus);
-                btnplus.addEventListener('click', qtyplus);
-            });
+    //             btnminus.addEventListener('click', qtyminus);
+    //             btnplus.addEventListener('click', qtyplus);
+    //         });
+    //     }
+    // };
+    // initQuantityInputs();
+    const min = 1;
+    const step = 1;
+    $(document).on('click', '.quantity__button_minus', function () {
+        const input = $(this).parent().find('input');
+        const current = Number(input.val());
+        let newValue = current - step;
+        if (newValue < min) {
+            newValue = min;
         }
-    };
-    initQuantityInputs();
-
+        input.val(Number(newValue));
+        e.preventDefault();
+    });
+    $(document).on('click', '.quantity__button_plus', function () {
+        const input = $(this).parent().find('input');
+        const current = Number(input.val());
+        const newValue = current + step;
+        const maxValue = $(this).attr('data-max-q');
+        if (maxValue && newValue > maxValue)
+            newValue = maxValue;
+        input.val(Number(newValue));
+        e.preventDefault();
+    });
     /**
      * show more catalog categories
      */

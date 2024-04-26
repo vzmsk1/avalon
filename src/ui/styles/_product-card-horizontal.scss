@@ -361,3 +361,16 @@
         width: 100%;
     }
 }
+
+.modal-product-card-horizontal--basket {
+    right: 2rem;
+    top: 14rem;
+    left: initial;
+}
+
+
+.modal-product-card-horizontal--basket.active {
+    opacity: 1;
+    visibility: initial;
+    
+}

@@ -1027,9 +1027,38 @@
                     <div class="order-account__group">
                         <div class="order-account__head">
                             <span class="order-account__heading h h_h2">Детали заказа</span>
-                            <button type="button" class="order-account__btn btn btn_secondary">
+                            <button type="button" class="order-account__btn btn btn_secondary horizontal-basket-open">
                                 <span class="txt txt_20 txt_semibold">Добавить корзину в проект</span>
                             </button>
+                            <div class="product-card-horizontal__modal modal-product-card-horizontal modal-product-card-horizontal--basket">
+                                <ul class="modal-product-card-horizontal__list">
+                                    <li class="modal-product-card-horizontal__item">
+                                        <label class="modal-product-card-horizontal__item-txt txt txt_16 checkbox">
+                                            <input type="checkbox" name="form[]" value="value" checked="" class="checkbox__input">
+                                            <span class="checkbox__txt">Проект 1</span>
+                                        </label>
+                                        <span class="modal-product-card-horizontal__num txt txt_16">1</span>
+                                    </li>
+                                    <li class="modal-product-card-horizontal__item">
+                                        <label class="modal-product-card-horizontal__item-txt txt txt_16 checkbox">
+                                            <input type="checkbox" name="form[]" value="value" class="checkbox__input">
+                                            <span class="checkbox__txt">Проект 2</span>
+                                        </label>
+                                        <span class="modal-product-card-horizontal__num txt txt_16">4</span>
+                                    </li>
+                                    <li class="modal-product-card-horizontal__item">
+                                        <label class="modal-product-card-horizontal__item-txt txt txt_16 checkbox">
+                                            <input type="checkbox" name="form[]" value="value" class="checkbox__input">
+                                            <span class="checkbox__txt">Проект 3</span>
+                                        </label>
+                                        <span class="modal-product-card-horizontal__num txt txt_16">12</span>
+                                    </li>
+                                </ul>
+                                <a href="#" class="modal-product-card-horizontal__link-btn btn btn_secondary">Новый проект</a>
+                                <button type="button" class="modal-product-card-horizontal__btn btn btn_primary">
+                                    <span class="txt txt_20 txt_semibold">Готово</span>
+                                </button>
+                            </div>
                         </div>
                         <div class="order-account__body">
                             <div class="order-account__table table-order-account">
@@ -1136,13 +1165,13 @@
                         <div class="order-account__body">
                             <form action="#" data-dev="" class="order-account__form form-order-account">
                                 <div data-select-single="" class="form-order-account__fields">
-                                    <div class="form-order-account__dropdown dropdown dropdown_field">
-                                        <select data-sel-label="Выбрать тип оплаты" data-show-selection="" name="form[]">
+                                    <!-- <div class="form-order-account__dropdown dropdown dropdown_field">
+                                        <select data-sel-label="Выбрать тип оплаты" data-show-selection name="form[]">
                                             <option value="1">Выбор</option>
                                             <option value="2">Выбор</option>
                                             <option value="3">Выбор</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <div class="form-order-account__dropdown dropdown dropdown_field">
                                         <select data-sel-label="Выбрать тип доставки" data-show-selection="" name="form[]">
                                             <option value="1">Выбор</option>
@@ -1150,12 +1179,8 @@
                                             <option value="3">Выбор</option>
                                         </select>
                                     </div>
-                                    <div class="form-order-account__dropdown dropdown dropdown_field">
-                                        <select data-sel-label="Желаемая дата отгрузки" data-show-selection="" name="form[]">
-                                            <option value="1">Выбор</option>
-                                            <option value="2">Выбор</option>
-                                            <option value="3">Выбор</option>
-                                        </select>
+                                    <div class="form-order-account__input form-order-account__input--date input">
+                                        <input type="text" id="date-select" placeholder="Желаемая дата отгрузки" class="input__field">
                                     </div>
                                     <div data-hint="Заполните поле" class="form-order-account__input input input_textarea _solid">
                                         <textarea placeholder="Комментарий" name="form[]" class="input__field"></textarea>
@@ -1288,6 +1313,14 @@
     </div>
 </footer>
 
+<div class="basket-alert ">
+    <div class="basket-alert__text">Товар добавлен в корзину</div>
+    <button class="basket-alert__close">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L8 8M8 8L15 1M8 8L1 15M8 8L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+    </button>
+</div>
             <div id="requestSentModal" aria-hidden="true" class="modal">
     <div class="modal__wrapper">
         <div class="modal__content">

@@ -6,10 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const inputFrom = document.getElementById('from');
     const inputTo = document.getElementById('to');
-    
+    const elementsStart = document.querySelector('[data-value-start]');
+    const elementsEnd = document.querySelector('[data-value-end]');
+    const attributeValuesRange = []; 
+   
+
     if (rangeSlider) {
         console.log(typeof inputFrom.dataset.fromMin);
         console.log(typeof inputTo.dataset.toMax);
+        console.log(typeof inputFrom.dataset.startNumber);
+        console.log(typeof inputTo.dataset.endNumber);
+
+        const startValue = parseInt(inputFrom.dataset.startNumber, 10);
+        const endValue = parseInt(inputTo.dataset.endNumber, 10);
+        attributeValuesRange.push(startValue, endValue);
+
+
         noUiSlider.create(rangeSlider, {
             range: {
                 min: Number(inputFrom.dataset.fromMin),
@@ -17,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             values: 0,
             step: 1,
-            start: [Number(inputFrom.dataset.fromMin), 0.7 * Number(inputTo.dataset.toMax)],
+            start: attributeValuesRange,
             connect: true,
             format: {
                 to: function (value) {
@@ -50,5 +62,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-

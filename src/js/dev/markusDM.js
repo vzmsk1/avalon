@@ -69,3 +69,32 @@ date.setDate(date.getDate() + 1)
 new AirDatepicker('#date-select', {
     minDate: date
 })
+
+$('.form-order-account__input--date').click(function(){
+    $('.form-order-account__input--date').toggleClass('active')
+});
+
+
+$(document).on('mouseup', function(e){
+    let s = $('.form-order-account__input--date.active'); 
+    if(!s.is(e.target) && s.has(e.target).length === 0) {
+    
+      s.removeClass('active');
+    }
+  });
+
+  $(".horizontal-basket-open").on('click', function(){
+    $(".modal-product-card-horizontal--basket").toggleClass('active')
+    });
+
+    $(document).on('mouseup', function(e){
+        let s = $('.modal-product-card-horizontal--basket.active'); 
+        if(!s.is(e.target) && s.has(e.target).length === 0) {
+        
+          s.removeClass('active');
+        }
+      });
+
+      $(".basket-alert__close").click( function(){
+        $(".basket-alert").removeClass('active')
+    });

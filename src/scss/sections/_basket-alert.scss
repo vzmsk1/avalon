@@ -1,0 +1,24 @@
+.basket-alert {
+   display: none;
+    align-items:center;
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    background-color: $gray;
+    padding: 2rem 3.2rem;
+    &__text {
+        font-size: 2.8rem;
+        margin-right: 5rem;
+    }
+
+    &__close {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    
+}
+
+.basket-alert.active {
+    display: flex;
+}
