@@ -64,11 +64,17 @@ $(".catalog__filters-slide-fields").keypress(function(event){
 
 
 var date = new Date();
-date.setDate(date.getDate() + 1)
+date.setDate(date.getDate() + 1);
 
-new AirDatepicker('#date-select', {
-    minDate: date
-})
+var datepicker = new AirDatepicker('#date-select', {
+    minDate: date,
+    autoClose: true,
+
+});
+
+
+
+
 
 $('.form-order-account__input--date').click(function(){
     $('.form-order-account__input--date').toggleClass('active')

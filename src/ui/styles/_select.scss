@@ -6,7 +6,12 @@
     ._is-filled {
         .select__value {
             color: $black;
+            
         }
+    }
+
+    .select__value {
+        padding-right: 5rem;
     }
 
     &_field {
@@ -117,7 +122,8 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: transform 0.3s ease;
-
+            position: absolute;
+            right: 2rem;
             @media (max-width: 48em) {
                 flex: 0 0 3.5rem;
                 width: 3.5rem;
