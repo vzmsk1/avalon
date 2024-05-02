@@ -19,7 +19,26 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse;
-
+        .table-order-account__quantity--black {
+            height: 8rem;
+            border: 1.5px solid #000000;
+            text-align: center;
+            background-color: #000000;
+            transition: background-color 0.3s ease;
+            max-width: fit-content;
+            width: 100%;
+            @media (max-width: 48em) { 
+                position: initial;
+            }
+            .quantity__button::before {
+                color: #fff;
+            }
+    
+            .quantity__input input {
+                color: #fff;
+            }
+        }
+    
         .detailed {
             &__block {
                 padding: 0;

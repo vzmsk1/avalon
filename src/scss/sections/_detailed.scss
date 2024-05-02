@@ -134,10 +134,29 @@
             font-size: 3.4rem;
             text-transform: uppercase;
             width: 100%;
-
+            @media (max-width: 48em) { 
+                flex-direction: column;
+                width: fit-content;
+                position: relative;
+                padding-right: 3rem;
+            }
             sup {
                 font-size: 2rem;
                 margin-top: -1rem;
+                @media (max-width: 48em) { 
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+                color:#a1a2a9;
+                text-decoration:line-through;
+                margin-left: 1rem;
+                @media (max-width: 48em) { 
+                    font-size: 3rem;
+                }
             }
         }
 
@@ -475,9 +494,70 @@
 
 
     .detailed__block-bookmark-menu {
-        opacity: 1;
+     
         .table-order-account__quantity {
             margin-bottom: 1rem;
         }
     }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 6rem;
+        border: 1px solid #efefef;
+    }
+
+    .quantity__button {
+       
+        flex: 0 0 8rem;
+        width: 8rem;
+        &::before {
+            font-size: 4rem;
+        }
+       
+    }
+
+    .quantity__input {
+        flex: 0 0 8rem;
+        width: 8rem;
+        text-align: center;
+
+        input {
+            font-size: 2rem;
+        }
+    }
+
+    .table-order-account__quantity {
+
+        @media (max-width: 48em) { 
+            position: initial;
+            height: 8rem;
+        }
+        
+    }
+
+
+    .table-order-account__quantity--black {
+        height: 6rem;
+        border: 1.5px solid #000000;
+        text-align: center;
+        background-color: #000000;
+        transition: background-color 0.3s ease;
+        max-width: 34.1rem;
+        width: 100%;
+        @media (max-width: 48em) { 
+            position: initial;
+        }
+        .quantity__button::before {
+            color: #fff;
+        }
+
+        .quantity__input input {
+            color: #fff;
+        }
+    }
+
+
+    
 }
